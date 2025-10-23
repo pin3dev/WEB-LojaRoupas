@@ -32,27 +32,97 @@
         .product-item:hover .product-image {
             transform: scale(1.05);
         }
-        /* Removed .color-swatch CSS */
     </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="index.html">Clothé</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain2">
-            <span class="navbar-toggler-icon"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navMain2">
+        <div class="collapse navbar-collapse" id="navMain">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="catalog.html">Catalog</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      id="megaMenu"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      >Categories</a
+                    >
+                    <div
+                      class="dropdown-menu p-4"
+                      aria-labelledby="megaMenu"
+                      style="min-width: 600px"
+                    >
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Man</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man">T-Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man">Pants</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man">Accessories</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Woman</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman">Dresses</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman">Blouses</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman">Pants</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Children</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=children-boy">Boys</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=children-girl">Girls</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="catalog.html">Catalog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
             </ul>
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link position-relative" href="cart.html">
-                        <i class="bi bi-bag-fill me-1"></i>Cart 
-                        <span id="cart-count-2" class="badge bg-dark rounded-pill ms-1">0</span>
+                        <i class="bi bi-cart3"></i>
+                        <span id="cart-count" class="badge bg-danger rounded-pill ms-1">0</span>
                     </a>
                 </li>
             </ul>
@@ -74,10 +144,22 @@
             <div class="card p-3 mb-3">
                 <h6 class="mb-2">Categories</h6>
                 <div class="list-group list-group-flush" id="category-filters">
-                    <a href="#" class="list-group-item list-group-item-action active" data-cat="all">All</a>
-                    <a href="#" class="list-group-item list-group-item-action" data-cat="masculino">Man</a>
-                    <a href="#" class="list-group-item list-group-item-action" data-cat="feminino">Woman</a>
-                    <a href="#" class="list-group-item list-group-item-action" data-cat="infantil">Children</a>
+                    <a href="#" class="list-group-item list-group-item-action active" data-cat="all">All Products</a>
+                    
+                    <a href="#" class="list-group-item list-group-item-action fw-bold" data-cat="man">Man</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="man-dress">T-Shirts</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-blouse">Accessories</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-blouse">Pants</a>
+                    
+                    <a href="#" class="list-group-item list-group-item-action fw-bold" data-cat="woman">Woman</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-dress">Dresses</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-blouse">Blouses</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-blouse">Pants</a>
+
+                    <a href="#" class="list-group-item list-group-item-action fw-bold" data-cat="children">Children</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="children-boy">Boys</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="children-girl">Girls</a>
+
                 </div>
             </div>
             
@@ -146,19 +228,25 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/cart.js"></script>
 <script>
-/* Product Data (Colors property is now ignored, but kept for simplicity) */
+/* Updated Product Data: Categories adjusted to 'man', 'woman', 'children-boy', 'children-girl' */
 const products = [
-    {"id":"p1","name":"Basic Black T-shirt","category":"masculino","price":19.90,"image":"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800&auto=format&fit=crop&q=60","desc":"Regular fit, light cotton.","colors": ["#000000", "#FFFFFF"]},
-    {"id":"p4","name":"Oversized Sweatshirt","category":"masculino","price":39.90,"image":"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&auto=format&fit=crop&q=60","desc":"Urban comfort with dropped shoulders.","colors": ["#4F46E5", "#F59E0B", "#10B981"]},
-    {"id":"p2","name":"Summer Floral Dress","category":"feminino","price":49.90,"image":"https://images.unsplash.com/photo-1520975912262-6b1fcd9c8f4a?w=800&auto=format&fit=crop&q=60","desc":"Light and flowy, delicate print.","colors": ["#EC4899", "#1D4ED8"]},
-    {"id":"p5","name":"Light Linen Blouse","category":"feminino","price":34.50,"image":"https://images.unsplash.com/photo-1495121605193-b116b5b09a9b?w=800&auto=format&fit=crop&q=60","desc":"Ideal for summer, 100% linen.","colors": ["#FEF3C7", "#059669"]},
-    {"id":"p3","name":"Warm Children's Coat","category":"infantil","price":29.90,"image":"https://images.unsplash.com/photo-1546171735-5b9bd4f8b8a0?w=800&auto=format&fit=crop&q=60","desc":"Soft warmth for the little ones.","colors": ["#F87171", "#3B82F6"]},
-    {"id":"p6","name":"Cotton Jogger Pants","category":"infantil","price":24.00,"image":"https://images.unsplash.com/photo-1520975683576-2d8b2a6c8a55?w=800&auto=format&fit=crop&q=60","desc":"Flexible and durable, adjustable waist.","colors": ["#1F2937", "#9CA3AF"]},
-    {"id":"p7","name":"Urban Cargo Pants","category":"masculino","price":55.00,"image":"https://images.unsplash.com/photo-1624378439578-838f32239c4d?w=800&auto=format&fit=crop&q=60","desc":"Modern style with multiple pockets.","colors": ["#6B7280"]},
-    {"id":"p8","name":"Lace Strap Top","category":"feminino","price":22.50,"image":"https://images.unsplash.com/photo-1558769131-0b5c175c5f2e?w=800&auto=format&fit=crop&q=60","desc":"Lace detailing, light fabric.","colors": ["#FFFFFF", "#000000"]}
+    {"id":"p1","name":"Basic Black T-shirt","category":"man","price":19.90,"image":"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800&auto=format&fit=crop&q=60","desc":"Regular fit, light cotton."},
+    {"id":"p4","name":"Oversized Sweatshirt","category":"man","price":39.90,"image":"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&auto=format&fit=crop&q=60","desc":"Urban comfort with dropped shoulders."},
+    {"id":"p2","name":"Summer Floral Dress","category":"woman","price":49.90,"image":"https://images.unsplash.com/photo-1520975912262-6b1fcd9c8f4a?w=800&auto=format&fit=crop&q=60","desc":"Light and flowy, delicate print."},
+    {"id":"p5","name":"Light Linen Blouse","category":"woman","price":34.50,"image":"https://images.unsplash.com/photo-1495121605193-b116b5b09a9b?w=800&auto=format&fit=crop&q=60","desc":"Ideal for summer, 100% linen."},
+    {"id":"p3","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"https://images.unsplash.com/photo-1546171735-5b9bd4f8b8a0?w=800&auto=format&fit=crop&q=60","desc":"Soft warmth for the little ones."},
+    {"id":"p6","name":"Cotton Jogger Pants (Girl)","category":"children-girl","price":24.00,"image":"https://images.unsplash.com/photo-1520975683576-2d8b2a6c8a55?w=800&auto=format&fit=crop&q=60","desc":"Flexible and durable, adjustable waist."},
+    {"id":"p7","name":"Urban Cargo Pants","category":"man","price":55.00,"image":"https://images.unsplash.com/photo-1624378439578-838f32239c4d?w=800&auto=format&fit=crop&q=60","desc":"Modern style with multiple pockets."},
+    {"id":"p8","name":"Lace Strap Top","category":"woman","price":22.50,"image":"https://images.unsplash.com/photo-1558769131-0b5c175c5f2e?w=800&auto=format&fit=crop&q=60","desc":"Lace detailing, light fabric."}
 ];
 
-// Removed getColorSwatches function
+function getDisplayCategory(categoryKey) {
+    if (categoryKey === 'man') return 'Man';
+    if (categoryKey === 'woman') return 'Woman';
+    if (categoryKey === 'children-boy') return 'Children (Boy)';
+    if (categoryKey === 'children-girl') return 'Children (Girl)';
+    return categoryKey;
+}
 
 function renderProducts(list){
     const cont = document.getElementById('product-list');
@@ -176,11 +264,8 @@ function renderProducts(list){
     }
     
     list.forEach(p=>{
-        // Translating category for display
-        let displayCategory = p.category.charAt(0).toUpperCase() + p.category.slice(1);
-        if (p.category === 'masculino') displayCategory = 'Man';
-        if (p.category === 'feminino') displayCategory = 'Woman';
-        if (p.category === 'infantil') displayCategory = 'Children';
+        // Get the translated display category
+        const displayCategory = getDisplayCategory(p.category);
 
         cont.innerHTML += `
             <div class="col-12 col-sm-6 col-lg-4 mb-4">
@@ -211,7 +296,7 @@ function renderProducts(list){
             </div>
         `;
     });
-    // Re-attach listeners after rendering
+    // Re-attach listeners after rendering (assuming attachAddButtons is defined in cart.js)
     attachAddButtons();
 }
 
@@ -219,10 +304,17 @@ function renderProducts(list){
 function performFilter(){
     let filteredList = [...products];
 
-    // 1. CATEGORY FILTER
+    // 1. CATEGORY FILTER (Handles main categories AND 'children' parent filter)
     const activeCategory = document.querySelector('#category-filters .active').dataset.cat;
+    
     if (activeCategory !== 'all') {
-        filteredList = filteredList.filter(p => p.category === activeCategory);
+        if (activeCategory === 'children') {
+            // Special case: Filter products whose category STARTS with 'children-'
+            filteredList = filteredList.filter(p => p.category.startsWith('children-'));
+        } else {
+            // Standard filtering for 'man', 'woman', 'children-boy', 'children-girl'
+            filteredList = filteredList.filter(p => p.category === activeCategory);
+        }
     }
     
     // 2. PRICE FILTER
@@ -258,7 +350,9 @@ function performFilter(){
 document.getElementById('category-filters').addEventListener('click', e=>{
     if(e.target && e.target.dataset.cat !== undefined){
         e.preventDefault();
+        // Remove 'active' from all category filters
         document.querySelectorAll('#category-filters a').forEach(el=>el.classList.remove('active'));
+        // Add 'active' to the clicked element
         e.target.classList.add('active');
         performFilter(); // Call filter function
     }
