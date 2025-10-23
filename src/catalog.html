@@ -1,137 +1,277 @@
 <!doctype html>
-<!-- Catalog page with filters and product listing -->
-<html lang="pt">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Catálogo — Loja de Roupas</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catalog — Clothé Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Aesthetic Adjustments for the Catalog */
+        .product-item {
+            transition: transform 0.3s ease;
+        }
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+        }
+        .product-image-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        .product-image {
+            transition: transform 0.5s ease;
+            height: 320px; /* Fixed height for uniformity */
+            object-fit: cover;
+        }
+        .product-item:hover .product-image {
+            transform: scale(1.05);
+        }
+        /* Removed .color-swatch CSS */
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="index.html">Clothé</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain2">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMain2">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-        <li class="nav-item"><a class="nav-link active" href="catalog.html">Catálogo</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-      </ul>
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link position-relative" href="cart.html">Carrinho <span id="cart-count-2" class="badge bg-primary rounded-pill ms-1">0</span></a></li>
-      </ul>
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Clothé</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain2">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="catalog.html">Catalog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="cart.html">
+                        <i class="bi bi-bag-fill me-1"></i>Cart 
+                        <span id="cart-count-2" class="badge bg-dark rounded-pill ms-1">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 <main class="container my-4">
-  <div class="row">
-    <!-- Filters column -->
-    <aside class="col-12 col-md-3 mb-4">
-      <div class="card p-3">
-        <h6>Filtrar por Categoria</h6>
-        <div class="list-group" id="category-filters">
-          <button class="list-group-item list-group-item-action active" data-cat="all">Todas</button>
-          <button class="list-group-item list-group-item-action" data-cat="masculino">Masculino</button>
-          <button class="list-group-item list-group-item-action" data-cat="feminino">Feminino</button>
-          <button class="list-group-item list-group-item-action" data-cat="infantil">Infantil</button>
-        </div>
-      </div>
-    </aside>
+    <div class="row">
+        <aside class="col-12 col-md-3 mb-4">
+            
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search by name..." id="search-input">
+                <button class="btn btn-outline-secondary" type="button" onclick="performFilter()">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+            
+            <div class="card p-3 mb-3">
+                <h6 class="mb-2">Categories</h6>
+                <div class="list-group list-group-flush" id="category-filters">
+                    <a href="#" class="list-group-item list-group-item-action active" data-cat="all">All</a>
+                    <a href="#" class="list-group-item list-group-item-action" data-cat="masculino">Man</a>
+                    <a href="#" class="list-group-item list-group-item-action" data-cat="feminino">Woman</a>
+                    <a href="#" class="list-group-item list-group-item-action" data-cat="infantil">Children</a>
+                </div>
+            </div>
+            
+            <div class="card p-3 mb-3">
+                <h6 class="mb-2">Price Range</h6>
+                <div id="price-filters">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="price_range" id="price_all" value="all" checked>
+                        <label class="form-check-label" for="price_all">Show All</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="price_range" id="price_range1" value="0-25">
+                        <label class="form-check-label" for="price_range1">Under €25</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="price_range" id="price_range2" value="25.01-50">
+                        <label class="form-check-label" for="price_range2">€25 to €50</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="price_range" id="price_range3" value="50.01-9999">
+                        <label class="form-check-label" for="price_range3">Over €50</label>
+                    </div>
+                </div>
+            </div>
+            
+        </aside>
 
-    <section class="col-12 col-md-9">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4>Produtos</h4>
-        <div>
-          <label class="me-2">Ordenar:</label>
-          <select id="sort" class="form-select form-select-sm d-inline-block w-auto">
-            <option value="default">Padrão</option>
-            <option value="price-asc">Preço: Crescente</option>
-            <option value="price-desc">Preço: Decrescente</option>
-          </select>
-        </div>
-      </div>
+        <section class="col-12 col-md-9">
+            <div class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+                <div>
+                    <h4>Products</h4>
+                    <small class="text-muted" id="results-count"></small>
+                </div>
+                <div>
+                    <label class="me-2 fw-medium">Sort by:</label>
+                    <select id="sort" class="form-select form-select-sm d-inline-block w-auto">
+                        <option value="default">Featured</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Name: A-Z</option>
+                    </select>
+                </div>
+            </div>
 
-      <div class="row" id="product-list">
-        <!-- Product cards injected by JS -->
-      </div>
-    </section>
-  </div>
+            <div class="row" id="product-list">
+                </div>
+            
+            <nav class="mt-4 d-flex justify-content-center">
+                <ul class="pagination">
+                    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </section>
+    </div>
 </main>
 
-<footer class="bg-light py-4">
-  <div class="container d-flex justify-content-between">
-    <div>© <span id="year2"></span> Clothé</div>
-    <div>Telefone: +351 210 000 000</div>
-  </div>
+<footer class="bg-light py-4 mt-5 border-top">
+    <div class="container d-flex justify-content-between">
+        <div>© <span id="year2"></span> Clothé</div>
+        <div>Phone: +351 210 000 000</div>
+    </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/cart.js"></script>
 <script>
-/* Example product catalogue. In a real project these come from a backend. */
+/* Product Data (Colors property is now ignored, but kept for simplicity) */
 const products = [
-  {"id":"p1","name":"T-shirt Básica Preta","category":"masculino","price":19.90,"image":"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800&auto=format&fit=crop&q=60","desc":"Corte regular, algodão leve."},
-  {"id":"p4","name":"Camisola Oversized","category":"masculino","price":39.90,"image":"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&auto=format&fit=crop&q=60","desc":"Conforto urbano."},
-  {"id":"p2","name":"Vestido Floral","category":"feminino","price":49.90,"image":"https://images.unsplash.com/photo-1520975912262-6b1fcd9c8f4a?w=800&auto=format&fit=crop&q=60","desc":"Leve e fluido."},
-  {"id":"p5","name":"Blusa de Linho","category":"feminino","price":34.50,"image":"https://images.unsplash.com/photo-1495121605193-b116b5b09a9b?w=800&auto=format&fit=crop&q=60","desc":"Ideal para o verão."},
-  {"id":"p3","name":"Casaco Infantil","category":"infantil","price":29.90,"image":"https://images.unsplash.com/photo-1546171735-5b9bd4f8b8a0?w=800&auto=format&fit=crop&q=60","desc":"Aquecimento suave para os miúdos."},
-  {"id":"p6","name":"Calças Jogger","category":"infantil","price":24.00,"image":"https://images.unsplash.com/photo-1520975683576-2d8b2a6c8a55?w=800&auto=format&fit=crop&q=60","desc":"Flexíveis e duráveis."}
+    {"id":"p1","name":"Basic Black T-shirt","category":"masculino","price":19.90,"image":"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800&auto=format&fit=crop&q=60","desc":"Regular fit, light cotton.","colors": ["#000000", "#FFFFFF"]},
+    {"id":"p4","name":"Oversized Sweatshirt","category":"masculino","price":39.90,"image":"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&auto=format&fit=crop&q=60","desc":"Urban comfort with dropped shoulders.","colors": ["#4F46E5", "#F59E0B", "#10B981"]},
+    {"id":"p2","name":"Summer Floral Dress","category":"feminino","price":49.90,"image":"https://images.unsplash.com/photo-1520975912262-6b1fcd9c8f4a?w=800&auto=format&fit=crop&q=60","desc":"Light and flowy, delicate print.","colors": ["#EC4899", "#1D4ED8"]},
+    {"id":"p5","name":"Light Linen Blouse","category":"feminino","price":34.50,"image":"https://images.unsplash.com/photo-1495121605193-b116b5b09a9b?w=800&auto=format&fit=crop&q=60","desc":"Ideal for summer, 100% linen.","colors": ["#FEF3C7", "#059669"]},
+    {"id":"p3","name":"Warm Children's Coat","category":"infantil","price":29.90,"image":"https://images.unsplash.com/photo-1546171735-5b9bd4f8b8a0?w=800&auto=format&fit=crop&q=60","desc":"Soft warmth for the little ones.","colors": ["#F87171", "#3B82F6"]},
+    {"id":"p6","name":"Cotton Jogger Pants","category":"infantil","price":24.00,"image":"https://images.unsplash.com/photo-1520975683576-2d8b2a6c8a55?w=800&auto=format&fit=crop&q=60","desc":"Flexible and durable, adjustable waist.","colors": ["#1F2937", "#9CA3AF"]},
+    {"id":"p7","name":"Urban Cargo Pants","category":"masculino","price":55.00,"image":"https://images.unsplash.com/photo-1624378439578-838f32239c4d?w=800&auto=format&fit=crop&q=60","desc":"Modern style with multiple pockets.","colors": ["#6B7280"]},
+    {"id":"p8","name":"Lace Strap Top","category":"feminino","price":22.50,"image":"https://images.unsplash.com/photo-1558769131-0b5c175c5f2e?w=800&auto=format&fit=crop&q=60","desc":"Lace detailing, light fabric.","colors": ["#FFFFFF", "#000000"]}
 ];
 
+// Removed getColorSwatches function
+
 function renderProducts(list){
-  const cont = document.getElementById('product-list');
-  cont.innerHTML = '';
-  list.forEach(p=>{
-    cont.innerHTML += `
-      <div class="col-12 col-sm-6 col-lg-4 mb-4">
-        <div class="card h-100">
-          <img src="${p.image}" class="card-img-top" alt="${p.name}">
-          <div class="card-body d-flex flex-column">
-            <h6 class="card-title">${p.name}</h6>
-            <p class="small text-muted">${p.desc}</p>
-            <div class="mt-auto d-flex justify-content-between align-items-center">
-              <div><strong>€ ${p.price.toFixed(2)}</strong></div>
-              <div>
-                <button class="btn btn-sm btn-outline-primary add-to-cart" data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-image="${p.image}">Adicionar</button>
-              </div>
+    const cont = document.getElementById('product-list');
+    const resultsCount = document.getElementById('results-count');
+    
+    cont.innerHTML = '';
+    
+    // Update results count
+    resultsCount.textContent = `Listing ${list.length} of ${products.length} products.`;
+
+    if (list.length === 0) {
+        cont.innerHTML = '<div class="col-12"><div class="alert alert-warning">No products found matching the selected filters.</div></div>';
+        attachAddButtons();
+        return;
+    }
+    
+    list.forEach(p=>{
+        // Translating category for display
+        let displayCategory = p.category.charAt(0).toUpperCase() + p.category.slice(1);
+        if (p.category === 'masculino') displayCategory = 'Man';
+        if (p.category === 'feminino') displayCategory = 'Woman';
+        if (p.category === 'infantil') displayCategory = 'Children';
+
+        cont.innerHTML += `
+            <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                <div class="product-item card h-100 border-0 shadow-sm">
+                    <div class="product-image-wrapper">
+                        <img src="${p.image}" class="card-img-top product-image" alt="${p.name}">
+                    </div>
+                    
+                    <div class="card-body d-flex flex-column">
+                        <p class="text-muted small mb-1">${displayCategory}</p>
+                        <h6 class="card-title fw-medium">${p.name}</h6>
+                        <p class="small text-muted flex-grow-1 mb-3">${p.desc}</p>
+                        
+                        <div class="mt-auto d-flex justify-content-between align-items-center pt-2 border-top">
+                            <div class="fs-4 fw-bold text-dark">€ ${p.price.toFixed(2)}</div>
+                            <div>
+                                <button class="btn btn-dark btn-sm add-to-cart" 
+                                        data-id="${p.id}" 
+                                        data-name="${p.name}" 
+                                        data-price="${p.price}" 
+                                        data-image="${p.image}">
+                                    <i class="bi bi-cart-plus me-1"></i> Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    `;
-  });
-  attachAddButtons();
+        `;
+    });
+    // Re-attach listeners after rendering
+    attachAddButtons();
 }
 
-/* Filters */
+/* Centralized function to apply all filters and sorting */
+function performFilter(){
+    let filteredList = [...products];
+
+    // 1. CATEGORY FILTER
+    const activeCategory = document.querySelector('#category-filters .active').dataset.cat;
+    if (activeCategory !== 'all') {
+        filteredList = filteredList.filter(p => p.category === activeCategory);
+    }
+    
+    // 2. PRICE FILTER
+    const activePriceRange = document.querySelector('input[name="price_range"]:checked').value;
+    if (activePriceRange !== 'all') {
+        const [minStr, maxStr] = activePriceRange.split('-');
+        const min = parseFloat(minStr);
+        const max = parseFloat(maxStr);
+        
+        filteredList = filteredList.filter(p => p.price >= min && p.price <= max);
+    }
+
+    // 3. NAME SEARCH FILTER
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    if (searchTerm) {
+        filteredList = filteredList.filter(p => p.name.toLowerCase().includes(searchTerm) || p.desc.toLowerCase().includes(searchTerm));
+    }
+
+    // 4. SORTING
+    const sortValue = document.getElementById('sort').value;
+    if (sortValue === 'price-asc') {
+        filteredList.sort((a, b) => a.price - b.price);
+    } else if (sortValue === 'price-desc') {
+        filteredList.sort((a, b) => b.price - a.price);
+    } else if (sortValue === 'name-asc') {
+        filteredList.sort((a, b) => a.name.localeCompare(b.name));
+    }
+
+    renderProducts(filteredList);
+}
+
+/* Event Listeners */
 document.getElementById('category-filters').addEventListener('click', e=>{
-  if(e.target && e.target.dataset.cat !== undefined){
-    document.querySelectorAll('#category-filters .list-group-item').forEach(el=>el.classList.remove('active'));
-    e.target.classList.add('active');
-    const cat = e.target.dataset.cat;
-    const filtered = cat==='all' ? products : products.filter(p=>p.category===cat);
-    renderProducts(filtered);
-  }
-});
-/* Sort */
-document.getElementById('sort').addEventListener('change', e=>{
-  const v = e.target.value;
-  let copy = [...products];
-  if(v==='price-asc') copy.sort((a,b)=>a.price-b.price);
-  if(v==='price-desc') copy.sort((a,b)=>b.price-a.price);
-  renderProducts(copy);
+    if(e.target && e.target.dataset.cat !== undefined){
+        e.preventDefault();
+        document.querySelectorAll('#category-filters a').forEach(el=>el.classList.remove('active'));
+        e.target.classList.add('active');
+        performFilter(); // Call filter function
+    }
 });
 
+document.getElementById('sort').addEventListener('change', performFilter); // Call filter function on sort change
+
+document.getElementById('price-filters').addEventListener('change', performFilter); // Call filter function on price change
+
+document.getElementById('search-input').addEventListener('input', performFilter); // Filter while typing
+
 /* Initial render */
-renderProducts(products);
+performFilter(); // Renders with initial filters (all)
 document.getElementById('year2').textContent = new Date().getFullYear();
 </script>
 </body>
