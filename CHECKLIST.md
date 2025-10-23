@@ -1,19 +1,21 @@
 # PAGINAS DO SITE:
 
-[] index.html
-[] cart.html
-[] clothes_categories.html
-[] contact.html
-[] checkout.html
-[] product_page.html
+[] index.html  
+[] cart.html  
+[] clothes_categories.html  
+[] contact.html  
+[] checkout.html  
+[] product_page.html  
 
 
-# IVA
+### IVA
 
+- checkout.html  
+- contact.html  
 
-# RUI
+### RUI
 
-index.html
+- index.html  
 
-# THAIS
+### THAIS
 
