@@ -1,7 +1,6 @@
 # Integração Contínua
 
-```bash
-# 1. Salvar o trabalho atual
+##### 1. Salvar o trabalho atual
 ```bash
 git status
 git add .
