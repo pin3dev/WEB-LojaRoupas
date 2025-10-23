@@ -1,10 +1,4 @@
-# 🧭 Fluxo Git Simples e Sem Conflitos
-
-Este é o fluxo padrão do time para manter o repositório limpo e evitar conflitos na `main`.
-
----
-
-# 🚀 Passo a passo diário
+# Integração Contínua
 
 ```bash
 # 1. Salvar o trabalho atual
