@@ -4,7 +4,7 @@ Este é o fluxo padrão do time para manter o repositório limpo e evitar confli
 
 ---
 
-## 🚀 Passo a passo diário
+# 🚀 Passo a passo diário
 
 ```bash
 # 1. Salvar o trabalho atual
@@ -14,19 +14,19 @@ git add .
 git commit -m "tipo: mensagem significativa"
 ```
 
-# 2. Atualizar a main
+##### 2. Atualizar a main
 ```bash
 git switch main
 git pull origin
 ```
 
-# 3. Atualizar sua branch de trabalho
+##### 3. Atualizar sua branch de trabalho
 ```bash
 git switch minha-branch
 git rebase main
 ```
 
-# 4. Enviar sua branch atualizada
+##### 4. Enviar sua branch atualizada
 ```bash
 git push
 ```
