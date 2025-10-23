@@ -1740,3 +1740,16 @@ h4, h3, h6 {
 @media (max-width: 575.98px) {
   .card img { height: 180px; }
 }
+
+/* Contact page icon circles */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #00b4b6;
+  border-radius: 50%;
+  color: white;
+  margin-right: 0.5rem;
+}
