@@ -1,0 +1,240 @@
+<!doctype html>
+<!--
+Index - Home page
+Mobile-first, Bootstrap 5, minimal JS.
+-->
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Loja de Roupas — Início</title>
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<!-- Navbar with Mega Menu -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">Clothé</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+
+        <!-- Mega menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="megaMenu" role="button" data-bs-toggle="dropdown">Categorias</a>
+          <div class="dropdown-menu p-4" aria-labelledby="megaMenu" style="min-width: 600px;">
+            <div class="row">
+              <div class="col-md-4">
+                <h6 class="text-uppercase">Masculino</h6>
+                <ul class="list-unstyled">
+                  <li><a class="dropdown-item" href="catalog.html?cat=masculino">Camisetas</a></li>
+                  <li><a class="dropdown-item" href="catalog.html?cat=masculino">Calças</a></li>
+                  <li><a class="dropdown-item" href="catalog.html?cat=masculino">Acessórios</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h6 class="text-uppercase">Feminino</h6>
+                <ul class="list-unstyled">
+                  <li><a class="dropdown-item" href="catalog.html?cat=feminino">Vestidos</a></li>
+                  <li><a class="dropdown-item" href="catalog.html?cat=feminino">Blusas</a></li>
+                  <li><a class="dropdown-item" href="catalog.html?cat=feminino">Calças</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <h6 class="text-uppercase">Infantil</h6>
+                <ul class="list-unstyled">
+                  <li><a class="dropdown-item" href="catalog.html?cat=infantil">Meninos</a></li>
+                  <li><a class="dropdown-item" href="catalog.html?cat=infantil">Meninas</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="catalog.html">Catálogo</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+      </ul>
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link position-relative" href="cart.html">
+            Carrinho
+            <span id="cart-count" class="badge bg-primary rounded-pill ms-1">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="content-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <h1 class="hero-title">Discover Amazing Products</h1>
+            <p class="hero-description">Explore our curated collection of premium items designed to enhance your lifestyle. From fashion to tech, find everything you need with exclusive deals and fast shipping.</p>
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+              <a href="#products" class="btn-primary">Shop Now</a>
+              <a href="#categories" class="btn-secondary">Browse Categories</a>
+            </div>
+            <div class="features-list" data-aos="fade-up" data-aos-delay="300">
+              <div class="feature-item">
+                <i class="bi bi-truck"></i>
+                <span>Free Shipping</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-award"></i>
+                <span>Quality Guarantee</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-headset"></i>
+                <span>24/7 Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visuals">
+          <div class="product-showcase" data-aos="fade-left" data-aos-delay="200">
+            <div class="product-card featured">
+              <img src="assets/img/product/product-2.webp" alt="Featured Product" class="img-fluid">
+              <div class="product-badge">Best Seller</div>
+              <div class="product-info">
+                <h4>Premium Wireless Headphones</h4>
+                <div class="price">
+                  <span class="sale-price">$299</span>
+                  <span class="original-price">$399</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-grid">
+              <div class="product-mini" data-aos="zoom-in" data-aos-delay="400">
+                <img src="assets/img/product/product-3.webp" alt="Product" class="img-fluid">
+                <span class="mini-price">$89</span>
+              </div>
+              <div class="product-mini" data-aos="zoom-in" data-aos-delay="500">
+                <img src="assets/img/product/product-5.webp" alt="Product" class="img-fluid">
+                <span class="mini-price">$149</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-elements">
+            <div class="floating-icon cart" data-aos="fade-up" data-aos-delay="600">
+              <i class="bi bi-cart3"></i>
+              <span class="notification-dot">3</span>
+            </div>
+            <div class="floating-icon wishlist" data-aos="fade-up" data-aos-delay="700">
+              <i class="bi bi-heart"></i>
+            </div>
+            <div class="floating-icon search" data-aos="fade-up" data-aos-delay="800">
+              <i class="bi bi-search"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+
+<!-- Hero Carousel -->
+<header class="container mt-3">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=1400&auto=format&fit=crop&q=60" class="d-block w-100" alt="Coleção">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Nova Coleção Primavera</h2>
+          <p>Peças selecionadas — estilo e conforto.</p>
+          <a href="catalog.html" class="btn btn-light">Ver Coleção</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1520975683576-2d8b2a6c8a55?w=1400&auto=format&fit=crop&q=60" class="d-block w-100" alt="Promoção">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Até 30% OFF</h2>
+          <p>Ofertas por tempo limitado.</p>
+          <a href="catalog.html" class="btn btn-light">Aproveitar</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</header>
+
+<!-- Featured products -->
+<main class="container my-5">
+  <h3 class="mb-3">Destaques</h3>
+  <div class="row" id="featured-products">
+    <!-- Product cards are injected by JS for simplicity -->
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="catalog.html" class="btn btn-primary">Ver todas as peças</a>
+  </div>
+</main>
+
+<footer class="bg-light py-4">
+  <div class="container d-flex justify-content-between">
+    <div>© <span id="year"></span> Clothé — Loja de Roupas</div>
+    <div>Telefone: +351 210 000 000 • Email: info@clothe.example</div>
+  </div>
+</footer>
+
+<!-- Bootstrap bundle + our script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/cart.js"></script>
+<script>
+/* Initialize: sample featured products injected on home */
+const featured = [
+  {"id":"p1","name":"T-shirt Básica Preta","category":"masculino","price":19.90,"image":"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800&auto=format&fit=crop&q=60"},
+  {"id":"p2","name":"Vestido Floral","category":"feminino","price":49.90,"image":"https://images.unsplash.com/photo-1520975912262-6b1fcd9c8f4a?w=800&auto=format&fit=crop&q=60"},
+  {"id":"p3","name":"Casaco Infantil","category":"infantil","price":29.90,"image":"https://images.unsplash.com/photo-1546171735-5b9bd4f8b8a0?w=800&auto=format&fit=crop&q=60"}
+];
+
+function renderFeatured(){
+  const cont = document.getElementById('featured-products');
+  cont.innerHTML = '';
+  featured.forEach(p=>{
+    cont.innerHTML += `
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="${p.image}" class="card-img-top" alt="${p.name}">
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">${p.name}</h6>
+            <p class="card-text text-muted small mb-2">${p.category.charAt(0).toUpperCase()+p.category.slice(1)}</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <div><strong>€ ${p.price.toFixed(2)}</strong></div>
+              <button class="btn btn-sm btn-outline-primary add-to-cart" data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-image="${p.image}">Adicionar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  attachAddButtons();
+}
+renderFeatured();
+
+/* Set year */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
