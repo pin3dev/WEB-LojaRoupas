@@ -1,4 +1,4 @@
-# Integração Contínua
+# Integração
 
 ##### 1. Salvar o trabalho atual
 ```bash
