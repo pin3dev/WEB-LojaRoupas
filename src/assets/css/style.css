@@ -1741,15 +1741,64 @@ h4, h3, h6 {
   .card img { height: 180px; }
 }
 
-/* Contact page icon circles */
-.icon-circle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background-color: #00b4b6;
-  border-radius: 50%;
-  color: white;
-  margin-right: 0.5rem;
+/* Contact page styles */
+.context-section {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.context-section h2 {
+  color: #00b4b6;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.context-section p {
+  font-size: 1.1rem;
+}
+
+.map-section {
+  width: 100%;
+  height: 200px;
+  display: block;
+  overflow: hidden;
+}
+
+.map-section .ratio {
+  height: 200px;
+  width: 100%;
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  display: block;
+}
+
+.contact-section {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding: 4rem 0 !important;
+}
+
+.store-info .info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.store-info .info-content strong {
+  color: #00b4b6;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.store-info .info-content p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }

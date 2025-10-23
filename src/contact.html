@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -31,56 +31,96 @@
   </div>
 </nav>
 
-<main class="container my-4">
-  <h4>Contacto</h4>
-  <div class="row">
-    <div class="col-12 col-md-6">
-      <form class="card p-3" id="contact-form">
-        <div class="mb-2">
-          <label class="form-label">Nome</label>
-          <input type="text" class="form-control" required name="name">
+<main class="container-fluid p-0">
+  <!-- Mapa em faixa horizontal -->
+  <section class="map-section">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.2829142717778!2d-8.612677684600243!3d41.16794987927796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b1f4b9c4a0d65d%3A0x0!2sR.%20de%20Cir%C3%ADaco%20Cardoso%20186%2C%204150-212%20Porto!5e0!3m2!1spt!2spt!4v1698062400000!5m2!1spt!2spt" 
+      width="100%" 
+      height="200"
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Localização da Loja Clothé">
+    </iframe>
+  </section>
+
+  <!-- Faixa branca com informações e formulário -->
+  <section class="contact-section bg-white py-5">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Coluna esquerda - Informações da loja -->
+        <div class="col-md-6">
+          <!-- <h4 class="mb-4">Informações da Loja</h4> -->
+          <div class="store-info">
+            <div class="info-item mb-3">
+              <span class="icon-circle"><i class="bi bi-geo-alt"></i></span>
+              <div class="info-content">
+                <strong>Morada</strong>
+                <p class="mb-0">R. de Ciríaco Cardoso 186, 4150-212 Porto</p>
+              </div>
+            </div>
+            <div class="info-item mb-3">
+              <span class="icon-circle"><i class="bi bi-telephone"></i></span>
+              <div class="info-content">
+                <strong>Telefone</strong>
+                <p class="mb-0">+351 22 619 5200</p>
+              </div>
+            </div>
+            <div class="info-item mb-3">
+              <span class="icon-circle"><i class="bi bi-envelope"></i></span>
+              <div class="info-content">
+                <strong>Email</strong>
+                <p class="mb-0">info@clothe.example</p>
+              </div>
+            </div>
+            <div class="info-item mb-3">
+              <span class="icon-circle"><i class="bi bi-clock"></i></span>
+              <div class="info-content">
+                <strong>Horário</strong>
+                <p class="mb-0">Segunda a Sábado: 9h às 19h</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mb-2">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-control" required name="email">
+
+        <!-- Coluna direita - Formulário de contato -->
+        <div class="col-md-6">
+          <!-- <h4 class="mb-4">Entre em Contacto</h4> -->
+          <form id="contact-form">
+            <!-- Nome e Email lado a lado -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <!-- <label class="form-label">Nome</label> -->
+                <input type="text" class="form-control" required name="name" placeholder="Your name">
+              </div>
+              <div class="col-md-6">
+                <!-- <label class="form-label">Email</label> -->
+                <input type="email" class="form-control" required name="email" placeholder="Your email">
+              </div>
+            </div>
+            
+            <!-- Subject -->
+            <div class="mb-3">
+              <!-- <label class="form-label">Assunto</label> -->
+              <input type="text" class="form-control" required name="subject" placeholder="Subject">
+            </div>
+            
+            <!-- Message -->
+            <div class="mb-3">
+              <!-- <label class="form-label">Mensagem</label> -->
+              <textarea class="form-control" rows="5" required name="message" placeholder="Message"></textarea>
+            </div>
+            
+            <div class="d-grid">
+              <button class="btn btn-primary" type="submit">Enviar Mensagem</button>
+            </div>
+          </form>
         </div>
-        <div class="mb-2">
-          <label class="form-label">Mensagem</label>
-          <textarea class="form-control" rows="5" required name="message"></textarea>
-        </div>
-        <div class="d-grid">
-          <button class="btn btn-primary" type="submit">Enviar Mensagem</button>
-        </div>
-      </form>
+      </div>
     </div>
-    <aside class="col-12 col-md-6">
-      <div class="card p-3">
-        <h6>Informações da Loja</h6>
-        <p><span class="icon-circle"><i class="bi bi-geo-alt"></i></span><strong>Morada:</strong> R. de Ciríaco Cardoso 186, 4150-212 Porto</p>
-        <p><span class="icon-circle"><i class="bi bi-telephone"></i></span><strong>Telefone:</strong> +351 22 619 5200</p>
-        <p><span class="icon-circle"><i class="bi bi-envelope"></i></span><strong>Email:</strong> info@clothe.example</p>
-        <p><span class="icon-circle"><i class="bi bi-clock"></i></span><strong>Horário:</strong> Segunda a Sábado: 9h às 19h</p>
-      </div>
-      
-      <!-- Mapa da Loja -->
-      <div class="card p-3 mt-3">
-        <h6>Localização</h6>
-        <div class="ratio ratio-16x9">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.2829142717778!2d-8.612677684600243!3d41.16794987927796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b1f4b9c4a0d65d%3A0x0!2sR.%20de%20Cir%C3%ADaco%20Cardoso%20186%2C%204150-212%20Porto!5e0!3m2!1spt!2spt!4v1698062400000!5m2!1spt!2spt" 
-            width="100%" 
-            height="200" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Localização da Loja Clothé">
-          </iframe>
-        </div>
-        <small class="text-muted mt-2">📍 R. de Ciríaco Cardoso 186, 4150-212 Porto</small>
-      </div>
-    </aside>
-  </div>
+  </section>
 </main>
 
 <footer class="bg-light py-4">

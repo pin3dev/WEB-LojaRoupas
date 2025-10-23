@@ -1,0 +1,71 @@
+/* Contact page icon circles */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #00b4b6;
+  border-radius: 50%;
+  color: white;
+  flex-shrink: 0;
+}
+
+/* Form styling for contact page */
+.contact-section .form-control {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.contact-section .form-control:focus {
+  border-color: #00b4b6;
+  box-shadow: 0 0 0 0.2rem rgba(0, 180, 182, 0.25);
+}
+
+.contact-section .btn-primary {
+  background-color: #00b4b6;
+  border-color: #00b4b6;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+.contact-section .btn-primary:hover {
+  background-color: #009a9c;
+  border-color: #009a9c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .context-section h2 {
+    font-size: 1.7rem;
+  }
+  
+  .context-section p {
+    font-size: 1rem;
+  }
+  
+  .map-section {
+    height: 150px;
+  }
+  
+  .map-section .ratio {
+    height: 150px;
+  }
+  
+  .map-section iframe {
+    height: 150px;
+  }
+  
+  .contact-section {
+    padding: 3rem 0 !important;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .store-info .info-item {
+    margin-bottom: 1.5rem !important;
+  }
+}
