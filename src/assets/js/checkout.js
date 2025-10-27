@@ -1,19 +1,42 @@
-
 function goToStep(stepIndex) {
   const steps = document.querySelectorAll(".checkout-steps .step");
   const forms = document.querySelectorAll(".checkout-step");
 
-  // 🔹 Antes de mudar de etapa, salva os dados da atual
-  if (stepIndex > 0) saveStepData(stepIndex - 1);
+  // 🔹 Identifica a etapa atual (a que está visível no momento)
+  const currentStepIndex = Array.from(forms).findIndex(f => !f.classList.contains("d-none"));
+  const currentForm = forms[currentStepIndex];
 
-  // 🔹 Atualiza a barra de progresso
+  // 🔹 Se o usuário está tentando avançar, validar os campos obrigatórios
+  if (stepIndex > currentStepIndex) {
+    const requiredInputs = currentForm.querySelectorAll("input[required], select[required], textarea[required]");
+    let isValid = true;
+
+    requiredInputs.forEach(input => {
+      if (!input.checkValidity()) {
+        input.classList.add("is-invalid");
+        isValid = false;
+      } else {
+        input.classList.remove("is-invalid");
+      }
+    });
+
+    if (!isValid) {
+      currentForm.reportValidity(); // Exibe mensagem padrão do navegador
+      return; // 🔒 Impede o avanço
+    }
+
+    // 🔹 Se for válido, salva os dados da etapa atual
+    saveStepData(currentStepIndex);
+  }
+
+  // 🔹 Atualiza barra de progresso
   steps.forEach((step, i) => {
     step.classList.remove("active", "completed");
     if (i < stepIndex) step.classList.add("completed");
     if (i === stepIndex) step.classList.add("active");
   });
 
-  // 🔹 Mostra a etapa correspondente
+  // 🔹 Mostra a etapa correspondente e esconde as outras
   forms.forEach((form, i) => {
     form.classList.toggle("d-none", i !== stepIndex);
   });
@@ -21,6 +44,7 @@ function goToStep(stepIndex) {
   // 🔹 Se for a etapa de Review, preenche o resumo
   if (stepIndex === 3) fillReviewStep();
 }
+
 
 
 // Armazena todos os dados do checkout
