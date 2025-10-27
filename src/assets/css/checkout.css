@@ -1877,6 +1877,11 @@ h4, h3, h6 {
   font-weight: 700;
 }
 
+.checkout-steps .completed .circle {
+  color: transparent; /* esconde o número */
+}
+
+
 .checkout-steps .completed .label {
   color: var(--accent-color);
   font-weight: 600;
@@ -1895,4 +1900,15 @@ h4, h3, h6 {
   pointer-events: none;
   height: 0;
   overflow: hidden;
+}
+
+
+#order-summary img {
+  border: 1px solid #eee;
+}
+#order-summary .fw-semibold {
+  color: #333;
+}
+#order-summary .text-muted {
+  color: #777 !important;
 }
