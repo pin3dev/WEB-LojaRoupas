@@ -11,28 +11,38 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
     
-    <style>
-        /* Aesthetic Adjustments for the Catalog */
-        .product-item {
-            transition: transform 0.3s ease;
-        }
-        .product-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
-        }
-        .product-image-wrapper {
-            position: relative;
-            overflow: hidden;
-        }
-        .product-image {
-            transition: transform 0.5s ease;
-            height: 320px; /* Fixed height for uniformity */
-            object-fit: cover;
-        }
-        .product-item:hover .product-image {
-            transform: scale(1.05);
-        }
-    </style>
+<style>
+    /* Aesthetic Adjustments for the Catalog */
+    .product-item {
+        transition: transform 0.3s ease;
+    }
+    .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* --- 1. FORÇA O FORMATO VERTICAL (RETRATO) --- */
+    .product-image-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: auto;  /* Largura MAIS ESTREITA para forçar o retrato */
+        margin: 0 auto; /* Centraliza a caixa da imagem */
+    }
+
+    .product-image {
+        transition: transform 0.5s ease;
+        height: 100%;
+        width: 100%;
+        /* 'cover' preenche a caixa vertical, cortando as laterais */
+        object-fit: cover; 
+    }
+
+    .product-item:hover .product-image {
+        transform: scale(1.05);
+    }
+
+</style>
+
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -147,14 +157,14 @@
                     <a href="#" class="list-group-item list-group-item-action active" data-cat="all">All Products</a>
                     
                     <a href="#" class="list-group-item list-group-item-action fw-bold" data-cat="man">Man</a>
-                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="man-dress">T-Shirts</a>
-                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-blouse">Accessories</a>
-                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-blouse">Pants</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="man-shirt">T-Shirts</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="man-acessorie">Accessories</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="man-pant">Pants</a>
                     
                     <a href="#" class="list-group-item list-group-item-action fw-bold" data-cat="woman">Woman</a>
                     <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-dress">Dresses</a>
                     <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-blouse">Blouses</a>
-                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-blouse">Pants</a>
+                    <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="woman-pant">Pants</a>
 
                     <a href="#" class="list-group-item list-group-item-action fw-bold" data-cat="children">Children</a>
                     <a href="#" class="list-group-item list-group-item-action ps-4" data-cat="children-boy">Boys</a>
@@ -230,24 +240,24 @@
 <script>
 /* Updated Product Data: Categories adjusted to 'man', 'woman', 'children-boy', 'children-girl' */
 const products = [
-    {"id":"p1","name":"Basic White T-shirt","category":"man","price":19.90,"image":"assets/img/product/product-m-5.webp","desc":"Regular fit, light cotton."},
-    {"id":"p2","name":"Floral Dress","category":"feminino","price":49.90,"image":"assets/img/product/product-f-1.webp","desc":"Regular fit, light cotton."},
-    {"id":"p3","name":"Polo Blue Lagoon","category":"man","price":39.90,"image":"assets/img/product/product-m-1.webp","desc":"Urban comfort."},
-    {"id":"p4","name":"Polo Caramel","category":"man","price":39.90,"image":"assets/img/product/product-m-2.webp","desc":"Urban comfort."},
-    {"id":"p5","name":"Summer Coral Dress","category":"woman","price":49.90,"image":"assets/img/product/product-f-3.webp","desc":"Light and flowy, delicate print."},
-    {"id":"p6","name":"Pink Linen Blouse","category":"woman","price":34.50,"image":"assets/img/product/product-f-6.webp","desc":"Ideal for summer, 100% linen."},
+    {"id":"p1","name":"Basic White T-shirt","category":"man-shirt","price":19.90,"image":"assets/img/product/product-m-5.webp","desc":"Regular fit, light cotton."},
+    {"id":"p2","name":"Floral Dress","category":"woman-dress","price":49.90,"image":"assets/img/product/product-f-1.webp","desc":"Regular fit, light cotton."},
+    {"id":"p3","name":"Polo Blue Lagoon","category":"man-shirt","price":39.90,"image":"assets/img/product/product-m-1.webp","desc":"Urban comfort."},
+    {"id":"p4","name":"Polo Caramel","category":"man-shirt","price":39.90,"image":"assets/img/product/product-m-2.webp","desc":"Urban comfort."},
+    {"id":"p5","name":"Summer Coral Dress","category":"woman-dress","price":49.90,"image":"assets/img/product/product-f-3.webp","desc":"Light and flowy, delicate print."},
+    {"id":"p6","name":"Pink Linen Blouse","category":"woman-blouse","price":34.50,"image":"assets/img/product/product-f-6.webp","desc":"Ideal for summer, 100% linen."},
     {"id":"p7","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"assets/img/product/product-b-1.webp","desc":"Soft warmth for the little ones."},
     {"id":"p8","name":"Cotton Jogger Pants (Girl)","category":"children-girl","price":24.00,"image":"assets/img/product/product-g-2.webp","desc":"Flexible and durable, adjustable waist."},
-    {"id":"p9","name":"Urban Cargo Pants","category":"man","price":55.00,"image":"assets/img/product/product-m-8.webp"},
-    {"id":"p10","name":"Lace Strap Blouse","category":"woman","price":22.50,"image":"assets/img/product/product-f-7.webp"},
-    {"id":"p11","name":"Black Slim Dress","category":"woman","price":22.50,"image":"assets/img/product/product-f-4.webp","desc":"Lace detailing, light fabric."},
+    {"id":"p9","name":"Urban Cargo Pants","category":"man-pant","price":55.00,"image":"assets/img/product/product-m-8.webp"},
+    {"id":"p10","name":"Lace Strap Blouse","category":"woman-blouse","price":22.50,"image":"assets/img/product/product-f-7.webp"},
+    {"id":"p11","name":"Black Slim Dress","category":"woman-dress","price":22.50,"image":"assets/img/product/product-f-4.webp","desc":"Lace detailing, light fabric."},
     {"id":"p12","name":"Pink Lady Bag","category":"woman","price":22.50,"image":"assets/img/product/product-1.png","desc":"Lace detailing, light fabric."},
-    {"id":"p13","name":"Watch Dark Green","category":"man","price":22.50,"image":"assets/img/product/product-11.png","desc":"Green round watch."},
-     {"id":"p14","name":"Jeans Chic blouse","category":"woman","price":22.50,"image":"assets/img/product/product-f-8.webp","desc":"Green round watch."},
-     {"id":"p15","name":"Urban Cargo Blue Pants","category":"man","price":55.00,"image":"assets/img/product/product-m-7.webp"},
-     {"id":"p16","name":"White Summer Shirt","category":"woman","price":55.00,"image":"assets/img/product/product-f-5.webp"},
+    {"id":"p13","name":"Watch Dark Green","category":"man-acessorie","price":22.50,"image":"assets/img/product/product-11.png","desc":"Green round watch."},
+     {"id":"p14","name":"Jeans Chic blouse","category":"woman-blouse","price":22.50,"image":"assets/img/product/product-f-8.webp","desc":"Green round watch."},
+     {"id":"p15","name":"Urban Cargo Blue Pants","category":"man-pant","price":55.00,"image":"assets/img/product/product-m-7.webp"},
+     {"id":"p16","name":"White Summer Shirt","category":"woman-blouse","price":55.00,"image":"assets/img/product/product-f-5.webp"},
       {"id":"17","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"assets/img/product/product-b-2.webp","desc":"Soft warmth for the little ones."},
-      {"id":"18","name":"Warm Children's Coat (Girl)","category":"children-boy","price":29.90,"image":"assets/img/product/product-g-1.webp","desc":"Soft warmth for the little ones."}
+      {"id":"18","name":"Warm Children's Coat (Girl)","category":"children-girl","price":29.90,"image":"assets/img/product/product-g-1.webp","desc":"Soft warmth for the little ones."}
 ];
 
 function getDisplayCategory(categoryKey) {
@@ -285,7 +295,6 @@ function renderProducts(list){
                     </div>
                     
                     <div class="card-body d-flex flex-column">
-                        <p class="text-muted small mb-1">${displayCategory}</p>
                         <h6 class="card-title fw-medium">${p.name}</h6>
                         <p class="small text-muted flex-grow-1 mb-3">${p.desc}</p>
                         
