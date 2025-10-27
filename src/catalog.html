@@ -230,15 +230,25 @@
 <script>
 /* Updated Product Data: Categories adjusted to 'man', 'woman', 'children-boy', 'children-girl' */
 const products = [
-    {"id":"p1","name":"Basic Black T-shirt","category":"man","price":19.90,"image":"https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=800&auto=format&fit=crop&q=60","desc":"Regular fit, light cotton."},
-    {"id":"p2","name":"Floral Dress","category":"feminino","price":49.90,"image":"assets/img/product/product-f-3.webp","desc":"Regular fit, light cotton."},
-    {"id":"p4","name":"Oversized Sweatshirt","category":"man","price":39.90,"image":"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&auto=format&fit=crop&q=60","desc":"Urban comfort with dropped shoulders."},
-    {"id":"p2","name":"Summer Floral Dress","category":"woman","price":49.90,"image":"https://images.unsplash.com/photo-1520975912262-6b1fcd9c8f4a?w=800&auto=format&fit=crop&q=60","desc":"Light and flowy, delicate print."},
-    {"id":"p5","name":"Light Linen Blouse","category":"woman","price":34.50,"image":"https://images.unsplash.com/photo-1495121605193-b116b5b09a9b?w=800&auto=format&fit=crop&q=60","desc":"Ideal for summer, 100% linen."},
-    {"id":"p3","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"https://images.unsplash.com/photo-1546171735-5b9bd4f8b8a0?w=800&auto=format&fit=crop&q=60","desc":"Soft warmth for the little ones."},
-    {"id":"p6","name":"Cotton Jogger Pants (Girl)","category":"children-girl","price":24.00,"image":"https://images.unsplash.com/photo-1520975683576-2d8b2a6c8a55?w=800&auto=format&fit=crop&q=60","desc":"Flexible and durable, adjustable waist."},
-    {"id":"p7","name":"Urban Cargo Pants","category":"man","price":55.00,"image":"https://images.unsplash.com/photo-1624378439578-838f32239c4d?w=800&auto=format&fit=crop&q=60","desc":"Modern style with multiple pockets."},
-    {"id":"p8","name":"Lace Strap Top","category":"woman","price":22.50,"image":"https://images.unsplash.com/photo-1558769131-0b5c175c5f2e?w=800&auto=format&fit=crop&q=60","desc":"Lace detailing, light fabric."}
+    {"id":"p1","name":"Basic White T-shirt","category":"man","price":19.90,"image":"assets/img/product/product-m-5.webp","desc":"Regular fit, light cotton."},
+    {"id":"p2","name":"Floral Dress","category":"feminino","price":49.90,"image":"assets/img/product/product-f-1.webp","desc":"Regular fit, light cotton."},
+    {"id":"p3","name":"Polo Blue Lagoon","category":"man","price":39.90,"image":"assets/img/product/product-m-1.webp","desc":"Urban comfort."},
+    {"id":"p4","name":"Polo Caramel","category":"man","price":39.90,"image":"assets/img/product/product-m-2.webp","desc":"Urban comfort."},
+    {"id":"p5","name":"Summer Coral Dress","category":"woman","price":49.90,"image":"assets/img/product/product-f-3.webp","desc":"Light and flowy, delicate print."},
+    {"id":"p6","name":"Pink Linen Blouse","category":"woman","price":34.50,"image":"assets/img/product/product-f-6.webp","desc":"Ideal for summer, 100% linen."},
+    {"id":"p7","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"assets/img/product/product-b-1.webp","desc":"Soft warmth for the little ones."},
+    {"id":"p8","name":"Cotton Jogger Pants (Girl)","category":"children-girl","price":24.00,"image":"assets/img/product/product-g-1.webp","desc":"Flexible and durable, adjustable waist."},
+    {"id":"p9","name":"Urban Cargo Pants","category":"man","price":55.00,"image":"assets/img/product/product-m-8.webp"},
+    {"id":"p10","name":"Lace Strap Blouse","category":"woman","price":22.50,"image":"assets/img/product/product-f-7.webp"},
+    {"id":"p11","name":"Black Slim Dress","category":"woman","price":22.50,"image":"assets/img/product/product-f-4.webp","desc":"Lace detailing, light fabric."},
+    {"id":"p12","name":"Pink Lady Bag","category":"woman","price":22.50,"image":"assets/img/product/product-1.png","desc":"Lace detailing, light fabric."},
+    {"id":"p13","name":"Watch Dark Green","category":"man","price":22.50,"image":"assets/img/product/product-11.png","desc":"Green round watch."},
+     {"id":"p14","name":"Jeans Chic blouse","category":"woman","price":22.50,"image":"assets/img/product/product-f-8.webp","desc":"Green round watch."},
+     {"id":"p15","name":"Urban Cargo Blue Pants","category":"man","price":55.00,"image":"assets/img/product/product-m-7.webp"},
+     {"id":"p16","name":"White Summer Shirt","category":"woman","price":55.00,"image":"assets/img/product/product-f-5.webp"},
+      {"id":"17","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"assets/img/product/product-b-2.webp","desc":"Soft warmth for the little ones."},
+      {"id":"18","name":"Warm Children's Coat (Girl)","category":"children-boy","price":29.90,"image":"assets/img/product/product-g-1.webp","desc":"Soft warmth for the little ones."}
+
 ];
 
 function getDisplayCategory(categoryKey) {
