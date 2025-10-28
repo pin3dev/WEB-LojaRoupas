@@ -9,7 +9,27 @@ function renderOrderSummary() {
   }
 
   // Calcular totais
-  const totals = calculateGrandTotal();
+  // const totals = calculateGrandTotal();
+
+  // LER TOTAIS DO LOCALSTORAGE (não recalcular)
+  let totals;
+  try {
+    totals = JSON.parse(localStorage.getItem('cartTotals') || 'null');
+  } catch (e) {
+    totals = null;
+  }
+
+  // Fallback: se não houver totais salvos, calcular novamente
+  if (!totals) {
+    totals = {
+      subtotal: cart.reduce((s, it) => s + (it.price * it.qty), 0),
+      discount: 0,
+      shippingCost: 0,
+      grandTotal: 0,
+      isFreeShippingApplied: false
+    };
+    totals.grandTotal = totals.subtotal - totals.discount + totals.shippingCost;
+  }
 
   // Criar HTML
   let html = '<ul class="list-unstyled">';
