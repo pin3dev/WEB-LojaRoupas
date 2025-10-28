@@ -1,0 +1,8 @@
+.summary-total {
+  border-top: 2px solid #000;
+  padding-top: .75rem;
+}
+.summary-title {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: .5rem;
+}

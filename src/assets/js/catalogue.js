@@ -1,3 +1,4 @@
+// PRODUTOS DO CATALOGO
 const products = [
     {"id":"p1","name":"Basic White T-shirt","category":"man-shirt","price":19.90,"image":"assets/img/product/product-m-5.webp","desc":"Regular fit and light cotton"},
     {"id":"p2","name":"Floral Dress","category":"woman-dress","price":49.90,"image":"assets/img/product/product-f-1.webp","desc":"Fluid and soft"},
@@ -12,16 +13,17 @@ const products = [
     {"id":"p11","name":"Black Slim Dress","category":"woman-dress","price":22.50,"image":"assets/img/product/product-f-4.webp","desc":"Lace detailing light fabric"},
     {"id":"p12","name":"Pink Lady Bag","category":"woman","price":22.50,"image":"assets/img/product/product-1.png","desc":"Casual chic"},
     {"id":"p13","name":"Watch Dark Green","category":"man-acessorie","price":22.50,"image":"assets/img/product/product-11.png","desc":"Ajustable with snake skin "},
-     {"id":"p14","name":"Jeans Chic blouse","category":"woman-blouse","price":22.50,"image":"assets/img/product/product-f-8.webp","desc":"Warm and soft"},
-     {"id":"p15","name":"Urban Cargo Blue Pants","category":"man-pant","price":55.00,"image":"assets/img/product/product-m-7.webp", "desc":"Elastic adjustable"},
-     {"id":"p16","name":"White Summer Shirt","category":"woman-blouse","price":55.00,"image":"assets/img/product/product-f-5.webp", "desc":"Fresh and comfy"},
-     {"id":"p17","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"assets/img/product/product-b-2.webp","desc":"Soft warmth for the little ones"},
-     {"id":"p18","name":"Warm Children's Coat (Girl)","category":"children-girl","price":29.90,"image":"assets/img/product/product-g-1.webp","desc":"Soft warmth for the little ones"},
-     {"id":"p19","name":"Queen Gold Neckless","category":"woman","price":290.90,"image":"assets/img/product/product-3.png","desc":"Gold 24k"},
-     {"id":"p20","name":"Earing Queen Red","category":"woman","price":48.90,"image":"assets/img/product/product-5.png","desc":"Rubi and gold plated"},
-     {"id":"p21","name":"Black Oversize Pant","category":"woman-pant","price":48.90,"image":"assets/img/product/product-f-9.webp","desc":"Flexible and durable with adjustable waist"},
+    {"id":"p14","name":"Jeans Chic blouse","category":"woman-blouse","price":22.50,"image":"assets/img/product/product-f-8.webp","desc":"Warm and soft"},
+    {"id":"p15","name":"Urban Cargo Blue Pants","category":"man-pant","price":55.00,"image":"assets/img/product/product-m-7.webp", "desc":"Elastic adjustable"},
+    {"id":"p16","name":"White Summer Shirt","category":"woman-blouse","price":55.00,"image":"assets/img/product/product-f-5.webp", "desc":"Fresh and comfy"},
+    {"id":"p17","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"assets/img/product/product-b-2.webp","desc":"Soft warmth for the little ones"},
+    {"id":"p18","name":"Warm Children's Coat (Girl)","category":"children-girl","price":29.90,"image":"assets/img/product/product-g-1.webp","desc":"Soft warmth for the little ones"},
+    {"id":"p19","name":"Queen Gold Neckless","category":"woman","price":290.90,"image":"assets/img/product/product-3.png","desc":"Gold 24k"},
+    {"id":"p20","name":"Earing Queen Red","category":"woman","price":48.90,"image":"assets/img/product/product-5.png","desc":"Rubi and gold plated"},
+    {"id":"p21","name":"Black Oversize Pant","category":"woman-pant","price":48.90,"image":"assets/img/product/product-f-9.webp","desc":"Flexible and durable with adjustable waist"},
 ];
 
+// FUNCAO PARA APARECEREM OS PRODUTOS QUE REMETEM A SUAS CATEGORIAS E SUBCATEGORIAS
 function getDisplayCategory(categoryKey) {
     if (categoryKey === 'man') return 'Man';
     if (categoryKey === 'woman') return 'Woman';
@@ -31,26 +33,18 @@ function getDisplayCategory(categoryKey) {
     return categoryKey;
 }
 
+// GERA E INSERE NO HTML OS PRODUTOS NA PAGINA
 function renderProducts(list){
     const cont = document.getElementById('product-list');
     const resultsCount = document.getElementById('results-count');
     
     cont.innerHTML = '';
     
-    // Update results count
-    resultsCount.textContent = `Listing ${list.length} of ${products.length} products.`;
-
-    if (list.length === 0) {
-        cont.innerHTML = '<div class="col-12"><div class="alert alert-warning">No products found matching the selected filters.</div></div>';
-        // Mesmo que não haja produtos, precisamos de tentar ligar os botões (caso venham de 'cart.js')
-        if (typeof attachAddButtons === 'function') {
-            attachAddButtons();
-        }
-        return;
-    }
+    // ATUALIZAÇAO DA CONTAGEM DOS PRODUTOS EXIBIDOS
+    resultsCount.textContent = `Listing ${list.length} of ${products.length} products`;
     
+    // ITERA SOBRE LISTA DE PRODUTOS E GERA CADA CARD DE PRODUTO
     list.forEach(p=>{
-        // Get the translated display category
         const displayCategory = getDisplayCategory(p.category);
 
         cont.innerHTML += `
@@ -82,62 +76,56 @@ function renderProducts(list){
         `;
     });
     
-    // Re-attach listeners after rendering (assumindo que attachAddButtons está em cart.js)
-    // Adicionamos uma verificação para evitar erros se o ficheiro/função não existir
+    // FUNCIONALIDADE DO BOTAO DE ADC AO CARRINHO
     if (typeof attachAddButtons === 'function') {
         attachAddButtons();
     }
 }
 
-/* Centralized function to apply all filters and sorting */
+// FUNCAO PARA APLICAR FILTROS
 function performFilter(){
     let filteredList = [...products];
 
-    // 1. CATEGORY FILTER (Handles main categories AND 'children' parent filter)
+//    FILTRO DE CATEGORIA
     const activeCategoryEl = document.querySelector('#category-filters .active');
     
-    if (activeCategoryEl) { // Verifica se algum filtro está ativo
+    if (activeCategoryEl) { // VERFICA FILTROS ATIVOS
         const activeCategory = activeCategoryEl.dataset.cat;
         
         if (activeCategory !== 'all') {
-            if (activeCategory === 'children') {
-                // Special case: Filter products whose category STARTS with 'children-'
+            if (activeCategory === 'children') {   
                 filteredList = filteredList.filter(p => p.category.startsWith('children-'));
-            } else if (activeCategory === 'man') {
-                 // Special case: Filter products whose category STARTS with 'man-'
+            } else if (activeCategory === 'man') {  
                 filteredList = filteredList.filter(p => p.category.startsWith('man-'));
-            } else if (activeCategory === 'woman') {
-                 // Special case: Filter products whose category STARTS with 'woman-'
+            } else if (activeCategory === 'woman') {  
                 filteredList = filteredList.filter(p => p.category.startsWith('woman-'));
             }
             else {
-                // Standard filtering for specific sub-categories
                 filteredList = filteredList.filter(p => p.category === activeCategory);
             }
         }
     }
     
-    // 2. PRICE FILTER
+    // FILTRO PARA PREÇO
     const activePriceRange = document.querySelector('input[name="price_range"]:checked').value;
     if (activePriceRange !== 'all') {
         const [minStr, maxStr] = activePriceRange.split('-');
         const min = parseFloat(minStr);
         const max = parseFloat(maxStr);
-        
         filteredList = filteredList.filter(p => p.price >= min && p.price <= max);
     }
 
-    // 3. NAME SEARCH FILTER
+    // FILTRAGEM POR NOME E DESCRIÇAO DO PRODUTO
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
     if (searchTerm) {
-        // Verifica nome E descrição
+    
         filteredList = filteredList.filter(p => 
             (p.name && p.name.toLowerCase().includes(searchTerm)) || 
             (p.desc && p.desc.toLowerCase().includes(searchTerm))
         );
     }
 
-    // 4. SORTING
+    // ORDEM DA LISTAGEM DE PRODUTOS
     const sortValue = document.getElementById('sort').value;
     if (sortValue === 'price-asc') {
         filteredList.sort((a, b) => a.price - b.price);
@@ -150,53 +138,43 @@ function performFilter(){
     renderProducts(filteredList);
 }
 
-/**
- * FIX 2 (JS): Nova Função
- * Lê a URL à procura de '?cat=...' e ativa o filtro correspondente
- * na barra lateral antes da primeira renderização.
- */
+// FUNCAO PARA A NAVBAR FILTRAR A CATEGORIA ATRAVES DA URL
 function applyCategoryFromURL() {
     const urlParams = new URLSearchParams(window.location.search);
     const categoryFromURL = urlParams.get('cat');
     
     if (categoryFromURL) {
-        // Tenta encontrar o link correspondente na barra lateral
+       
         const sidebarLink = document.querySelector(`#category-filters a[data-cat="${categoryFromURL}"]`);
         
         if (sidebarLink) {
-            // Remove 'active' do link "All Products" (que é o default)
+            
             document.querySelector('#category-filters a.active').classList.remove('active');
-            // Adiciona 'active' ao link da URL
+          
             sidebarLink.classList.add('active');
         }
     }
 }
 
-/* Event Listeners */
+// TORNA ATIVO OS LINKS DE CATEGORIAS PARA FILTRAGEM DOS PRODUTOS
 document.getElementById('category-filters').addEventListener('click', e=>{
     if(e.target && e.target.dataset.cat !== undefined){
         e.preventDefault();
-        // Remove 'active' from all category filters
         document.querySelectorAll('#category-filters a').forEach(el=>el.classList.remove('active'));
-        // Add 'active' to the clicked element
         e.target.classList.add('active');
-        performFilter(); // Call filter function
+        performFilter();
     }
 });
 
-document.getElementById('sort').addEventListener('change', performFilter); // Call filter function on sort change
+document.getElementById('sort').addEventListener('change', performFilter); 
 
-document.getElementById('price-filters').addEventListener('change', performFilter); // Call filter function on price change
+document.getElementById('price-filters').addEventListener('change', performFilter);
 
-/**
- * FIX 1 (JS):
- * Adiciona o listener ao campo de busca para filtrar ENQUANTO digita.
- */
+// FILTRAGEM DO PRODUTO ENQUANTO DIGITA NA BARRA DE BUSCA
 document.getElementById('search-input').addEventListener('input', performFilter);
 
 
-/* Initial render */
-applyCategoryFromURL(); // PRIMEIRO, aplica o filtro da URL
-performFilter();      // DEPOIS, renderiza a lista com todos os filtros (incluindo o da URL)
-
+// VERIFICA URL E APLICA UM FILTRO
+applyCategoryFromURL(); 
+performFilter();   
 document.getElementById('year2').textContent = new Date().getFullYear();

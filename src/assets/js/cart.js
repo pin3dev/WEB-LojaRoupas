@@ -1,9 +1,9 @@
 // CALCULO PARA ENVIO
 const DISCOUNT_THRESHOLD = 100; // Desconto no frete a partir de 100
 const SHIPPING_EXPRESS_COST = 12.99;
-const SHIPPING_FREE_COST = 0.00;
+const SHIPPING_FREE_COST = 0.00; // Usado para frete grátis / pick up
 
-// LEITURA PARA LEVANTAR EM LOJA
+// LÊ E RETORNA OS PRODUTOS SALVOS NO CARRINHO (LocalStorage)
 function getCart(){
     try{
         return JSON.parse(localStorage.getItem('cart')) || [];
@@ -12,7 +12,7 @@ function getCart(){
     }
 }
 
-/* Save cart to localStorage */
+// SALVA PRODUTOS INSERIDOS NO CARRINHO E ATUALIZA O CONTADOR
 function saveCart(cart){
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
@@ -26,10 +26,12 @@ function clearCart(){
     }
 }
 
-// ADICIONA ITEM AO CARRINHO CASO JA TENHA ALGUM ITEM
+// ADICIONA ITEM AO CARRINHO (incrementa se existir, adiciona se não)
 function addToCart(item){
     const cart = getCart();
-    const existing = cart.find(c=>c.id===item.id);
+    // Procura se o item já existe no carrinho pelo ID
+    const existing = cart.find(c=>c.id===item.id); 
+    
     if(existing){
         existing.qty += 1;
     } else {
@@ -38,13 +40,13 @@ function addToCart(item){
     }
     saveCart(cart);
     
-    // ATUALIZA A TABELA DO CARRINHO ENQUANTO NA PAGINA
+    // ATUALIZA A TABELA DO CARRINHO SE O USUARIO ESTÁ NA PAGINA DO CARRINHO
     if (document.getElementById('cart-items')) {
         renderCart(); 
     }
 }
 
-// REMOÇAO DE ITENS DO CARRINHO
+// REMOÇÃO DE ITENS DO CARRINHO PELO ID
 function removeFromCart(id){
     let cart = getCart();
     cart = cart.filter(c=>c.id !== id);
@@ -52,16 +54,18 @@ function removeFromCart(id){
     renderCart();
 }
 
-// ATUALIZAÇAO DE QUANTIDADES NO CARRINHO
+// ATUALIZAÇÃO DA QUANTIDADE DE UM ITEM NO CARRINHO
 function updateQuantity(id, qty){
-    const cart = getCart();
+    let cart = getCart();
     const item = cart.find(c=>c.id===id);
+    
     if(item){
         item.qty = qty;
+        
         if(item.qty <= 0){
-            // REMOVE NO CASO DE ITENS = 0
-            const filtered = cart.filter(c=>c.id!==id);
-            saveCart(filtered);
+            // REMOVE O ITEM SE FOR 0 OU MENOS
+            cart = cart.filter(c=>c.id!==id);
+            saveCart(cart);
         } else {
             saveCart(cart);
         }
@@ -69,41 +73,37 @@ function updateQuantity(id, qty){
     renderCart(); 
 }
 
-// CALCULA O SUBTOTAL DA COMPRA
-function calculateSubtotal(){
-    const cart = getCart();
-    return cart.reduce((s,it)=>s + (it.price * it.qty), 0);
-}
-
-// CALCULA ENCARGOS E TAXAS
+// CALCULA TODOS OS TOTAIS 
 function calculateGrandTotal(){
-    const subtotal = calculateSubtotal();
+    const cart = getCart();
     
-    // 1. Discount (Fixed at 0 for this minimal example)
+    // CALCULA O SUBTOTAL 
+    const subtotal = cart.reduce((s,it)=>s + (it.price * it.qty), 0);
+    
     const discount = 0.00; 
 
-    // PREÇO PARA ENVIO
+    // CALCULA O CUSTO BASE DE ENVIO
     let shippingCost = 0.00;
     const selectedShippingRadio = document.querySelector('input[name="shipping"]:checked');
     
-    // Determine the base cost of the selected shipping option
+    // OBTEM O CUSTO QUE O USUARIO SELECIONOU
     if (selectedShippingRadio) {
+        
         shippingCost = parseFloat(selectedShippingRadio.dataset.cost) || 0.00;
     } else {
-        // Fallback: Default to Express if none is checked
+        
         shippingCost = SHIPPING_EXPRESS_COST; 
     }
 
-    // APLICAR FRETE GRÁTIS PARA COMPRAS ACIMA DE 100
+    // LÓGICA DE FRETE GRÁTIS
     let isFreeShippingApplied = false;
     
-    // Apenas a opção 'Express Delivery' é elegível para o frete grátis se o subtotal for atingido.
     if (subtotal >= DISCOUNT_THRESHOLD && selectedShippingRadio && selectedShippingRadio.id === 'express') {
         shippingCost = 0.00;
         isFreeShippingApplied = true;
     }
     
-    // CALCULO DO VALOR TOTAL DA COMPRA
+    // CALCULA O VALOR TOTAL DA COMPRA
     const grandTotal = subtotal - discount + shippingCost;
 
     const result = {
@@ -114,7 +114,7 @@ function calculateGrandTotal(){
         isFreeShippingApplied
     };
 
-    // SALVAR EM LOCALSTORAGE ANTES DO RETURN
+    // SALVA OS TOTAIS NA PAGINA DE CHECKOUT
     try {
         localStorage.setItem('cartTotals', JSON.stringify(result));
     } catch (e) {
@@ -124,50 +124,49 @@ function calculateGrandTotal(){
     return result;
 }
 
-/* Updates the total summary panel (Subtotal, Shipping, Total) */
+// ATUALIZA OS VALORES NA SEÇÃO DE RESUMO DA COMPRA
 function updateSummary() {
     const totals = calculateGrandTotal();
 
-    // Update display elements
     const updateEl = (id, value) => {
         const el = document.getElementById(id);
-        if(el) el.textContent = `€ ${value.toFixed(2)}`;
+        if(el) el.textContent = (id === 'cart-discount' ? `-€ ${value.toFixed(2)}` : `€ ${value.toFixed(2)}`); 
     };
 
     updateEl('cart-subtotal', totals.subtotal);
-    updateEl('cart-discount', -totals.discount); // Display as negative
+    updateEl('cart-discount', totals.discount); 
     updateEl('cart-grand-total', totals.grandTotal);
     
     const freeShippingMessage = document.getElementById('free-shipping-message');
     const expressCostSpan = document.getElementById('express-cost');
 
+    // EXIBE/OCULTA MSG DE FRETE GRATIS
     if (freeShippingMessage) {
-        if (totals.subtotal >= DISCOUNT_THRESHOLD) {
+        if (totals.isFreeShippingApplied) {
             freeShippingMessage.classList.remove('d-none');
         } else {
             freeShippingMessage.classList.add('d-none');
         }
     }
     
-    // Atualiza o custo exibido ao lado do Express Delivery
+    // ATUALIZA O CUSTO DO FRETE EXPRESSO 
     if (expressCostSpan) {
         const isExpressSelected = document.getElementById('express')?.checked;
         
-        if (isExpressSelected && totals.subtotal >= DISCOUNT_THRESHOLD) {
+        if (isExpressSelected && totals.isFreeShippingApplied) {
             expressCostSpan.textContent = "FREE";
             expressCostSpan.classList.add('text-success', 'fw-bold');
         } else {
-            // Se não atingiu o limite OU se 'Pick Up' estiver selecionado, exibe o custo normal.
             expressCostSpan.textContent = `€ ${SHIPPING_EXPRESS_COST.toFixed(2)}`;
             expressCostSpan.classList.remove('text-success', 'fw-bold');
         }
     }
 }
 
-/* Render cart page table rows AND total summary */
 function renderCart(){
     const tbody = document.getElementById('cart-items');
-    // Se não estiver na página do carrinho (onde tbody não existe), apenas atualiza o contador.
+    
+    // Se não houver a tabela (ex: estamos na página do catálogo), só atualiza o contador
     if(!tbody) {
         updateCartCount(); 
         return;
@@ -175,7 +174,7 @@ function renderCart(){
 
     const cart = getCart();
     
-    // 1. RENDER TABLE ROWS
+    // 1. RENDERIZA AS LINHAS DA TABELA
     if(cart.length === 0){
         tbody.innerHTML = '<tr><td colspan="5">Your cart is empty.</td></tr>';
     } else {
@@ -194,12 +193,12 @@ function renderCart(){
                     <input type="number" min="0" value="${it.qty}" class="form-control form-control-sm qty-input" data-id="${it.id}" style="width:100px;">
                 </td>
                 <td>€ ${(it.price*it.qty).toFixed(2)}</td>
-                <td><button class="btn btn-sm btn-outline-danger remove-btn" data-id="${it.id}">Remove</button></td>
+                <td><button class="btn btn-sm btn-outline-danger remove-btn" data-id="${it.id}"><i class="bi bi-x-lg"></i></button></td>
             `;
             tbody.appendChild(tr);
         });
         
-        // Add listeners for new inputs/buttons
+        // ANEXA LISTENERS: Quantidade (change) e Remover (click)
         document.querySelectorAll('.qty-input').forEach(inp=>{
             inp.addEventListener('change', e=>{
                 const id = e.target.dataset.id;
@@ -209,37 +208,24 @@ function renderCart(){
         });
         document.querySelectorAll('.remove-btn').forEach(b=>{
             b.addEventListener('click', e=>{
-                removeFromCart(e.target.dataset.id);
+                // Usa e.currentTarget para obter o botão, caso o clique tenha sido no ícone <i>
+                const btn = e.currentTarget;
+                removeFromCart(btn.dataset.id);
             });
         });
     }
 
-    // 2. RENDER TOTALS SUMMARY
+    // 2. RENDERIZA O RESUMO DOS TOTAIS
     updateSummary();
-
-    // 3. Add listeners for necessary elements (only once)
-    if (!document.body.dataset.listenersAttached) {
-        document.querySelectorAll('input[name="shipping"]').forEach(radio => {
-            radio.addEventListener('change', updateSummary);
-        });
-        
-        // Listener para o botão 'Clear Cart'
-        const clearCartBtn = document.getElementById('clear-cart-btn');
-        if(clearCartBtn) clearCartBtn.addEventListener('click', clearCart);
-        
-        document.body.dataset.listenersAttached = 'true';
-    }
 }
 
-
-/* Attach add-to-cart buttons on pages */
+// ANEXA BOTÕES 'ADD TO CART' À PÁGINA DE CATÁLOGO 
 function attachAddButtons(){
     document.querySelectorAll('.add-to-cart').forEach(btn=>{
-        // avoid attaching twice
+        
         if(btn.dataset.attached) return;
         btn.dataset.attached = '1';
 
-        // Salva o texto original do botão para restaurar depois
         if (!btn.dataset.originalText) {
             btn.dataset.originalText = btn.textContent;
         }
@@ -253,15 +239,16 @@ function attachAddButtons(){
             };
             addToCart(item);
             
-            // quick feedback
+            // BOTAO QUE CONFIRMA QUE O PRODUTO FOI ADICIONADO
             this.textContent = 'Added';
             setTimeout(()=> this.textContent = this.dataset.originalText, 900); 
         });
     });
 }
 
-/* Update cart count badge in navbar(s) */
+/* ATUALIZA O NÚMERO (BADGE) DO CARRINHO NA NAVBAR */
 function updateCartCount(){
+    
     const countEls = [document.getElementById('cart-count'), document.getElementById('cart-count-2')];
     const total = getCart().reduce((s,i)=>s + i.qty, 0);
     countEls.forEach(el=>{
@@ -269,20 +256,24 @@ function updateCartCount(){
     });
 }
 
-/* Run on load */
+
+/* EXECUTAR NA CARGA DA PÁGINA (DOMContentLoaded) */
 document.addEventListener('DOMContentLoaded', function(){
-    attachAddButtons();
-    updateCartCount();
+    // 1. FUNÇÕES DE INICIALIZAÇÃO GERAIS 
+    attachAddButtons(); 
+    updateCartCount(); 
     
-    // Apenas renderiza a tabela e resumo se o elemento 'cart-items' existir na página
+    // INICIALIZAÇÃO ESPECÍFICA DA PÁGINA DO CARRINHO
     if (document.getElementById('cart-items')) {
         renderCart(); 
+        
+        // Anexa listeners dos RÁDIOS DE ENVIO (para recalcular o total quando a escolha muda)
+        document.querySelectorAll('input[name="shipping"]').forEach(radio => {
+            radio.addEventListener('change', updateSummary);
+        });
+        
+        // Anexa listener do botão 'Clear Cart' (AGORA AQUI, fora de renderCart)
+        const clearCartBtn = document.getElementById('clear-cart-btn');
+        if(clearCartBtn) clearCartBtn.addEventListener('click', clearCart);
     }
-
-    // --- CORREÇÃO 1: MOVIDO PARA AQUI E TORNADO SEGURO ---
-    const yearEl = document.getElementById('year3');
-    if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-    }
-    // --- FIM DA CORREÇÃO 1 ---
 });

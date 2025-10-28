@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+
 </head>
 <body>
                 <!--  NAVBAR -->
@@ -134,18 +136,21 @@
             
             <!-- CONTAINER PARA CONTATO E LIMPAR CARRINHO -->
             <div class="d-flex justify-content-between align-items-center mt-3 p-2 border-top border-bottom">
-    <div>
-        <small class="text-muted">
+    <div class="me-auto"> <small class="text-muted">
             Problems with your purchase? 
-            <a href="contact.html">Contact us.</a>
+            <a href="contact.html">Contact us!</a>
         </small>
+    </div>
+
+    <div class="input-group" style="width: 250px; margin-right: 10px;"> 
+        <input type="text" class="form-control form-control-sm" placeholder="Enter discount code">
+        <button class="btn btn-outline-secondary" type="button">Apply</button>
     </div>
 
     <div>
         <button class="btn btn-outline-danger" id="clear-cart-btn" onclick="if(typeof clearCart === 'function') clearCart()">Clear Cart</button>
     </div>
-    
-          </div>
+</div>
         </div>
 
         <!-- FORMULARIO COM RESUMO DA COMPRA -->
