@@ -10,40 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    
-<style>
-    /* Aesthetic Adjustments for the Catalog */
-    .product-item {
-        transition: transform 0.3s ease;
-    }
-    .product-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
-    }
-
-    /* --- 1. FORÇA O FORMATO VERTICAL (RETRATO) --- */
-    .product-image-wrapper {
-        position: relative;
-        overflow: hidden;
-        width: auto;  /* Largura MAIS ESTREITA para forçar o retrato */
-        margin: 0 auto; /* Centraliza a caixa da imagem */
-    }
-
-    .product-image {
-        transition: transform 0.5s ease;
-        height: 100%;
-        width: 100%;
-        /* 'cover' preenche a caixa vertical, cortando as laterais */
-        object-fit: cover; 
-    }
-
-    .product-item:hover .product-image {
-        transform: scale(1.05);
-    }
-
-</style>
-
+    <link rel="stylesheet" href="assets/css/catalogue.css">
 </head>
+
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
