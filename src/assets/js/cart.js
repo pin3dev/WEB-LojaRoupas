@@ -118,13 +118,22 @@ function calculateGrandTotal(){
     // 3. Grand Total (Taxa removida, pois está incluída no preço do produto)
     const grandTotal = subtotal - discount + shippingCost;
 
-    return {
+    /*return*/ const result = {
         subtotal,
         discount,
         shippingCost,
         grandTotal,
         isFreeShippingApplied
     };
+
+    // SALVAR EM LOCALSTORAGE ANTES DO RETURN
+    try {
+        localStorage.setItem('cartTotals', JSON.stringify(result));
+    } catch (e) {
+        console.warn('Erro ao salvar totals no localStorage:', e);
+    }
+
+    return result;
 }
 
 /* Updates the total summary panel (Subtotal, Shipping, Total) */
