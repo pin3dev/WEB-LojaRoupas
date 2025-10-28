@@ -256,8 +256,11 @@ const products = [
      {"id":"p14","name":"Jeans Chic blouse","category":"woman-blouse","price":22.50,"image":"assets/img/product/product-f-8.webp","desc":"Green round watch."},
      {"id":"p15","name":"Urban Cargo Blue Pants","category":"man-pant","price":55.00,"image":"assets/img/product/product-m-7.webp"},
      {"id":"p16","name":"White Summer Shirt","category":"woman-blouse","price":55.00,"image":"assets/img/product/product-f-5.webp"},
-      {"id":"17","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"assets/img/product/product-b-2.webp","desc":"Soft warmth for the little ones."},
-      {"id":"18","name":"Warm Children's Coat (Girl)","category":"children-girl","price":29.90,"image":"assets/img/product/product-g-1.webp","desc":"Soft warmth for the little ones."}
+      {"id":"p17","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"assets/img/product/product-b-2.webp","desc":"Soft warmth for the little ones."},
+      {"id":"p18","name":"Warm Children's Coat (Girl)","category":"children-girl","price":29.90,"image":"assets/img/product/product-g-1.webp","desc":"Soft warmth for the little ones."},
+      {"id":"p19","name":"Queen Gold Neckless","category":"woman","price":290.90,"image":"assets/img/product/product-3.png","desc":"Soft warmth for the little ones."},
+      {"id":"p20","name":"Earing Queen Red","category":"woman","price":48.90,"image":"assets/img/product/product-5.png","desc":"Soft warmth for the little ones."},
+      {"id":"p21","name":"Black Oversize Pant","category":"woman-pant","price":48.90,"image":"assets/img/product/product-f-9.webp","desc":"Soft warmth for the little ones."},
 ];
 
 function getDisplayCategory(categoryKey) {
@@ -380,8 +383,6 @@ document.getElementById('category-filters').addEventListener('click', e=>{
 document.getElementById('sort').addEventListener('change', performFilter); // Call filter function on sort change
 
 document.getElementById('price-filters').addEventListener('change', performFilter); // Call filter function on price change
-
-document.getElementById('search-input').addEventListener('input', performFilter); // Filter while typing
 
 /* Initial render */
 performFilter(); // Renders with initial filters (all)
