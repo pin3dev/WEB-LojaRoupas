@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<!--
+Index - Home page
+Mobile-first, Bootstrap 5, minimal JS.
+-->
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loja de Roupas — Início</title>
+    <!-- Bootstrap 5 CSS (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Navbar with Mega Menu -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Clothé</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Início</a>
+            </li>
+
+            <!-- Mega menu -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="megaMenu"
+                role="button"
+                data-bs-toggle="dropdown"
+                >Categorias</a
+              >
+              <div
+                class="dropdown-menu p-4"
+                aria-labelledby="megaMenu"
+                style="min-width: 600px"
+              >
+                <div class="row">
+                  <div class="col-md-4">
+                    <h6 class="text-uppercase">Masculino</h6>
+                    <ul class="list-unstyled">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="catalog.html?cat=masculino"
+                          >Camisetas</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="catalog.html?cat=masculino"
+                          >Calças</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="catalog.html?cat=masculino"
+                          >Acessórios</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="text-uppercase">Feminino</h6>
+                    <ul class="list-unstyled">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="catalog.html?cat=feminino"
+                          >Vestidos</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="catalog.html?cat=feminino"
+                          >Blusas</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="catalog.html?cat=feminino"
+                          >Calças</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-md-4">
+                    <h6 class="text-uppercase">Infantil</h6>
+                    <ul class="list-unstyled">
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="catalog.html?cat=infantil"
+                          >Meninos</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="dropdown-item"
+                          href="catalog.html?cat=infantil"
+                          >Meninas</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Catálogo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contacto</a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link position-relative" href="cart.html">
+                <i class="bi bi-cart3"></i>
+                <span id="cart-count" class="badge bg-danger rounded-pill ms-1"
+                  >0</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Featured products -->
+    <main class="container my-5">
+      <!-- Product Details Section -->
+      <section id="product-details" class="product-details section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-4">
+            <!-- Product Gallery -->
+            <div class="col-lg-7" data-aos="zoom-in" data-aos-delay="150">
+              <div class="product-gallery">
+                <div class="main-showcase">
+                  <div class="image-zoom-container">
+                    <img
+                      src="assets/img/product/product-details-6.webp"
+                      alt="Product Main"
+                      class="img-fluid main-product-image drift-zoom"
+                      id="main-product-image"
+                      data-zoom="assets/img/product/product-details-6.webp"
+                    />
+
+                    <div class="image-navigation">
+                      <button
+                        class="nav-arrow prev-image image-nav-btn prev-image"
+                        type="button"
+                      >
+                        <i class="bi bi-chevron-left"></i>
+                      </button>
+                      <button
+                        class="nav-arrow next-image image-nav-btn next-image"
+                        type="button"
+                      >
+                        <i class="bi bi-chevron-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="thumbnail-grid">
+                  <div
+                    class="thumbnail-wrapper thumbnail-item active"
+                    data-image="assets/img/product/product-details-6.webp"
+                  >
+                    <img
+                      src="assets/img/product/product-details-6.webp"
+                      alt="View 1"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div
+                    class="thumbnail-wrapper thumbnail-item"
+                    data-image="assets/img/product/product-details-7.webp"
+                  >
+                    <img
+                      src="assets/img/product/product-details-7.webp"
+                      alt="View 2"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div
+                    class="thumbnail-wrapper thumbnail-item"
+                    data-image="assets/img/product/product-details-8.webp"
+                  >
+                    <img
+                      src="assets/img/product/product-details-8.webp"
+                      alt="View 3"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div
+                    class="thumbnail-wrapper thumbnail-item"
+                    data-image="assets/img/product/product-details-4.webp"
+                  >
+                    <img
+                      src="assets/img/product/product-details-4.webp"
+                      alt="View 4"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div
+                    class="thumbnail-wrapper thumbnail-item"
+                    data-image="assets/img/product/product-details-5.webp"
+                  >
+                    <img
+                      src="assets/img/product/product-details-5.webp"
+                      alt="View 5"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <div
+                    class="thumbnail-wrapper thumbnail-item"
+                    data-image="assets/img/product/product-details-3.webp"
+                  >
+                    <img
+                      src="assets/img/product/product-details-3.webp"
+                      alt="View 6"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
+              <div class="product-details">
+                <div class="product-badge-container">
+                  <span class="badge-category">Audio Equipment</span>
+                  <div class="rating-group">
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-fill"></i>
+                      <i class="bi bi-star-half"></i>
+                    </div>
+                    <span class="review-text">(127 reviews)</span>
+                  </div>
+                </div>
+
+                <h1 class="product-name">
+                  Mauris tempus cursus magna vel scelerisque nisl consectetur
+                </h1>
+
+                <div class="pricing-section">
+                  <div class="price-display">
+                    <span class="sale-price">$189.99</span>
+                    <span class="regular-price">$239.99</span>
+                  </div>
+                  <div class="savings-info">
+                    <span class="save-amount">Save $50.00</span>
+                    <span class="discount-percent">(21% off)</span>
+                  </div>
+                </div>
+
+                <div class="product-description">
+                  <p>
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis et
+                    quasi architecto beatae vitae dicta sunt explicabo.
+                  </p>
+                </div>
+
+                <div class="availability-status">
+                  <div class="stock-indicator">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <span class="stock-text">Available</span>
+                  </div>
+                  <div class="quantity-left">Only 18 items remaining</div>
+                </div>
+
+                <!-- Product Variants -->
+                <div class="variant-section">
+                  <div class="color-selection">
+                    <label class="variant-label">Available Colors:</label>
+                    <div class="color-grid">
+                      <div
+                        class="color-chip active"
+                        data-color="Midnight Black"
+                        style="
+                          background: linear-gradient(135deg, #1a1a1a, #000);
+                        "
+                      >
+                        <span class="selection-check"
+                          ><i class="bi bi-check"></i
+                        ></span>
+                      </div>
+                      <div
+                        class="color-chip"
+                        data-color="Pearl White"
+                        style="
+                          background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+                        "
+                      >
+                        <span class="selection-check"
+                          ><i class="bi bi-check"></i
+                        ></span>
+                      </div>
+                      <div
+                        class="color-chip"
+                        data-color="Ocean Blue"
+                        style="
+                          background: linear-gradient(135deg, #0066cc, #004499);
+                        "
+                      >
+                        <span class="selection-check"
+                          ><i class="bi bi-check"></i
+                        ></span>
+                      </div>
+                      <div
+                        class="color-chip"
+                        data-color="Forest Green"
+                        style="
+                          background: linear-gradient(135deg, #28a745, #155724);
+                        "
+                      >
+                        <span class="selection-check"
+                          ><i class="bi bi-check"></i
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="selected-variant">
+                      Selected: <span>Midnight Black</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Purchase Options -->
+                <div class="purchase-section">
+                  <div class="quantity-control">
+                    <label class="control-label">Quantity:</label>
+                    <div class="quantity-input-group">
+                      <div class="quantity-selector">
+                        <button class="quantity-btn decrease" type="button">
+                          <i class="bi bi-dash"></i>
+                        </button>
+                        <input
+                          type="number"
+                          class="quantity-input"
+                          value="1"
+                          min="1"
+                          max="18"
+                        />
+                        <button class="quantity-btn increase" type="button">
+                          <i class="bi bi-plus"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="action-buttons">
+                    <button class="btn primary-action">
+                      <i class="bi bi-bag-plus"></i>
+                      Add to Cart
+                    </button>
+                    <button class="btn secondary-action">
+                      <i class="bi bi-lightning"></i>
+                      Buy Now
+                    </button>
+                    <button class="btn icon-action" title="Add to Wishlist">
+                      <i class="bi bi-heart"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Benefits List -->
+                <div class="benefits-list">
+                  <div class="benefit-item">
+                    <i class="bi bi-truck"></i>
+                    <span>Free delivery on orders over $75</span>
+                  </div>
+                  <div class="benefit-item">
+                    <i class="bi bi-arrow-clockwise"></i>
+                    <span>45-day hassle-free returns</span>
+                  </div>
+                  <div class="benefit-item">
+                    <i class="bi bi-shield-check"></i>
+                    <span>3-year manufacturer warranty</span>
+                  </div>
+                  <div class="benefit-item">
+                    <i class="bi bi-headset"></i>
+                    <span>24/7 customer support available</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Information Tabs -->
+          <div class="row mt-5" data-aos="fade-up" data-aos-delay="300">
+            <div class="col-12">
+              <div class="info-tabs-container">
+                <nav class="tabs-navigation nav">
+                  <button
+                    class="nav-link active"
+                    data-bs-toggle="tab"
+                    data-bs-target="#ecommerce-product-details-5-customer-reviews"
+                    type="button"
+                  >
+                    Reviews (127)
+                  </button>
+                </nav>
+                  <!-- Reviews Tab -->
+                  <div
+                    class="tab-pane fade show active"
+                    id="ecommerce-product-details-5-customer-reviews"
+                  >
+                    <div class="reviews-content">
+                      <div class="reviews-header">
+                        <div class="rating-overview">
+                          <div class="average-score">
+                            <div class="score-display">4.6</div>
+                            <div class="score-stars">
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-fill"></i>
+                              <i class="bi bi-star-half"></i>
+                            </div>
+                            <div class="total-reviews">
+                              127 customer reviews
+                            </div>
+                          </div>
+
+                          <div class="rating-distribution">
+                            <div class="rating-row">
+                              <span class="stars-label">5★</span>
+                              <div class="progress-container">
+                                <div
+                                  class="progress-fill"
+                                  style="width: 68%"
+                                ></div>
+                              </div>
+                              <span class="count-label">86</span>
+                            </div>
+                            <div class="rating-row">
+                              <span class="stars-label">4★</span>
+                              <div class="progress-container">
+                                <div
+                                  class="progress-fill"
+                                  style="width: 22%"
+                                ></div>
+                              </div>
+                              <span class="count-label">28</span>
+                            </div>
+                            <div class="rating-row">
+                              <span class="stars-label">3★</span>
+                              <div class="progress-container">
+                                <div
+                                  class="progress-fill"
+                                  style="width: 6%"
+                                ></div>
+                              </div>
+                              <span class="count-label">8</span>
+                            </div>
+                            <div class="rating-row">
+                              <span class="stars-label">2★</span>
+                              <div class="progress-container">
+                                <div
+                                  class="progress-fill"
+                                  style="width: 3%"
+                                ></div>
+                              </div>
+                              <span class="count-label">4</span>
+                            </div>
+                            <div class="rating-row">
+                              <span class="stars-label">1★</span>
+                              <div class="progress-container">
+                                <div
+                                  class="progress-fill"
+                                  style="width: 1%"
+                                ></div>
+                              </div>
+                              <span class="count-label">1</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="write-review-cta">
+                          <h4>Share Your Experience</h4>
+                          <p>Help others make informed decisions</p>
+                          <button class="btn review-btn">Write Review</button>
+                        </div>
+                      </div>
+
+                      <div class="customer-reviews-list">
+                        <div class="review-card">
+                          <div class="reviewer-profile">
+                            <img
+                              src="assets/img/person/person-f-3.webp"
+                              alt="Customer"
+                              class="profile-pic"
+                            />
+                            <div class="profile-details">
+                              <div class="customer-name">Sarah Martinez</div>
+                              <div class="review-meta">
+                                <div class="review-stars">
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                </div>
+                                <span class="review-date">March 28, 2024</span>
+                              </div>
+                            </div>
+                          </div>
+                          <h5 class="review-headline">
+                            Outstanding audio quality and comfort
+                          </h5>
+                          <div class="review-text">
+                            <p>
+                              Sed ut perspiciatis unde omnis iste natus error
+                              sit voluptatem accusantium doloremque laudantium,
+                              totam rem aperiam. Eaque ipsa quae ab illo
+                              inventore veritatis et quasi architecto beatae
+                              vitae dicta sunt explicabo.
+                            </p>
+                          </div>
+                          <div class="review-actions">
+                            <button class="action-btn">
+                              <i class="bi bi-hand-thumbs-up"></i> Helpful (12)
+                            </button>
+                            <button class="action-btn">
+                              <i class="bi bi-chat-dots"></i> Reply
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="review-card">
+                          <div class="reviewer-profile">
+                            <img
+                              src="assets/img/person/person-m-5.webp"
+                              alt="Customer"
+                              class="profile-pic"
+                            />
+                            <div class="profile-details">
+                              <div class="customer-name">David Chen</div>
+                              <div class="review-meta">
+                                <div class="review-stars">
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star"></i>
+                                </div>
+                                <span class="review-date">March 15, 2024</span>
+                              </div>
+                            </div>
+                          </div>
+                          <h5 class="review-headline">
+                            Great value, minor connectivity issues
+                          </h5>
+                          <div class="review-text">
+                            <p>
+                              Nemo enim ipsam voluptatem quia voluptas sit
+                              aspernatur aut odit aut fugit, sed quia
+                              consequuntur magni dolores eos qui ratione
+                              voluptatem sequi nesciunt. Overall satisfied with
+                              the purchase.
+                            </p>
+                          </div>
+                          <div class="review-actions">
+                            <button class="action-btn">
+                              <i class="bi bi-hand-thumbs-up"></i> Helpful (8)
+                            </button>
+                            <button class="action-btn">
+                              <i class="bi bi-chat-dots"></i> Reply
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="review-card">
+                          <div class="reviewer-profile">
+                            <img
+                              src="assets/img/person/person-f-7.webp"
+                              alt="Customer"
+                              class="profile-pic"
+                            />
+                            <div class="profile-details">
+                              <div class="customer-name">Emily Rodriguez</div>
+                              <div class="review-meta">
+                                <div class="review-stars">
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                  <i class="bi bi-star-fill"></i>
+                                </div>
+                                <span class="review-date"
+                                  >February 22, 2024</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                          <h5 class="review-headline">
+                            Perfect for work-from-home setup
+                          </h5>
+                          <div class="review-text">
+                            <p>
+                              At vero eos et accusamus et iusto odio dignissimos
+                              ducimus qui blanditiis praesentium voluptatum
+                              deleniti atque corrupti quos dolores et quas
+                              molestias excepturi sint occaecati cupiditate non
+                              provident.
+                            </p>
+                          </div>
+                          <div class="review-actions">
+                            <button class="action-btn">
+                              <i class="bi bi-hand-thumbs-up"></i> Helpful (15)
+                            </button>
+                            <button class="action-btn">
+                              <i class="bi bi-chat-dots"></i> Reply
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="load-more-section">
+                          <button class="btn load-more-reviews">
+                            Show More Reviews
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Product Details Section -->
+    </main>
+    <footer id="footer" class="footer dark-background">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-widget footer-about">
+                <a href="index.html" class="logo">
+                  <a
+                    class="navbar-brand fw-bold"
+                    style="font-size: 2rem"
+                    href="index.html"
+                    >Clothé</a
+                  >
+                </a>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Nullam in nibh vehicula, facilisis magna ut, consectetur
+                  lorem. Proin eget tortor risus.
+                </p>
+
+                <div class="social-links mt-4">
+                  <h5>Connect With Us</h5>
+                  <div class="social-icons">
+                    <a href="#" aria-label="Facebook"
+                      ><i class="bi bi-facebook"></i
+                    ></a>
+                    <a href="#" aria-label="Instagram"
+                      ><i class="bi bi-instagram"></i
+                    ></a>
+                    <a href="#" aria-label="Twitter"
+                      ><i class="bi bi-twitter-x"></i
+                    ></a>
+                    <a href="#" aria-label="TikTok"
+                      ><i class="bi bi-tiktok"></i
+                    ></a>
+                    <a href="#" aria-label="Pinterest"
+                      ><i class="bi bi-pinterest"></i
+                    ></a>
+                    <a href="#" aria-label="YouTube"
+                      ><i class="bi bi-youtube"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h4>Shop</h4>
+                <ul class="footer-links">
+                  <li><a href="category.html">New Arrivals</a></li>
+                  <li><a href="category.html">Bestsellers</a></li>
+                  <li><a href="category.html">Women's Clothing</a></li>
+                  <li><a href="category.html">Men's Clothing</a></li>
+                  <li><a href="category.html">Accessories</a></li>
+                  <li><a href="category.html">Sale</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                  <li><a href="support.html">Help Center</a></li>
+                  <li><a href="account.html">Order Status</a></li>
+                  <li><a href="shiping-info.html">Shipping Info</a></li>
+                  <li>
+                    <a href="return-policy.html">Returns &amp; Exchanges</a>
+                  </li>
+                  <li><a href="#">Size Guide</a></li>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-widget">
+                <h4>Contact Information</h4>
+                <div class="footer-contact">
+                  <div class="contact-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>123 Fashion Street, New York, NY 10001</span>
+                  </div>
+                  <div class="contact-item">
+                    <i class="bi bi-telephone"></i>
+                    <span>+1 (555) 123-4567</span>
+                  </div>
+                  <div class="contact-item">
+                    <i class="bi bi-envelope"></i>
+                    <span>hello@example.com</span>
+                  </div>
+                  <div class="contact-item">
+                    <i class="bi bi-clock"></i>
+                    <span
+                      >Monday-Friday: 9am-6pm<br />Saturday: 10am-4pm<br />Sunday:
+                      Closed</span
+                    >
+                  </div>
+                </div>
+
+                <div class="app-buttons mt-4">
+                  <a href="#" class="app-btn">
+                    <i class="bi bi-apple"></i>
+                    <span>App Store</span>
+                  </a>
+                  <a href="#" class="app-btn">
+                    <i class="bi bi-google-play"></i>
+                    <span>Google Play</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row gy-3 align-items-center">
+            <div class="col-lg-6 col-md-12">
+              <div class="copyright">
+                <p>
+                  © <span>Copyright</span>
+                  <strong class="sitename">NiceShop</strong>. All Rights
+                  Reserved.
+                </p>
+              </div>
+              <div class="credits mt-1">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Designed by
+                <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4"
+              >
+                <div class="payment-methods">
+                  <div class="payment-icons">
+                    <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                    <i class="bi bi-paypal" aria-label="PayPal"></i>
+                    <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                    <i class="bi bi-google" aria-label="Google Pay"></i>
+                    <i class="bi bi-shop" aria-label="Shop Pay"></i>
+                    <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
+                  </div>
+                </div>
+
+                <div class="legal-links">
+                  <a href="tos.html">Terms</a>
+                  <a href="privacy.html">Privacy</a>
+                  <a href="tos.html">Cookies</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Bootstrap bundle + our script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/scrollTop.js"></script>
+    <script src="assets/js/productDetail.js"></script>
+    <script>
+      /* Initialize: sample featured products injected on home */
+      const featured = [
+        {
+          id: "p1",
+          name: "T-shirt Básica Preta",
+          category: "masculino",
+          price: 19.9,
+          image: "./assets/img/product/product-f-8.webp",
+        },
+        {
+          id: "p2",
+          name: "Vestido Floral",
+          category: "feminino",
+          price: 49.9,
+          image: "./assets/img/product/product-f-3.webp",
+        },
+        {
+          id: "p4",
+          name: "Casaco Cabedal",
+          category: "masculino",
+          price: 29.9,
+          image: "./assets/img/product/product-m-6.webp",
+        },
+      ];
+
+      function renderFeatured() {
+        const cont = document.getElementById("featured-products");
+        cont.innerHTML = "";
+        featured.forEach((p) => {
+          cont.innerHTML += `
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="${p.image}" class="card-img-top" alt="${p.name}">
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">${p.name}</h6>
+            <p class="card-text text-muted small mb-2">${
+              p.category.charAt(0).toUpperCase() + p.category.slice(1)
+            }</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <div><strong>€ ${p.price.toFixed(2)}</strong></div>
+              <button class="btn btn-sm btn-outline-primary add-to-cart" data-id="${
+                p.id
+              }" data-name="${p.name}" data-price="${p.price}" data-image="${
+            p.image
+          }">Adicionar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+        });
+        attachAddButtons();
+      }
+      renderFeatured();
+
+      /* Set year */
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
