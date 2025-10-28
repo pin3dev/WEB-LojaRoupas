@@ -1489,12 +1489,9 @@ body {
 .footer .footer-main .footer-links li {
   margin-bottom: 12px;
   position: relative;
-  padding-left: 15px;
 }
 
 .footer .footer-main .footer-links li:before {
-  content: "→";
-  position: absolute;
   left: 0;
   top: 0;
   color: var(--accent-color);
