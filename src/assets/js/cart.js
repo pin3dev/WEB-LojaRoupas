@@ -1,15 +1,3 @@
-/* cart.js
-Minimal vanilla JS to handle cart in localStorage.
-Functions:
-- addToCart: Adds an item (or increases qty)
-- getCart: returns cart array
-- saveCart: saves to localStorage
-- renderCart: populates cart.html table and updates summary
-- calculateGrandTotal: computes all totals (subtotal,shipping, grand total)
-- attachAddButtons: attach event listeners to 'Add' buttons
-- clearCart: Clears all items from the cart (NEW)
-*/
-
 // Constants for calculations
 const DISCOUNT_THRESHOLD = 100; // Corrigido para €100 conforme o HTML
 const SHIPPING_EXPRESS_COST = 12.99;
@@ -49,7 +37,8 @@ function addToCart(item){
         cart.push(item);
     }
     saveCart(cart);
-    // CORREÇÃO 1: Renderiza o carrinho se estiver na página "cart.html"
+    
+    // Atualiza a tabela do carrinho se estivermos na página do carrinho
     if (document.getElementById('cart-items')) {
         renderCart(); 
     }
@@ -105,17 +94,16 @@ function calculateGrandTotal(){
         shippingCost = SHIPPING_EXPRESS_COST; 
     }
 
-    // CORREÇÃO 2: Aplicar Free Shipping Logic
+    // Aplicar Free Shipping Logic
     let isFreeShippingApplied = false;
     
     // Apenas a opção 'Express Delivery' é elegível para o frete grátis se o subtotal for atingido.
-    // 'Pick Up In Store' já é grátis.
     if (subtotal >= DISCOUNT_THRESHOLD && selectedShippingRadio && selectedShippingRadio.id === 'express') {
         shippingCost = 0.00;
         isFreeShippingApplied = true;
     }
     
-    // 3. Grand Total (Taxa removida, pois está incluída no preço do produto)
+    // 3. Grand Total
     const grandTotal = subtotal - discount + shippingCost;
 
     /*return*/ const result = {
@@ -150,7 +138,6 @@ function updateSummary() {
     updateEl('cart-discount', -totals.discount); // Display as negative
     updateEl('cart-grand-total', totals.grandTotal);
     
-    // CORREÇÃO 2.1: Atualiza o custo de envio e a mensagem de frete grátis
     const freeShippingMessage = document.getElementById('free-shipping-message');
     const expressCostSpan = document.getElementById('express-cost');
 
@@ -253,7 +240,6 @@ function attachAddButtons(){
         btn.dataset.attached = '1';
 
         // Salva o texto original do botão para restaurar depois
-        // Verifica se o texto original já foi definido para evitar sobrescrever
         if (!btn.dataset.originalText) {
             btn.dataset.originalText = btn.textContent;
         }
@@ -268,7 +254,7 @@ function attachAddButtons(){
             addToCart(item);
             
             // quick feedback
-            this.textContent = 'Added'; // Traduzido
+            this.textContent = 'Added';
             setTimeout(()=> this.textContent = this.dataset.originalText, 900); 
         });
     });
@@ -287,8 +273,16 @@ function updateCartCount(){
 document.addEventListener('DOMContentLoaded', function(){
     attachAddButtons();
     updateCartCount();
+    
     // Apenas renderiza a tabela e resumo se o elemento 'cart-items' existir na página
     if (document.getElementById('cart-items')) {
         renderCart(); 
     }
+
+    // --- CORREÇÃO 1: MOVIDO PARA AQUI E TORNADO SEGURO ---
+    const yearEl = document.getElementById('year3');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+    // --- FIM DA CORREÇÃO 1 ---
 });
