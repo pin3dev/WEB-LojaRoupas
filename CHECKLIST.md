@@ -10,7 +10,7 @@
 
 ### IVA
 
-- checkout.html  (footer + check input form + botao indisponivel carrinho vazio)
+- checkout.html  (footer)
 - contact.html  (footer)
 
 ### RUI

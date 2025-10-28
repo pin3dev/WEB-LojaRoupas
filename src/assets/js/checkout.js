@@ -170,6 +170,38 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const continueBtn = document.querySelector('#step-1 button.btn-primary'); // botão da etapa 1
+  const warning = document.getElementById('empty-cart-warning');
+
+  function checkCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+      continueBtn.disabled = true;
+      continueBtn.classList.remove('btn-primary');
+      continueBtn.classList.add('btn-secondary', 'disabled');
+      continueBtn.textContent = 'Cart is empty';
+      continueBtn.style.cursor = 'not-allowed';
+
+      if (warning) warning.classList.remove('d-none');
+    } else {
+      continueBtn.disabled = false;
+      continueBtn.classList.add('btn-primary');
+      continueBtn.classList.remove('btn-secondary', 'disabled');
+      continueBtn.textContent = 'Continue to Shipping';
+      continueBtn.style.cursor = 'pointer';
+
+      if (warning) warning.classList.add('d-none');
+    }
+  }
+
+  checkCart();
+  window.addEventListener('storage', checkCart);
+});
+
+
+
 
 
 
