@@ -23,5 +23,3 @@ git rebase main
 ```bash
 git push
 ```
-
-thais
