@@ -10,8 +10,8 @@
 
 ### IVA
 
-- checkout.html  (reponsividade + footer)
-- contact.html  (reponsividade + footer)
+- checkout.html  (footer + check input form + icone errado na primeira pagina 1)
+- contact.html  (footer)
 
 ### RUI
 

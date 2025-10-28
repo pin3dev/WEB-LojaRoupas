@@ -145,8 +145,29 @@ footer {
   color: #777 !important;
 }
 
+.checkout-step .d-flex {
+    gap: 0.5rem;        /* espaço entre os botões */
+    flex-wrap: wrap;    /* permite quebra em telas muito estreitas */
+    align-items: center;
+}
+
+.checkout-step .d-flex .btn {
+    width: auto !important;     /* evita que algum estilo externo force 100% */
+    flex: 0 0 auto !important;  /* não deixa os botões crescerem igualmente */
+    white-space: nowrap;        /* evita quebra do texto do botão */
+}
+
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
+
+  .checkout-step .d-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .checkout-step .d-flex .btn {
+    width: 100%;
+    flex: 0 0 auto;
+  }
   .checkout-steps {
     flex-direction: column;
     align-items: stretch;
@@ -226,3 +247,19 @@ footer {
 }
 
 
+.checkout-step .d-flex {
+  gap: 0.75rem; /* mais espaço entre os botões */
+}
+
+@media (max-width: 576px) {
+  .checkout-step .d-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .checkout-step .d-flex .btn {
+    width: 100%;
+  }
+  .checkout-step .d-flex .btn + .btn {
+    margin-top: 0.5rem; /* separa verticalmente os botões */
+  }
+}
