@@ -90,7 +90,7 @@
                   </li>
 
                   <li class="nav-item">
-                      <a class="nav-link active" href="catalog.html">Catalog</a>
+                      <a class="nav-link active" href="catalog.html">Catalogue</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="contact.html">Contact</a>
@@ -242,7 +242,10 @@
           <p>Please review your information before placing your order</p>
           <div class="d-flex justify-content-between mt-3">
             <button class="btn btn-outline-secondary" onclick="goToStep(2)">Back to Payment</button>
-            <button class="btn btn-success">Place Order</button>
+            <!-- <button class="btn btn-success">Place Order</button> -->
+             <button id="place-order-btn" class="btn btn-success">Place Order</button>
+
+
           </div>
         </div>
       </div>
@@ -311,3 +314,8 @@ document.getElementById('checkout-form').addEventListener('submit', function(e){
 
 </body>
 </html>
+
+<!-- Success flag for visual feedback when an order is placed -->
+<div id="success-flag" class="success-flag" aria-live="polite" aria-atomic="true">
+  <div class="success-flag__content">Pedido efetuado com sucesso! Obrigado pela compra.</div>
+</div>

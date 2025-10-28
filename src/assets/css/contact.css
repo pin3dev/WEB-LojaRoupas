@@ -1,5 +1,18 @@
 
+/* ====== LAYOUT GERAL PARA FIXAR O FOOTER NO FIM ====== */
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 
+main {
+  flex: 1 0 auto; /* ocupa o espaço disponível */
+}
+
+footer {
+  flex-shrink: 0; /* garante que o footer não encolha */
+}
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
 /* Contact page icon circles */
