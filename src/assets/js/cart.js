@@ -26,10 +26,9 @@ function clearCart(){
     }
 }
 
-// ADICIONA ITEM AO CARRINHO (incrementa se existir, adiciona se não)
+// ADICIONA ITEM AO CARRINHO 
 function addToCart(item){
     const cart = getCart();
-    // Procura se o item já existe no carrinho pelo ID
     const existing = cart.find(c=>c.id===item.id); 
     
     if(existing){
@@ -166,7 +165,7 @@ function updateSummary() {
 function renderCart(){
     const tbody = document.getElementById('cart-items');
     
-    // Se não houver a tabela (ex: estamos na página do catálogo), só atualiza o contador
+    // ATUALIZA CONTADOR DE PRODUTOS NO ICONE CARRINHO
     if(!tbody) {
         updateCartCount(); 
         return;
@@ -174,7 +173,7 @@ function renderCart(){
 
     const cart = getCart();
     
-    // 1. RENDERIZA AS LINHAS DA TABELA
+    // RENDERIZA AS LINHAS DA TABELA
     if(cart.length === 0){
         tbody.innerHTML = '<tr><td colspan="5">Your cart is empty.</td></tr>';
     } else {
@@ -198,7 +197,7 @@ function renderCart(){
             tbody.appendChild(tr);
         });
         
-        // ANEXA LISTENERS: Quantidade (change) e Remover (click)
+        // ANEXA AS OPCOES DE QUANTIDADE E REMOVER
         document.querySelectorAll('.qty-input').forEach(inp=>{
             inp.addEventListener('change', e=>{
                 const id = e.target.dataset.id;
@@ -208,14 +207,13 @@ function renderCart(){
         });
         document.querySelectorAll('.remove-btn').forEach(b=>{
             b.addEventListener('click', e=>{
-                // Usa e.currentTarget para obter o botão, caso o clique tenha sido no ícone <i>
                 const btn = e.currentTarget;
                 removeFromCart(btn.dataset.id);
             });
         });
     }
 
-    // 2. RENDERIZA O RESUMO DOS TOTAIS
+    // RENDERIZA O RESUMO DOS TOTAIS
     updateSummary();
 }
 
@@ -246,7 +244,7 @@ function attachAddButtons(){
     });
 }
 
-/* ATUALIZA O NÚMERO (BADGE) DO CARRINHO NA NAVBAR */
+// ATUALIZA O NÚMERO (BADGE) DO CARRINHO NA NAVBAR 
 function updateCartCount(){
     
     const countEls = [document.getElementById('cart-count'), document.getElementById('cart-count-2')];
@@ -257,9 +255,8 @@ function updateCartCount(){
 }
 
 
-/* EXECUTAR NA CARGA DA PÁGINA (DOMContentLoaded) */
+// PARA TORNAR BOTOES DA PAG CATALOGO FUNCIONAIS
 document.addEventListener('DOMContentLoaded', function(){
-    // 1. FUNÇÕES DE INICIALIZAÇÃO GERAIS 
     attachAddButtons(); 
     updateCartCount(); 
     
@@ -267,12 +264,12 @@ document.addEventListener('DOMContentLoaded', function(){
     if (document.getElementById('cart-items')) {
         renderCart(); 
         
-        // Anexa listeners dos RÁDIOS DE ENVIO (para recalcular o total quando a escolha muda)
+       // ADICIONA BOTOES DE OPCAO DE ENVIO/LEVANTAR
         document.querySelectorAll('input[name="shipping"]').forEach(radio => {
             radio.addEventListener('change', updateSummary);
         });
         
-        // Anexa listener do botão 'Clear Cart' (AGORA AQUI, fora de renderCart)
+        // ADICIONA BOTAO DE LIMPAR CARRINHO
         const clearCartBtn = document.getElementById('clear-cart-btn');
         if(clearCartBtn) clearCartBtn.addEventListener('click', clearCart);
     }
