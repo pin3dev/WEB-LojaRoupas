@@ -1,9 +1,9 @@
-// Constants for calculations
-const DISCOUNT_THRESHOLD = 100; // Corrigido para €100 conforme o HTML
+// CALCULO PARA ENVIO
+const DISCOUNT_THRESHOLD = 100; // Desconto no frete a partir de 100
 const SHIPPING_EXPRESS_COST = 12.99;
-const SHIPPING_FREE_COST = 0.00; // Base cost for the 'pickup' option
+const SHIPPING_FREE_COST = 0.00;
 
-/* Read cart from localStorage */
+// LEITURA PARA LEVANTAR EM LOJA
 function getCart(){
     try{
         return JSON.parse(localStorage.getItem('cart')) || [];
@@ -18,7 +18,7 @@ function saveCart(cart){
     updateCartCount();
 }
 
-/* Clear all items from the cart */
+// APAGAR TODOS OS ITENS DO CARRINHO COM MSG DE ALERTA
 function clearCart(){
     if (confirm("Are you sure you want to clear your entire cart?")) {
         saveCart([]);
@@ -26,7 +26,7 @@ function clearCart(){
     }
 }
 
-/* Add item to cart. If exists, increment quantity. */
+// ADICIONA ITEM AO CARRINHO CASO JA TENHA ALGUM ITEM
 function addToCart(item){
     const cart = getCart();
     const existing = cart.find(c=>c.id===item.id);
@@ -38,13 +38,13 @@ function addToCart(item){
     }
     saveCart(cart);
     
-    // Atualiza a tabela do carrinho se estivermos na página do carrinho
+    // ATUALIZA A TABELA DO CARRINHO ENQUANTO NA PAGINA
     if (document.getElementById('cart-items')) {
         renderCart(); 
     }
 }
 
-/* Remove an item from cart */
+// REMOÇAO DE ITENS DO CARRINHO
 function removeFromCart(id){
     let cart = getCart();
     cart = cart.filter(c=>c.id !== id);
@@ -52,14 +52,14 @@ function removeFromCart(id){
     renderCart();
 }
 
-/* Update quantity for an item */
+// ATUALIZAÇAO DE QUANTIDADES NO CARRINHO
 function updateQuantity(id, qty){
     const cart = getCart();
     const item = cart.find(c=>c.id===id);
     if(item){
         item.qty = qty;
         if(item.qty <= 0){
-            // remove if zero or less
+            // REMOVE NO CASO DE ITENS = 0
             const filtered = cart.filter(c=>c.id!==id);
             saveCart(filtered);
         } else {
@@ -69,20 +69,20 @@ function updateQuantity(id, qty){
     renderCart(); 
 }
 
-/* Calculate subtotal price (Total of items only) */
+// CALCULA O SUBTOTAL DA COMPRA
 function calculateSubtotal(){
     const cart = getCart();
     return cart.reduce((s,it)=>s + (it.price * it.qty), 0);
 }
 
-/* Calculate all fees and grand total */
+// CALCULA ENCARGOS E TAXAS
 function calculateGrandTotal(){
     const subtotal = calculateSubtotal();
     
     // 1. Discount (Fixed at 0 for this minimal example)
     const discount = 0.00; 
 
-    // 2. Shipping
+    // PREÇO PARA ENVIO
     let shippingCost = 0.00;
     const selectedShippingRadio = document.querySelector('input[name="shipping"]:checked');
     
@@ -94,7 +94,7 @@ function calculateGrandTotal(){
         shippingCost = SHIPPING_EXPRESS_COST; 
     }
 
-    // Aplicar Free Shipping Logic
+    // APLICAR FRETE GRÁTIS PARA COMPRAS ACIMA DE 100
     let isFreeShippingApplied = false;
     
     // Apenas a opção 'Express Delivery' é elegível para o frete grátis se o subtotal for atingido.
@@ -103,10 +103,10 @@ function calculateGrandTotal(){
         isFreeShippingApplied = true;
     }
     
-    // 3. Grand Total
+    // CALCULO DO VALOR TOTAL DA COMPRA
     const grandTotal = subtotal - discount + shippingCost;
 
-    /*return*/ const result = {
+    const result = {
         subtotal,
         discount,
         shippingCost,

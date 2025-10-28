@@ -1,0 +1,67 @@
+ /* Aesthetic Adjustments for the Catalog */
+    .product-item {
+        transition: transform 0.3s ease;
+    }
+    .product-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* --- 1. FORÇA O FORMATO VERTICAL (RETRATO) --- */
+    .product-image-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: auto;  /* Largura MAIS ESTREITA para forçar o retrato */
+        margin: 0 auto; /* Centraliza a caixa da imagem */
+    }
+
+    .product-image {
+        transition: transform 0.5s ease;
+        height: 100%;
+        width: 100%;
+        /* 'cover' preenche a caixa vertical, cortando as laterais */
+        object-fit: cover; 
+    }
+
+    .product-item:hover .product-image {
+        transform: scale(1.05);
+    }
+
+    .sizes-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    
+    opacity: 0; /* Começa escondido */
+    transform: translateY(10px); /* Começa ligeiramente para baixo */
+    transition: all 0.25s ease-out;
+    pointer-events: none; /* Não "rouba" o clique da imagem */
+}
+
+/* O Efeito: Ao passar o rato no item do produto... */
+.product-item:hover .sizes-overlay {
+    opacity: 1; /* ...mostra o overlay */
+    transform: translateY(0); /* ...desliza para a posição correta */
+}
+
+/* Estilo para as caixas de tamanho */
+.size-box {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 30px; /* Ajustado para centrar */
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    font-size: 0.9em;
+    font-weight: 500;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer; /* Dá a sensação de que é clicável */
+}
