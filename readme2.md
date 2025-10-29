@@ -26,9 +26,7 @@ Shopping Cart Management: A dedicated cart page where users can:
 
 See all added items, update, remove individual items and clear the entire cart;
 
-Live Order Summary: A cart summary module that automatically recalculates the subtotal, shipping costs, and grand total as the cart changes.
-
-Persistent Cart: The shopping cart contents are saved in localStorage, so items are not lost when the user refreshes the page or closes the browser.
+(((ADICIONAR ALGO SOBRE CONTATOS E CHECKOUT)
 
 ## 🛠️ Technology Stack
 
@@ -55,22 +53,16 @@ cd WEB-LojaRoupas
 
 ## ✨ Authors
 
-Ivany Pinheiro
+* <strong>Ivany Pinheiro</strong><br>
+    <a href="#" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" /></a> 
+    <a href="https://github.com/pin3dev" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
 
-<a href="" target="_blank">LinkedIn</a>
+* <strong>Rui Costa</strong><br>
+    <a href="#" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" /></a>
+    <a href="https://github.com/ruifgcosta" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
 
-<a href="https://github.com/pin3dev" target="_blank">GitHub</a>
-
-Rui Costa
-
-<a href="" target="_blank">LinkedIn</a>
-
-<a href="https://github.com/ruifgcosta" target="_blank">GitHub</a>
-
-Thais Lira
-
-<a href="https://www.linkedin.com/in/thaisrioss/" target="_blank">LinkedIn</a>
-
-<a href="https://github.com/thaisliira" target="_blank">Github</a>
-
+* <strong>Thais Lira</strong><br>
+    <a href="https://www.linkedin.com/in/thaisrioss/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" /></a>
+    <a href="https://github.com/thaisliira" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
+    
 ## 💻 DEMO SITE
