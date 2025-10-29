@@ -26,9 +26,7 @@ Shopping Cart Management: A dedicated cart page where users can:
 
 See all added items, update, remove individual items and clear the entire cart;
 
-Live Order Summary: A cart summary module that automatically recalculates the subtotal, shipping costs, and grand total as the cart changes.
-
-Persistent Cart: The shopping cart contents are saved in localStorage, so items are not lost when the user refreshes the page or closes the browser.
+(((ADICIONAR ALGO SOBRE CONTATOS E CHECKOUT)
 
 ## 🛠️ Technology Stack
 
