@@ -55,11 +55,11 @@ function renderOrderSummary() {
       <span>Subtotal</span><span>€ ${totals.subtotal.toFixed(2)}</span>
     </div>
     <div class="d-flex justify-content-between mb-1">
-      <span>Envio</span><span>€ ${totals.shippingCost.toFixed(2)}</span>
+      <span>Shipping</span><span>€ ${totals.shippingCost.toFixed(2)}</span>
     </div>
     <hr>
     <div class="d-flex justify-content-between fw-bold">
-      <span>Total</span><span>€ ${totals.grandTotal.toFixed(2)}</span>
+      <span>Total (tax included)</span><span>€ ${totals.grandTotal.toFixed(2)}</span>
     </div>
   `;
 
