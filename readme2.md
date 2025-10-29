@@ -17,71 +17,60 @@ The primary goal of this project is to build a functional, beautiful and mobile-
 
 ✔ Using Bootstrap 5 for a modern responsive layout, components (like navbars and modals) and utility classes.
 
-## ✨ Key Features
-Responsive Product Catalogue: A clean grid layout to browse all available products.
+### ✨ Key Features
+Responsive Product Catalogue: A clean grid layout to browse all available products;
 
-Dynamic "Add to Cart": Users can add items to the cart directly from the catalogue page.
+Dynamic "Add to Cart": Users can add items to the cart directly from the catalogue page;
 
 Shopping Cart Management: A dedicated cart page where users can:
 
-See all added items.
-
-Update item quantities.
-
-Remove individual items.
-
-Clear the entire cart.
+See all added items, update, remove individual items and clear the entire cart;
 
 Live Order Summary: A cart summary module that automatically recalculates the subtotal, shipping costs, and grand total as the cart changes.
 
 Persistent Cart: The shopping cart contents are saved in localStorage, so items are not lost when the user refreshes the page or closes the browser.
 
-Mobile-First Design: The entire site is fully responsive and optimized for desktop, tablet, and mobile viewing.
-
 ## 🛠️ Technology Stack
-HTML5: Semantically structured markup.
 
-CSS3: Custom styling for branding, product cards, and layout adjustments (style.css, catalogue.css).
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
+![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
 
-JavaScript (ES6+): Core application logic, cart management, DOM manipulation, and event handling (cart.js).
-
-Bootstrap 5: Used for the responsive grid system, navbar, buttons, cards, and utility classes.
-
-Bootstrap Icons: Used for icons throughout the application (cart, payment methods, etc.).
-
-##🚀 Getting Started
+## 🚀 Getting Started
 To run this project locally, no special build steps are required. Simply clone the repository and open the .html files in your browser.
 
 1. Clone the Repository
 
 ```bash 
-git clone https://github.com/your-username/raw-line-repo.git
+git clone https://github.com/your-username/WEB-LojaRoupas.git
 ```
 Navigate to the project directory
 
 ```bash 
-cd raw-line-repo
-Open the index.html or catalog.html file in your preferred web browser.
+cd WEB-LojaRoupas
 ``` 
+
+2. Open the index.html or catalog.html file in your preferred web browser.
+
 
 ## ✨ Authors
 
 Ivany Pinheiro
 
-LinkedIn: https://www.linkedin.com/in/your-username/
+<a href="" target="_blank">LinkedIn</a>
 
-GitHub: https://github.com/pin3dev
+<a href="https://github.com/pin3dev" target="_blank">GitHub</a>
 
 Rui Costa
 
-LinkedIn: https://www.linkedin.com/in/your-username/
+<a href="" target="_blank">LinkedIn</a>
 
-GitHub: https://github.com/ruifgcosta
+<a href="https://github.com/ruifgcosta" target="_blank">GitHub</a>
 
 Thais Lira
 
-LinkedIn: https://www.linkedin.com/in/your-username/
+<a href="https://www.linkedin.com/in/thaisrioss/" target="_blank">LinkedIn</a>
 
-GitHub: https://github.com/thaisliira
+<a href="https://github.com/thaisliira" target="_blank">Github</a>
 
 ## 💻 DEMO SITE
