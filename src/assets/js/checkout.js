@@ -21,7 +21,14 @@ function goToStep(stepIndex) {
     });
 
     if (!isValid) {
-      currentForm.reportValidity(); // Exibe mensagem padrão do navegador
+        console.warn("🚫 Campo inválido! Travando avanço...");
+      requiredInputs.forEach(input => {
+        if (!input.checkValidity()) console.log("❌ Inválido:", input);
+      });
+        if (requiredInputs[0]) {
+        currentForm.reportValidity(); // Exibe mensagem padrão do navegador
+        }
+
       return; // 🔒 Impede o avanço
     }
 
@@ -58,31 +65,31 @@ let checkoutData = {
 function saveStepData(stepIndex) {
   if (stepIndex === 0) { // Etapa 1: Information
     checkoutData.information = {
-      name: document.querySelector('#step-1 input[type="text"]').value,
-      email: document.querySelector('#step-1 input[type="email"]').value,
-      phone: document.querySelector('#step-1 input[type="tel"]').value,
+      name: document.getElementById('full-name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
     };
   }
 
   if (stepIndex === 1) { // Etapa 2: Shipping
     const inputs = document.querySelectorAll('#step-2 input');
     checkoutData.shipping = {
-      street: inputs[0].value,
-      apt: inputs[1].value,
-      city: inputs[2].value,
-      state: inputs[3].value,
-      zip: inputs[4].value,
-      country: inputs[5].value,
+      street: document.getElementById('address')?.value || '',
+      apt: document.getElementById('apt')?.value || '',
+      city: document.getElementById('city')?.value || '',
+      state: document.getElementById('state')?.value || '',
+      zip: document.getElementById('zip')?.value || '',
+      country: document.getElementById('conutry')?.value || '',
     };
   }
 
   if (stepIndex === 2) { // Etapa 3: Payment
     const inputs = document.querySelectorAll('#step-3 input');
     checkoutData.payment = {
-      cardNumber: inputs[0].value,
-      expiry: inputs[1].value,
-      cvv: inputs[2].value,
-      cardName: inputs[3].value,
+      cardNumber: document.getElementById('cardnumb')?.value || '',
+      expiry: document.getElementById('expiry')?.value || '',
+      cvv: document.getElementById('cvv')?.value || '',
+      cardName: document.getElementById('cardname')?.value || '',
     };
   }
 }
@@ -194,6 +201,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   checkCart();
   window.addEventListener('storage', checkCart);
+
+
+
+
+  document.querySelectorAll('input[required], textarea[required], select[required]').forEach(input => {
+    input.addEventListener('input', () => {
+      input.classList.toggle('is-invalid', !input.checkValidity());
+    });
+  });
+
 });
 
 
