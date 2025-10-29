@@ -37,8 +37,8 @@ footer {
 }
 
 .contact-section .form-control:focus {
-  border-color: #035f61;
-  box-shadow: 0 0 0 0.2rem rgba(0, 180, 182, 0.25);
+  border-color: #035f61 !important;;
+  box-shadow: 0 0 0 0.2rem rgba(0, 180, 182, 0.25) !important;
 }
 
 .contact-section .btn-primary {
