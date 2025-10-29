@@ -61,7 +61,9 @@ Ivany Pinheiro
   <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
 </a>
 
-<a href="https://github.com/pin3dev" target="_blank">GitHub</a>
+<a href="https://github.com/pin3dev" target="_blank">
+<img src= "https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
 
 Rui Costa
 
@@ -69,7 +71,9 @@ Rui Costa
   <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
 </a>
 
-<a href="https://github.com/ruifgcosta" target="_blank">GitHub</a>
+<a href="https://github.com/ruifgcosta" target="_blank">
+<img src= "https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
 
 Thais Lira
 
@@ -77,6 +81,8 @@ Thais Lira
   <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
 </a>
 
-<a href="https://github.com/thaisliira" target="_blank">Github</a>
+<a href="https://github.com/thaisliira" target="_blank">
+<img src= "https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
 
 ## 💻 DEMO SITE
