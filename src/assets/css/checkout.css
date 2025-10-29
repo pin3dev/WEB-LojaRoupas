@@ -40,6 +40,12 @@ footer {
   box-shadow: 0 0 0 0.2rem rgba(0, 180, 182, 0.25);
 }
 
+/* Campos inválidos: borda + sombra vermelha */
+.form-control.is-invalid {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
 /* ==== CHECKOUT STEPS ==== */
 /* .checkout-steps {
   position: relative;
