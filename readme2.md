@@ -49,39 +49,41 @@ Bootstrap 5: Used for the responsive grid system, navbar, buttons, cards, and ut
 
 Bootstrap Icons: Used for icons throughout the application (cart, payment methods, etc.).
 
-##🚀 Getting Started
+## 🚀 Getting Started
 To run this project locally, no special build steps are required. Simply clone the repository and open the .html files in your browser.
 
 1. Clone the Repository
 
 ```bash 
-git clone https://github.com/your-username/raw-line-repo.git
+git clone https://github.com/your-username/WEB-LojaRoupas.git
 ```
 Navigate to the project directory
 
 ```bash 
-cd raw-line-repo
-Open the index.html or catalog.html file in your preferred web browser.
+cd WEB-LojaRoupas
 ``` 
+
+2. Open the index.html or catalog.html file in your preferred web browser.
+
 
 ## ✨ Authors
 
 Ivany Pinheiro
 
-LinkedIn: https://www.linkedin.com/in/your-username/
+<a href="" target="_blank">LinkedIn</a>
 
-GitHub: https://github.com/pin3dev
+<a href="https://github.com/pin3dev" target="_blank">GitHub</a>
 
 Rui Costa
 
-LinkedIn: https://www.linkedin.com/in/your-username/
+<a href="" target="_blank">LinkedIn</a>
 
-GitHub: https://github.com/ruifgcosta
+<a href="https://github.com/ruifgcosta" target="_blank">GitHub</a>
 
 Thais Lira
 
-LinkedIn: https://www.linkedin.com/in/your-username/
+<a href="https://www.linkedin.com/in/thaisrioss/" target="_blank">LinkedIn</a>
 
-GitHub: https://github.com/thaisliira
+<a href="https://github.com/thaisliira" target="_blank">Github</a>
 
 ## 💻 DEMO SITE
