@@ -30,7 +30,7 @@ body {
 }
 
 .navbar-brand {
-  color: #035f61; !important;
+  color: #035f61 !important;
   font-weight: 600;
 }
 
@@ -1641,7 +1641,6 @@ body {
   color: #ffffff; 
 }
 
-/
 @media (max-width: 991.98px) { 
   .footer-bottom .copyright,
   .footer-bottom .credits {
