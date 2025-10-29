@@ -57,19 +57,25 @@ cd WEB-LojaRoupas
 
 Ivany Pinheiro
 
-<a href="" target="_blank">LinkedIn</a>
+<a href="">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
+</a>
 
 <a href="https://github.com/pin3dev" target="_blank">GitHub</a>
 
 Rui Costa
 
-<a href="" target="_blank">LinkedIn</a>
+<a href="">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
+</a>
 
 <a href="https://github.com/ruifgcosta" target="_blank">GitHub</a>
 
 Thais Lira
 
-<a href="https://www.linkedin.com/in/thaisrioss/" target="_blank">LinkedIn</a>
+<a href="https://www.linkedin.com/in/thaisrioss/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
+</a>
 
 <a href="https://github.com/thaisliira" target="_blank">Github</a>
 
