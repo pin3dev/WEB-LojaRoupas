@@ -28,6 +28,17 @@ footer {
 }
 
 
+.checkout-forms .form-control {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.checkout-forms .form-control:focus {
+  border-color: #035f61;
+  box-shadow: 0 0 0 0.2rem rgba(0, 180, 182, 0.25);
+}
 
 /* ==== CHECKOUT STEPS ==== */
 /* .checkout-steps {
