@@ -148,7 +148,8 @@
     </div>
 
     <div>
-        <button class="btn btn-outline-danger" id="clear-cart-btn" onclick="if(typeof clearCart === 'function') clearCart()">Clear Cart</button>
+        <!-- <button class="btn btn-outline-danger" id="clear-cart-btn" onclick="if(typeof clearCart === 'function') clearCart()">Clear Cart</button> -->
+        <button class="btn btn-outline-danger" id="clear-cart-btn">Clear Cart</button>
     </div>
 </div>
         </div>
@@ -218,6 +219,31 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Modal de Confirmação para Clear Cart -->
+    <div class="modal fade" id="clearCartModal" tabindex="-1" aria-labelledby="clearCartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="clearCartModalLabel">Clear Shopping Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="text-center">
+            <i class="bi bi-exclamation-triangle-fill text-warning" style="font-size: 3rem;"></i>
+            <h4 class="mt-3">Are you sure?</h4>
+            <p>This action will remove all items from your shopping cart. This cannot be undone.</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-danger" id="confirm-clear-cart">Clear Cart</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
 </main>
 
 <!-- GRID COM PRODUTOS PARA ADICIONAR AO CARRINHO -->
