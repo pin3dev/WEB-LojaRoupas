@@ -20,10 +20,22 @@ function saveCart(cart){
 
 // APAGAR TODOS OS ITENS DO CARRINHO COM MSG DE ALERTA
 function clearCart(){
-    if (confirm("Are you sure you want to clear your entire cart?")) {
-        saveCart([]);
-        renderCart();
-    }
+    // if (confirm("Are you sure you want to clear your entire cart?")) {
+    //     saveCart([]);
+    //     renderCart();
+    // }
+    const clearCartModal = new bootstrap.Modal(document.getElementById('clearCartModal'));
+    clearCartModal.show();
+}
+
+// FUNÇÃO PARA LIMPAR O CARRINHO APÓS CONFIRMAÇÃO
+function confirmClearCart(){
+    saveCart([]);
+    renderCart();
+    
+    // Fechar o modal
+    const clearCartModal = bootstrap.Modal.getInstance(document.getElementById('clearCartModal'));
+    clearCartModal.hide();
 }
 
 // ADICIONA ITEM AO CARRINHO 
@@ -272,5 +284,12 @@ document.addEventListener('DOMContentLoaded', function(){
         // ADICIONA BOTAO DE LIMPAR CARRINHO
         const clearCartBtn = document.getElementById('clear-cart-btn');
         if(clearCartBtn) clearCartBtn.addEventListener('click', clearCart);
+
+
+        // CONFIGURAR BOTÃO DE CONFIRMAÇÃO NO MODAL
+        const confirmClearBtn = document.getElementById('confirm-clear-cart');
+        if(confirmClearBtn) {
+            confirmClearBtn.addEventListener('click', confirmClearCart);
+        }
     }
 });

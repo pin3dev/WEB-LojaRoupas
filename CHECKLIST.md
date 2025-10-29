@@ -10,8 +10,8 @@
 
 ### IVA
 
-- checkout.html  (footer)
-- contact.html  (footer)
+- checkout.html  (cor botoes)
+- contact.html  (cor botoes)
 
 ### RUI
 

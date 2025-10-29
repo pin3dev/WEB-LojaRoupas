@@ -22,7 +22,7 @@ footer {
   justify-content: center;
   width: 32px;
   height: 32px;
-  background-color: #00b4b6;
+  background-color: #035f61;
   border-radius: 50%;
   color: white;
   flex-shrink: 0;
@@ -37,13 +37,13 @@ footer {
 }
 
 .contact-section .form-control:focus {
-  border-color: #00b4b6;
+  border-color: #035f61;
   box-shadow: 0 0 0 0.2rem rgba(0, 180, 182, 0.25);
 }
 
 .contact-section .btn-primary {
-  background-color: #00b4b6;
-  border-color: #00b4b6;
+  background-color: #035f61;
+  border-color: #035f61;
   padding: 0.75rem 2rem;
   font-weight: 500;
   border-radius: 8px;
