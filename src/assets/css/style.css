@@ -444,8 +444,8 @@ body {
 }
 
 .btn-primary {
-  background-color: #00b4b6;
-  border-color: #00b4b6;
+  background-color: #035f61;
+  border-color: #035f61;
 }
 
 .btn-primary:hover {
@@ -455,12 +455,12 @@ body {
 }
 
 .btn-outline-primary {
-  color: #00b4b6;
-  border-color: #00b4b6;
+  color: #035f61;
+  border-color: #035f61;
 }
 
 .btn-outline-primary:hover {
-  background-color: #00b4b6;
+  background-color: #035f61;
   color: #fff;
   transform: scale(1.03);
 }
@@ -2693,7 +2693,7 @@ h4, h3, h6 {
 }
 
 .context-section h2 {
-  color: #00b4b6;
+  color: #035f61;
   font-weight: 600;
   font-size: 2rem;
 }
@@ -2736,7 +2736,7 @@ h4, h3, h6 {
 }
 
 .store-info .info-content strong {
-  color: #00b4b6;
+  color: #035f61;
   font-weight: 600;
   display: block;
   margin-bottom: 0.25rem;
