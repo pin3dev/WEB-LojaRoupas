@@ -1,9 +1,9 @@
 // PRODUTOS DO CATALOGO
 const products = [
-    {"id":"p1","name":"Basic White T-shirt","category":"man-shirt","price":19.90,"image":"assets/img/product/product-m-5.webp","desc":"Regular fit and light cotton"},
+    {"id":"p1","name":"Basic White T-shirt","category":"man-shirt","price":119.90,"image":"assets/img/product/product-m-5.webp","desc":"Regular fit and light cotton"},
     {"id":"p2","name":"Floral Dress","category":"woman-dress","price":49.90,"image":"assets/img/product/product-f-1.webp","desc":"Fluid and soft"},
-    {"id":"p3","name":"Polo Blue Lagoon","category":"man-shirt","price":39.90,"image":"assets/img/product/product-m-1.webp","desc":"Urban comfort"},
-    {"id":"p4","name":"Polo Caramel","category":"man-shirt","price":39.90,"image":"assets/img/product/product-m-2.webp","desc":"Elegant and comfortable"},
+    {"id":"p3","name":"Polo Blue Lagoon","category":"man-shirt","price":38.90,"image":"assets/img/product/product-m-1.webp","desc":"Urban comfort"},
+    {"id":"p4","name":"Polo Caramel","category":"man-shirt","price":30.90,"image":"assets/img/product/product-m-2.webp","desc":"Elegant and comfortable"},
     {"id":"p5","name":"Summer Coral Dress","category":"woman-dress","price":49.90,"image":"assets/img/product/product-f-3.webp","desc":"Light and flowy delicate print"},
     {"id":"p6","name":"Pink Linen Blouse","category":"woman-blouse","price":34.50,"image":"assets/img/product/product-f-6.webp","desc":"Ideal for summer, 100% linen"},
     {"id":"p7","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"assets/img/product/product-b-1.webp","desc":"Soft warmth for the little ones"},
@@ -12,15 +12,15 @@ const products = [
     {"id":"p10","name":"Lace Strap Blouse","category":"woman-blouse","price":22.50,"image":"assets/img/product/product-f-7.webp", "desc":"100% cotton"},
     {"id":"p11","name":"Black Slim Dress","category":"woman-dress","price":22.50,"image":"assets/img/product/product-f-4.webp","desc":"Lace detailing light fabric"},
     {"id":"p12","name":"Pink Lady Bag","category":"woman","price":22.50,"image":"assets/img/product/product-1.png","desc":"Casual chic"},
-    {"id":"p13","name":"Watch Dark Green","category":"man-acessorie","price":22.50,"image":"assets/img/product/product-11.png","desc":"Ajustable with snake skin "},
-    {"id":"p14","name":"Jeans Chic blouse","category":"woman-blouse","price":22.50,"image":"assets/img/product/product-f-8.webp","desc":"Warm and soft"},
+    {"id":"p13","name":"Watch Dark Green","category":"man-acessorie","price":89.00,"image":"assets/img/product/product-11.png","desc":"Ajustable with snake skin "},
+    {"id":"p14","name":"Jeans Chic blouse","category":"woman-blouse","price":89.90,"image":"assets/img/product/product-f-8.webp","desc":"Warm and soft"},
     {"id":"p15","name":"Urban Cargo Blue Pants","category":"man-pant","price":55.00,"image":"assets/img/product/product-m-7.webp", "desc":"Elastic adjustable"},
-    {"id":"p16","name":"White Summer Shirt","category":"woman-blouse","price":55.00,"image":"assets/img/product/product-f-5.webp", "desc":"Fresh and comfy"},
+    {"id":"p16","name":"White Summer Shirt","category":"woman-blouse","price":59.99,"image":"assets/img/product/product-f-5.webp", "desc":"Fresh and comfy"},
     {"id":"p17","name":"Warm Children's Coat (Boy)","category":"children-boy","price":29.90,"image":"assets/img/product/product-b-2.webp","desc":"Soft warmth for the little ones"},
-    {"id":"p18","name":"Warm Children's Coat (Girl)","category":"children-girl","price":29.90,"image":"assets/img/product/product-g-1.webp","desc":"Soft warmth for the little ones"},
+    {"id":"p18","name":"Warm Children's Coat (Girl)","category":"children-girl","price":35.90,"image":"assets/img/product/product-g-1.webp","desc":"Soft warmth for the little ones"},
     {"id":"p19","name":"Queen Gold Neckless","category":"woman","price":290.90,"image":"assets/img/product/product-3.png","desc":"Gold 24k"},
-    {"id":"p20","name":"Earing Queen Red","category":"woman","price":48.90,"image":"assets/img/product/product-5.png","desc":"Rubi and gold plated"},
-    {"id":"p21","name":"Black Oversize Pant","category":"woman-pant","price":48.90,"image":"assets/img/product/product-f-9.webp","desc":"Flexible and durable with adjustable waist"},
+    {"id":"p20","name":"Earring Queen Red","category":"woman","price":48.90,"image":"assets/img/product/product-5.png","desc":"Rubi and gold plated"},
+    {"id":"p21","name":"Black Oversize Pant","category":"woman-pant","price":40.90,"image":"assets/img/product/product-f-9.webp","desc":"Flexible and durable with adjustable waist"},
 ];
 
 // FUNCAO PARA APARECEREM OS PRODUTOS QUE REMETEM A SUAS CATEGORIAS E SUBCATEGORIAS
