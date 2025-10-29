@@ -1574,57 +1574,84 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.footer .footer-bottom {
-  padding: 25px 0;
+.footer-bottom {
+  background-color: #035f61; 
+  color: #ffffff;          
+  padding: 15px 0;      
+  font-size: 15px;         
 }
 
-.footer .footer-bottom .payment-methods .payment-icons {
-  display: flex;
-  gap: 12px;
+
+.footer-bottom .copyright .sitename {
+  color: #ffffff;
+  font-weight: 600;
 }
 
-.footer .footer-bottom .payment-methods .payment-icons i {
-  font-size: 22px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  transition: color 0.3s ease;
+.footer-bottom .credits {
+  font-size: 12px; 
+  color: #ffffff; 
 }
 
-.footer .footer-bottom .payment-methods .payment-icons i:hover {
-  color: var(--accent-color);
+.footer-bottom .credits a,
+.footer-bottom .legal-links a {
+  color: #f8f9fa; 
+  text-decoration: none;
+  transition: all 0.3s ease; 
 }
 
-.footer .footer-bottom .copyright p {
-  margin-bottom: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+.footer-bottom .credits a:hover,
+.footer-bottom .legal-links a:hover {
+  color: #ffffff70; 
+  text-decoration: underline;
 }
 
-.footer .footer-bottom .copyright p strong {
-  color: color-mix(in srgb, var(--default-color), transparent 10%);
+.footer-bottom .legal-links {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
 }
 
-.footer .footer-bottom .credits {
-  font-size: 13px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
+.footer-bottom .legal-links a {
+  margin-left: 15px;
+  position: relative;
 }
 
-.footer .footer-bottom .credits a {
-  color: var(--accent-color);
+
+.footer-bottom .legal-links a + a::before {
+  content: "|";
+  color: #bbc3ccbe; /* Cor do separador */
+  padding-right: 15px;
+  display: inline-block;
 }
 
-.footer .footer-bottom .legal-links {
+.footer-bottom .payment-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px; 
+  justify-content: center; 
 }
 
-.footer .footer-bottom .legal-links a {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 13px;
+.footer-bottom .payment-icons i {
+  font-size: 25px; 
+  color: #d0d6dbda; 
   transition: color 0.3s ease;
 }
 
-.footer .footer-bottom .legal-links a:hover {
-  color: var(--accent-color);
+.footer-bottom .payment-icons i:hover {
+  color: #ffffff; 
+}
+
+/
+@media (max-width: 991.98px) { 
+  .footer-bottom .copyright,
+  .footer-bottom .credits {
+    text-align: center;
+  }
+
+  .footer-bottom .legal-links,
+  .footer-bottom .payment-icons {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -2642,8 +2669,8 @@ body {
 }
 
 .list-group-item.active {
-  background-color: #00b4b6;
-  border-color: #00b4b6;
+  background-color: #035f61; 
+  border-color: #035f61; 
 }
 
 .qty-input {
