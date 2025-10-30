@@ -73,7 +73,7 @@ cd WEB-LojaRoupas
 ## 💻 Demo Site
 
 <div align="left">
-<img src="https://github.com/pin3dev/WEB-LojaRoupas/blob/thais/Rawline.gif">
+<img src="screenshots/Rawline.gif">
 </div>
 
 ### Home Page
