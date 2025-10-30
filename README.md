@@ -58,6 +58,12 @@ cd WEB-LojaRoupas
 2. Open the index.html or catalog.html file in your preferred web browser.
 
 
+## 🚀 Deploy
+
+The page is hosted via GitHub Pages:
+👉 https://pin3dev.github.io/WEB-LojaRoupas/
+
+
 ## ✨ Authors
 
 * <strong>Ivany Pinheiro</strong><br>
