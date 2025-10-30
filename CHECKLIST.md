@@ -16,10 +16,9 @@
 ### RUI
 
 - index.html  
-- cart.html  
 - product_page.html  
 
 ### THAIS
 
 - clothes_categories.html  
-- product_page.html  
+- cart.html  
