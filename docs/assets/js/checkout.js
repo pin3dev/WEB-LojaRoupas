@@ -1,12 +1,16 @@
+/**
+ * @param {*} stepIndex - Índice da etapa para a qual navegar (0-based).
+ * @description Navega para a etapa especificada do checkout, validando os campos obrigatórios da etapa atual antes de avançar.
+ */
 function goToStep(stepIndex) {
   const steps = document.querySelectorAll(".checkout-steps .step");
   const forms = document.querySelectorAll(".checkout-step");
 
-  // 🔹 Identifica a etapa atual (a que está visível no momento)
+  // Identifica a etapa atual, visivel no momento
   const currentStepIndex = Array.from(forms).findIndex(f => !f.classList.contains("d-none"));
   const currentForm = forms[currentStepIndex];
 
-  // 🔹 Se o usuário está tentando avançar, validar os campos obrigatórios
+  // Se o user tenta avançar, valida os campos obrigatórios
   if (stepIndex > currentStepIndex) {
     const requiredInputs = currentForm.querySelectorAll("input[required], select[required], textarea[required]");
     let isValid = true;
@@ -21,47 +25,49 @@ function goToStep(stepIndex) {
     });
 
     if (!isValid) {
-        console.warn("🚫 Campo inválido! Travando avanço...");
+      // console.warn("🚫 Campo inválido! Travando avanço...");
       requiredInputs.forEach(input => {
         if (!input.checkValidity()) console.log("❌ Inválido:", input);
       });
-        if (requiredInputs[0]) {
-        currentForm.reportValidity(); // Exibe mensagem padrão do navegador
-        }
-
-      return; // 🔒 Impede o avanço
+      if (requiredInputs[0]) {
+        currentForm.reportValidity(); // Exibe mensagem no navegador
+      }
+      return; // Impede o avanço
     }
-
-    // 🔹 Se for válido, salva os dados da etapa atual
+    // Se for válido, salva os dados da etapa atual
     saveStepData(currentStepIndex);
   }
-
-  // 🔹 Atualiza barra de progresso
+  // Atualiza barra de progresso
   steps.forEach((step, i) => {
     step.classList.remove("active", "completed");
     if (i < stepIndex) step.classList.add("completed");
     if (i === stepIndex) step.classList.add("active");
   });
-
-  // 🔹 Mostra a etapa correspondente e esconde as outras
+  // Mostra a etapa correspondente e esconde as outras
   forms.forEach((form, i) => {
     form.classList.toggle("d-none", i !== stepIndex);
   });
-
-  // 🔹 Se for a etapa de Review, preenche o resumo
+  // Se for a etapa de Review, preenche o resumo
   if (stepIndex === 3) fillReviewStep();
 }
 
 
 
-// Armazena todos os dados do checkout
+/**
+ * @description Objeto para armazenar os dados coletados em cada etapa do checkout.
+ */
 let checkoutData = {
   information: {},
   shipping: {},
   payment: {}
 };
 
-// Função para salvar os dados atuais de uma etapa
+
+
+/**
+ * @param {*} stepIndex 
+ * @description Salva os dados inseridos na etapa especificada do checkout no objeto checkoutData.
+ */
 function saveStepData(stepIndex) {
   if (stepIndex === 0) { // Etapa 1: Information
     checkoutData.information = {
@@ -95,16 +101,24 @@ function saveStepData(stepIndex) {
 }
 
 
+/**
+ * @description Preenche a etapa de revisão com os dados coletados nas etapas anteriores.
+ */
 function fillReviewStep() {
   const reviewContainer = document.querySelector('#step-4');
   if (!reviewContainer) return;
 
-  const { information, shipping, payment } = checkoutData;
+  const {
+    information,
+    shipping,
+    payment
+  } = checkoutData;
 
-  const maskedCard = payment.cardNumber
-    ? "**** **** **** " + payment.cardNumber.slice(-4)
-    : "—";
+  const maskedCard = payment.cardNumber ?
+    "**** **** **** " + payment.cardNumber.slice(-4) :
+    "—";
 
+  // Monta o HTML de revisão de dados, usando os dados coletados
   const html = `
     <h6>Review Your Order</h6>
     <p>Check your details before confirming:</p>
@@ -135,48 +149,42 @@ function fillReviewStep() {
       <button class="btn btn-success" onclick="showOrderModal()">Place Order</button>
     </div>
   `;
-
-  
   reviewContainer.innerHTML = html;
 }
 
+
+
+/**
+ * @description Exibe o modal de confirmação do pedido e finaliza o pedido.
+ */
 function showOrderModal() {
   const orderModal = new bootstrap.Modal(document.getElementById('orderConfirmationModal'));
   orderModal.show();
   finalizeOrder();
 }
 
+/**
+ * @description Finaliza o pedido, limpando o carrinho e redirecionando o usuário.
+ */
 function finalizeOrder() {
-  // remove cart and show success UI
   localStorage.removeItem('cart');
-  // showSuccessFlag('Pedido finalizado com sucesso! Obrigado pela compra.');
-  // wait a moment so user sees the message, then redirect
   setTimeout(() => {
     window.location.href = "index.html";
   }, 1700);
 }
 
-// Shows the floating success flag with a message, auto-hides after a timeout
-// function showSuccessFlag(message, timeout = 1500) {
-//   let el = document.getElementById('success-flag');
-//   if (!el) return;
-//   const content = el.querySelector('.success-flag__content');
-//   if (content) content.textContent = message;
-//   el.classList.add('show');
-//   // remove after timeout
-//   clearTimeout(el._hideTimer);
-//   el._hideTimer = setTimeout(() => {
-//     el.classList.remove('show');
-//   }, timeout);
-// }
 
-
-
-
+/**
+ * @description Verifica o carrinho e atualiza o botão "Continue to Shipping" na etapa 1 do checkout.
+ */
 document.addEventListener('DOMContentLoaded', () => {
   const continueBtn = document.querySelector('#step-1 button.btn-primary'); // botão da etapa 1
-  const warning = document.getElementById('empty-cart-warning');
+  const warning = document.getElementById('empty-cart-warning'); // aviso de carrinho vazio
 
+  
+  /**
+   * @description Verifica o conteúdo do carrinho e atualiza o estado do botão de continuação e o aviso de carrinho vazio.
+   */
   function checkCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -184,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
       continueBtn.disabled = true;
       continueBtn.classList.remove('btn-primary');
       continueBtn.classList.add('btn-secondary', 'disabled');
-      continueBtn.textContent = 'Cart is empty';
+      continueBtn.textContent = 'Cart is empty'; // botão desativado
       continueBtn.style.cursor = 'not-allowed';
 
       if (warning) warning.classList.remove('d-none');
@@ -192,19 +200,17 @@ document.addEventListener('DOMContentLoaded', () => {
       continueBtn.disabled = false;
       continueBtn.classList.add('btn-primary');
       continueBtn.classList.remove('btn-secondary', 'disabled');
-      continueBtn.textContent = 'Continue to Shipping';
+      continueBtn.textContent = 'Continue to Shipping'; // botão ativado
       continueBtn.style.cursor = 'pointer';
 
       if (warning) warning.classList.add('d-none');
     }
   }
 
-  checkCart();
-  window.addEventListener('storage', checkCart);
+  checkCart(); // Verifica qual botão mostrar ao carregar a página
+  window.addEventListener('storage', checkCart); // Atualiza se o carrinho mudar em outra aba
 
-
-
-
+  // Validação em tempo real dos campos obrigatórios
   document.querySelectorAll('input[required], textarea[required], select[required]').forEach(input => {
     input.addEventListener('input', () => {
       input.classList.toggle('is-invalid', !input.checkValidity());
@@ -212,9 +218,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-
-
-
-
-
-
