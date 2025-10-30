@@ -1,4 +1,10 @@
-/* ====== LAYOUT GERAL PARA FIXAR O FOOTER NO FIM ====== */
+/* ====================================================================
+                        Estilos CHECKOUT
+                        Autora: Ivany Batista
+===================================================================== */
+
+/* =========== GERAIS =========== */
+
 html,
 body {
   height: 100%;
@@ -8,37 +14,29 @@ body {
 
 main {
   flex: 1 0 auto;
-  /* ocupa o espaço disponível */
 }
 
 footer {
   flex-shrink: 0;
-  /* garante que o footer não encolha */
 }
 
-/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* =========== FAIXA TITULO =========== */
 .checkout-header {
   background: #f5f5f5 !important;
-  /* Cinza claro */
   font-family: 'Poppins', sans-serif;
   border-bottom: 1px solid #e0e0e0;
-  /* Borda sutil */
 }
 
 .checkout-header h1 {
   font-weight: 400;
-  /* Mais clean */
   font-size: 2.5rem;
-  /* Tamanho mais moderado */
   letter-spacing: 1px;
-  /* Espaçamento mais sutil */
   color: #666;
-  /* Cinza escuro */
   text-shadow: none;
-  /* Remove sombra para ficar mais clean */
 }
 
 
+/* =========== FORMULARIOS =========== */
 .checkout-forms .form-control {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -51,16 +49,14 @@ footer {
   box-shadow: 0 0 0 0.2rem rgba(0, 180, 182, 0.25);
 }
 
-/* Campos inválidos: borda + sombra vermelha */
+/* FORMULARIOS: Campos inválidos */
 .form-control.is-invalid {
   border-color: #dc3545 !important;
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
 }
 
-/* ==== CHECKOUT STEPS ==== */
-/* .checkout-steps {
-  position: relative;
-} */
+/* =========== CHECKOUT BARRA =========== */
+/* círculos, linhas, labels */
 
 .checkout-steps {
   display: flex;
@@ -69,7 +65,6 @@ footer {
   flex-wrap: wrap;
   gap: 8px;
 }
-
 
 .checkout-steps .step {
   text-align: center;
@@ -117,7 +112,7 @@ footer {
   font-weight: 600;
 }
 
-/* Estado completo (etapas anteriores com ✓) */
+/* Estado completo */
 .checkout-steps .completed .circle {
   background-color: var(--accent-color);
   position: relative;
@@ -140,9 +135,7 @@ footer {
 
 .checkout-steps .completed .circle {
   color: transparent;
-  /* esconde o número */
 }
-
 
 .checkout-steps .completed .label {
   color: var(--accent-color);
@@ -164,6 +157,19 @@ footer {
   overflow: hidden;
 }
 
+.checkout-step .d-flex {
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.checkout-step .d-flex .btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap;
+}
+
+/* =========== CARTAO DE SUMARIO =========== */
 #order-summary img {
   border: 1px solid #eee;
 }
@@ -176,24 +182,8 @@ footer {
   color: #777 !important;
 }
 
-.checkout-step .d-flex {
-  gap: 0.5rem;
-  /* espaço entre os botões */
-  flex-wrap: wrap;
-  /* permite quebra em telas muito estreitas */
-  align-items: center;
-}
 
-.checkout-step .d-flex .btn {
-  width: auto !important;
-  /* evita que algum estilo externo force 100% */
-  flex: 0 0 auto !important;
-  /* não deixa os botões crescerem igualmente */
-  white-space: nowrap;
-  /* evita quebra do texto do botão */
-}
-
-/* ===== RESPONSIVIDADE ===== */
+/* =========== RESPONSIVIDADE =========== */
 @media (max-width: 768px) {
 
   .checkout-step .d-flex {
@@ -214,7 +204,6 @@ footer {
 
   .checkout-steps .line {
     display: none;
-    /* remove linhas horizontais */
   }
 
   .checkout-steps .step {
@@ -225,7 +214,6 @@ footer {
     width: 100%;
     padding: 10px 12px;
     border-left: 4px solid #ddd;
-    /* linha guia */
     transition: border-color 0.3s ease, background-color 0.3s ease;
   }
 
@@ -241,63 +229,15 @@ footer {
     color: #555;
   }
 
-  /* Etapa ativa em destaque */
   .checkout-steps .active {
     border-left-color: var(--accent-color, #007bff);
     background-color: rgba(0, 255, 34, 0.05);
-    /* leve fundo */
   }
 
-  /* Etapas completas também em destaque mais suave */
   .checkout-steps .completed {
     border-left-color: var(--accent-color, #007bff);
     opacity: 0.9;
   }
-}
-
-/* ===== Success flag (floating message) ===== */
-.success-flag {
-  position: fixed;
-  right: 24px;
-  top: 24px;
-  z-index: 1080;
-  /* above bootstrap modals */
-  pointer-events: none;
-  /* let clicks through when hidden */
-  opacity: 0;
-  transform: translateY(-10px) scale(0.98);
-  transition: opacity 240ms ease, transform 240ms ease;
-}
-
-.success-flag.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto;
-}
-
-.success-flag__content {
-  background: #1e7e34;
-  /* bootstrap success dark */
-  color: #fff;
-  padding: 12px 16px;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(30, 126, 52, 0.18);
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-}
-
-@media (max-width: 576px) {
-  .success-flag {
-    right: 12px;
-    left: 12px;
-    top: 12px;
-  }
-}
-
-
-.checkout-step .d-flex {
-  gap: 0.75rem;
-  /* mais espaço entre os botões */
 }
 
 @media (max-width: 576px) {
@@ -312,6 +252,5 @@ footer {
 
   .checkout-step .d-flex .btn+.btn {
     margin-top: 0.5rem;
-    /* separa verticalmente os botões */
   }
 }
