@@ -7,7 +7,7 @@ Mobile-first, Bootstrap 5, minimal JS.
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Loja de Roupas — Início</title>
+    <title>Product Details - Raw Line Store</title>
     <!-- Bootstrap 5 CSS (CDN) -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -37,10 +37,12 @@ Mobile-first, Bootstrap 5, minimal JS.
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- Navbar with Mega Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">Clothé</a>
+    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/RL-logo2.png" alt="Raw Line Logo" height="50">
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -50,123 +52,85 @@ Mobile-first, Bootstrap 5, minimal JS.
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navMain">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Início</a>
-            </li>
+            <ul class="navbar-nav me-auto">
 
-            <!-- Mega menu -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="megaMenu"
-                role="button"
-                data-bs-toggle="dropdown"
-                >Categorias</a
-              >
-              <div
-                class="dropdown-menu p-4"
-                aria-labelledby="megaMenu"
-                style="min-width: 600px"
-              >
-                <div class="row">
-                  <div class="col-md-4">
-                    <h6 class="text-uppercase">Masculino</h6>
-                    <ul class="list-unstyled">
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=masculino"
-                          >Camisetas</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=masculino"
-                          >Calças</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=masculino"
-                          >Acessórios</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-4">
-                    <h6 class="text-uppercase">Feminino</h6>
-                    <ul class="list-unstyled">
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=feminino"
-                          >Vestidos</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=feminino"
-                          >Blusas</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=feminino"
-                          >Calças</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-4">
-                    <h6 class="text-uppercase">Infantil</h6>
-                    <ul class="list-unstyled">
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=infantil"
-                          >Meninos</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=infantil"
-                          >Meninas</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </li>
+                <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      id="megaMenu"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      >Categories</a
+                    >
+                    <div
+                      class="dropdown-menu p-4"
+                      aria-labelledby="megaMenu"
+                      style="min-width: 600px"
+                    >
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Man</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man-shirt">T-Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man-pant">Pants</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man-acessorie">Accessories</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Woman</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman-dress">Dresses</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman-blouse">Blouses</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman-pant">Pants</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Children</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=children-boy">Boys</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=children-girl">Girls</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="catalog.html">Catálogo</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contacto</a>
-            </li>
-          </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="catalog.html">Catalogue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
 
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link position-relative" href="cart.html">
-                <i class="bi bi-cart3"></i>
-                <span id="cart-count" class="badge bg-danger rounded-pill ms-1"
-                  >0</span
-                >
-              </a>
-            </li>
-          </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="cart.html">
+                        <i class="bi bi-cart3"></i>
+                        <span id="cart-count" class="badge bg-danger rounded-pill ms-1">0</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Featured products -->
     <main class="container my-5">
@@ -263,11 +227,11 @@ Mobile-first, Bootstrap 5, minimal JS.
 
                 <div class="pricing-section">
                   <div class="price-display">
-                    <span class="sale-price">$189.99</span>
-                    <span class="regular-price">$239.99</span>
+                    <span class="sale-price">€189.99</span>
+                    <span class="regular-price">€239.99</span>
                   </div>
                   <div class="savings-info">
-                    <span class="save-amount">Save $50.00</span>
+                    <span class="save-amount">Save €50.00</span>
                     <span class="discount-percent">(21% off)</span>
                   </div>
                 </div>
@@ -521,20 +485,18 @@ Mobile-first, Bootstrap 5, minimal JS.
                                   <i class="bi bi-star-fill"></i>
                                   <i class="bi bi-star-fill"></i>
                                 </div>
-                                <span class="review-date">March 28, 2024</span>
+                                <span class="review-date">March 28, 2025</span>
                               </div>
                             </div>
                           </div>
                           <h5 class="review-headline">
-                            Outstanding audio quality and comfort
+                            Outstanding quality and comfort
                           </h5>
                           <div class="review-text">
                             <p>
-                              Sed ut perspiciatis unde omnis iste natus error
-                              sit voluptatem accusantium doloremque laudantium,
-                              totam rem aperiam. Eaque ipsa quae ab illo
-                              inventore veritatis et quasi architecto beatae
-                              vitae dicta sunt explicabo.
+                              Had to buy this for my husband, and he absolutely
+                              loves it! The fabric is soft yet durable, and the fit
+                              is perfect. Highly recommended!
                             </p>
                           </div>
                           <div class="review-actions">
@@ -564,20 +526,17 @@ Mobile-first, Bootstrap 5, minimal JS.
                                   <i class="bi bi-star-fill"></i>
                                   <i class="bi bi-star"></i>
                                 </div>
-                                <span class="review-date">March 15, 2024</span>
+                                <span class="review-date">March 15, 2025</span>
                               </div>
                             </div>
                           </div>
                           <h5 class="review-headline">
-                            Great value, minor connectivity issues
+                            Great value for the price
                           </h5>
                           <div class="review-text">
                             <p>
-                              Nemo enim ipsam voluptatem quia voluptas sit
-                              aspernatur aut odit aut fugit, sed quia
-                              consequuntur magni dolores eos qui ratione
-                              voluptatem sequi nesciunt. Overall satisfied with
-                              the purchase.
+                              Perfect for everyday wear. The color options are
+                              fantastic, and the shirt holds up well after multiple washes.
                             </p>
                           </div>
                           <div class="review-actions">
@@ -608,21 +567,19 @@ Mobile-first, Bootstrap 5, minimal JS.
                                   <i class="bi bi-star-fill"></i>
                                 </div>
                                 <span class="review-date"
-                                  >February 22, 2024</span
+                                  >February 22, 2025</span
                                 >
                               </div>
                             </div>
                           </div>
                           <h5 class="review-headline">
-                            Perfect for work-from-home setup
+                            Stylish and comfortable choice
                           </h5>
                           <div class="review-text">
                             <p>
-                              At vero eos et accusamus et iusto odio dignissimos
-                              ducimus qui blanditiis praesentium voluptatum
-                              deleniti atque corrupti quos dolores et quas
-                              molestias excepturi sint occaecati cupiditate non
-                              provident.
+                              Bought this for my brother, and he can't stop
+                              raving about it! The design is sleek, and it feels
+                              great against the skin.
                             </p>
                           </div>
                           <div class="review-actions">
@@ -652,122 +609,6 @@ Mobile-first, Bootstrap 5, minimal JS.
       <!-- /Product Details Section -->
     </main>
     <footer id="footer" class="footer dark-background">
-      <div class="footer-main">
-        <div class="container">
-          <div class="row gy-4">
-            <div class="col-lg-4 col-md-6">
-              <div class="footer-widget footer-about">
-                <a href="index.html" class="logo">
-                  <a
-                    class="navbar-brand fw-bold"
-                    style="font-size: 2rem"
-                    href="index.html"
-                    >Clothé</a
-                  >
-                </a>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam in nibh vehicula, facilisis magna ut, consectetur
-                  lorem. Proin eget tortor risus.
-                </p>
-
-                <div class="social-links mt-4">
-                  <h5>Connect With Us</h5>
-                  <div class="social-icons">
-                    <a href="#" aria-label="Facebook"
-                      ><i class="bi bi-facebook"></i
-                    ></a>
-                    <a href="#" aria-label="Instagram"
-                      ><i class="bi bi-instagram"></i
-                    ></a>
-                    <a href="#" aria-label="Twitter"
-                      ><i class="bi bi-twitter-x"></i
-                    ></a>
-                    <a href="#" aria-label="TikTok"
-                      ><i class="bi bi-tiktok"></i
-                    ></a>
-                    <a href="#" aria-label="Pinterest"
-                      ><i class="bi bi-pinterest"></i
-                    ></a>
-                    <a href="#" aria-label="YouTube"
-                      ><i class="bi bi-youtube"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-6 col-sm-6">
-              <div class="footer-widget">
-                <h4>Shop</h4>
-                <ul class="footer-links">
-                  <li><a href="category.html">New Arrivals</a></li>
-                  <li><a href="category.html">Bestsellers</a></li>
-                  <li><a href="category.html">Women's Clothing</a></li>
-                  <li><a href="category.html">Men's Clothing</a></li>
-                  <li><a href="category.html">Accessories</a></li>
-                  <li><a href="category.html">Sale</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="col-lg-2 col-md-6 col-sm-6">
-              <div class="footer-widget">
-                <h4>Support</h4>
-                <ul class="footer-links">
-                  <li><a href="support.html">Help Center</a></li>
-                  <li><a href="account.html">Order Status</a></li>
-                  <li><a href="shiping-info.html">Shipping Info</a></li>
-                  <li>
-                    <a href="return-policy.html">Returns &amp; Exchanges</a>
-                  </li>
-                  <li><a href="#">Size Guide</a></li>
-                  <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <div class="footer-widget">
-                <h4>Contact Information</h4>
-                <div class="footer-contact">
-                  <div class="contact-item">
-                    <i class="bi bi-geo-alt"></i>
-                    <span>123 Fashion Street, New York, NY 10001</span>
-                  </div>
-                  <div class="contact-item">
-                    <i class="bi bi-telephone"></i>
-                    <span>+1 (555) 123-4567</span>
-                  </div>
-                  <div class="contact-item">
-                    <i class="bi bi-envelope"></i>
-                    <span>hello@example.com</span>
-                  </div>
-                  <div class="contact-item">
-                    <i class="bi bi-clock"></i>
-                    <span
-                      >Monday-Friday: 9am-6pm<br />Saturday: 10am-4pm<br />Sunday:
-                      Closed</span
-                    >
-                  </div>
-                </div>
-
-                <div class="app-buttons mt-4">
-                  <a href="#" class="app-btn">
-                    <i class="bi bi-apple"></i>
-                    <span>App Store</span>
-                  </a>
-                  <a href="#" class="app-btn">
-                    <i class="bi bi-google-play"></i>
-                    <span>Google Play</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="footer-bottom">
         <div class="container">
           <div class="row gy-3 align-items-center">
@@ -775,17 +616,12 @@ Mobile-first, Bootstrap 5, minimal JS.
               <div class="copyright">
                 <p>
                   © <span>Copyright</span>
-                  <strong class="sitename">NiceShop</strong>. All Rights
-                  Reserved.
+                  <strong class="sitename">Raw Line</strong>. All Rights Reserved.
                 </p>
               </div>
               <div class="credits mt-1">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you've purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
                 Designed by
-                <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                <a href="https://github.com/pin3dev" target="_blank">Ivany Pinheiro</a>, <a href="https://github.com/ruifgcosta" target="_blank">Rui Costa</a> and <a href="https://github.com/thaisliira" target="_blank">Thais Lira</a>
               </div>
             </div>
 
@@ -800,14 +636,13 @@ Mobile-first, Bootstrap 5, minimal JS.
                     <i class="bi bi-apple" aria-label="Apple Pay"></i>
                     <i class="bi bi-google" aria-label="Google Pay"></i>
                     <i class="bi bi-shop" aria-label="Shop Pay"></i>
-                    <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
                   </div>
                 </div>
 
                 <div class="legal-links">
-                  <a href="tos.html">Terms</a>
-                  <a href="privacy.html">Privacy</a>
-                  <a href="tos.html">Cookies</a>
+                  <a href="#">Terms</a>
+                  <a href="#">Privacy</a>
+                  <a href="#">Cookies</a>
                 </div>
               </div>
             </div>

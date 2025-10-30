@@ -37,9 +37,9 @@ Mobile-first, Bootstrap 5, minimal JS.
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <!-- Navbar with Mega Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <div class="container">
+    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
         <a class="navbar-brand" href="index.html">
             <img src="assets/img/RL-logo2.png" alt="Raw Line Logo" height="50">
         </a>
@@ -52,119 +52,85 @@ Mobile-first, Bootstrap 5, minimal JS.
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navMain">
-          <ul class="navbar-nav me-auto">
-            <!-- Mega menu -->
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="megaMenu"
-                role="button"
-                data-bs-toggle="dropdown"
-                >Categories</a
-              >
-              <div
-                class="dropdown-menu p-4"
-                aria-labelledby="megaMenu"
-                style="min-width: 600px"
-              >
-                <div class="row">
-                  <div class="col-md-4">
-                    <h6 class="text-uppercase">Men</h6>
-                    <ul class="list-unstyled">
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=masculino"
-                          >Shirts</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=masculino"
-                          >Jeans</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=masculino"
-                          >Accessories</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-4">
-                    <h6 class="text-uppercase">Women</h6>
-                    <ul class="list-unstyled">
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=feminino"
-                          >Dresses</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=feminino"
-                          >Shirts</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=feminino"
-                          >Jeans</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-md-4">
-                    <h6 class="text-uppercase">Kids</h6>
-                    <ul class="list-unstyled">
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=infantil"
-                          >Boys</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href="catalog.html?cat=infantil"
-                          >Girls</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </li>
+            <ul class="navbar-nav me-auto">
 
-            <li class="nav-item">
-              <a class="nav-link" href="catalog.html">Catalogue</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
+                <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      id="megaMenu"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      >Categories</a
+                    >
+                    <div
+                      class="dropdown-menu p-4"
+                      aria-labelledby="megaMenu"
+                      style="min-width: 600px"
+                    >
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Man</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man-shirt">T-Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man-pant">Pants</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man-acessorie">Accessories</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Woman</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman-dress">Dresses</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman-blouse">Blouses</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman-pant">Pants</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Children</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=children-boy">Boys</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=children-girl">Girls</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
 
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link position-relative" href="cart.html">
-                <i class="bi bi-cart3"></i>
-                <span id="cart-count" class="badge bg-danger rounded-pill ms-1"
-                  >0</span
-                >
-              </a>
-            </li>
-          </ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="catalog.html">Catalogue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="cart.html">
+                        <i class="bi bi-cart3"></i>
+                        <span id="cart-count" class="badge bg-danger rounded-pill ms-1">0</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="hero" class="hero section">
@@ -174,7 +140,7 @@ Mobile-first, Bootstrap 5, minimal JS.
             <h1 class="hero-title">Discover Amazing Products</h1>
             <p class="hero-description">
               Explore our curated collection of premium items designed to
-              enhance your lifestyle. From fashion to tech, find everything you
+              enhance your lifestyle. From clothes to accessories, find everything you
               need with exclusive deals and fast shipping.
             </p>
             <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
@@ -205,17 +171,19 @@ Mobile-first, Bootstrap 5, minimal JS.
             data-aos-delay="200"
           >
             <div class="product-card featured">
+              <a href="product.html" class="product-link">
               <img
                 src="assets/img/product/men_polo_grey_1.jpg"
                 alt="Featured Product"
                 class="img-fluid"
               />
+              </a>
               <div class="product-badge">Best Seller</div>
               <div class="product-info">
                 <h4>Polo Ralph Lauren LS</h4>
                 <div class="price">
-                  <span class="sale-price">€299</span>
-                  <span class="original-price">€399</span>
+                  <span class="sale-price">€189.99</span>
+                  <span class="original-price">€239.99</span>
                 </div>
               </div>
             </div>
@@ -310,8 +278,7 @@ Mobile-first, Bootstrap 5, minimal JS.
         >
           <h2>Best Sellers</h2>
           <p>
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+            Simple as that ... this is our customers' favorite products!
           </p>
         </div>
         <!-- End Section Title -->
@@ -343,16 +310,16 @@ Mobile-first, Bootstrap 5, minimal JS.
                   <div class="product-card">
                     <div class="product-image">
                       <img
-                        src="assets/img/product/product-1.png"
+                        src="assets/img/product/product-f-5.webp"
                         alt="Premium Leather Tote"
                         class="img-fluid"
                       />
                       <div class="product-badges">
-                        <span class="badge-new">New</span>
+                        <span class="badge-sale">-25%</span>
                       </div>
                     </div>
                     <div class="product-info">
-                      <h4 class="product-name">Premium Leather Tote</h4>
+                      <h4 class="product-name">White Summer Shirt</h4>
                       <div class="product-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -362,7 +329,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                         <span>(24)</span>
                       </div>
                       <div class="product-price">
-                        <span class="current-price">€87.50</span>
+                        <span class="current-price">€59.99</span>
                       </div>
                     </div>
                   </div>
@@ -370,13 +337,13 @@ Mobile-first, Bootstrap 5, minimal JS.
                   <div class="product-card">
                     <div class="product-image">
                       <img
-                        src="assets/img/product/product-3.webp"
+                        src="assets/img/product/product-f-8.webp"
                         alt="Statement Earrings"
                         class="img-fluid"
                       />
                     </div>
                     <div class="product-info">
-                      <h4 class="product-name">Statement Earrings</h4>
+                      <h4 class="product-name">Jeans Chic blouse</h4>
                       <div class="product-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -386,7 +353,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                         <span>(41)</span>
                       </div>
                       <div class="product-price">
-                        <span class="current-price">€39.99</span>
+                        <span class="current-price">€89.90</span>
                       </div>
                     </div>
                   </div>
@@ -394,13 +361,13 @@ Mobile-first, Bootstrap 5, minimal JS.
                   <div class="product-card">
                     <div class="product-image">
                       <img
-                        src="assets/img/product/product-5.webp"
+                        src="assets/img/product/product-f-4.webp"
                         alt="Organic Cotton Shirt"
                         class="img-fluid"
                       />
                     </div>
                     <div class="product-info">
-                      <h4 class="product-name">Organic Cotton Shirt</h4>
+                      <h4 class="product-name">Black Slim Dress</h4>
                       <div class="product-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -410,7 +377,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                         <span>(18)</span>
                       </div>
                       <div class="product-price">
-                        <span class="current-price">€45.00</span>
+                        <span class="current-price">€22.50</span>
                       </div>
                     </div>
                   </div>
@@ -431,7 +398,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                   <div class="product-card">
                     <div class="product-image">
                       <img
-                        src="assets/img/product/product-2.webp"
+                        src="assets/img/product/product-m-7.webp"
                         alt="Slim Fit Denim"
                         class="img-fluid"
                       />
@@ -440,7 +407,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                       </div>
                     </div>
                     <div class="product-info">
-                      <h4 class="product-name">Slim Fit Denim</h4>
+                      <h4 class="product-name">Urban Cargo Blue Pants</h4>
                       <div class="product-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -450,8 +417,8 @@ Mobile-first, Bootstrap 5, minimal JS.
                         <span>(87)</span>
                       </div>
                       <div class="product-price">
-                        <span class="current-price">€68.00</span>
-                        <span class="old-price">€80.00</span>
+                        <span class="current-price">€55.00</span>
+                        <span class="old-price">€45.00</span>
                       </div>
                     </div>
                   </div>
@@ -459,13 +426,13 @@ Mobile-first, Bootstrap 5, minimal JS.
                   <div class="product-card">
                     <div class="product-image">
                       <img
-                        src="assets/img/product/product-6.webp"
+                        src="assets/img/product/product-m-1.webp"
                         alt="Designer Handbag"
                         class="img-fluid"
                       />
                     </div>
                     <div class="product-info">
-                      <h4 class="product-name">Designer Handbag</h4>
+                      <h4 class="product-name">Polo Blue Lagoon</h4>
                       <div class="product-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -475,7 +442,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                         <span>(56)</span>
                       </div>
                       <div class="product-price">
-                        <span class="current-price">€129.99</span>
+                        <span class="current-price">€38.90</span>
                       </div>
                     </div>
                   </div>
@@ -483,7 +450,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                   <div class="product-card">
                     <div class="product-image">
                       <img
-                        src="assets/img/product/product-8.webp"
+                        src="assets/img/product/product-m-5.webp"
                         alt="Leather Crossbody"
                         class="img-fluid"
                       />
@@ -492,7 +459,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                       </div>
                     </div>
                     <div class="product-info">
-                      <h4 class="product-name">Leather Crossbody</h4>
+                      <h4 class="product-name">Basic White T-shirt</h4>
                       <div class="product-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -502,7 +469,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                         <span>(112)</span>
                       </div>
                       <div class="product-price">
-                        <span class="current-price">€95.50</span>
+                        <span class="current-price">€19.90</span>
                       </div>
                     </div>
                   </div>
@@ -523,13 +490,13 @@ Mobile-first, Bootstrap 5, minimal JS.
                   <div class="product-card">
                     <div class="product-image">
                       <img
-                        src="assets/img/product/product-7.webp"
+                        src="assets/img/product/product-b-2.webp"
                         alt="Pleated Midi Skirt"
                         class="img-fluid"
                       />
                     </div>
                     <div class="product-info">
-                      <h4 class="product-name">Pleated Midi Skirt</h4>
+                      <h4 class="product-name">Warm Children's Coat</h4>
                       <div class="product-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -539,7 +506,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                         <span>(32)</span>
                       </div>
                       <div class="product-price">
-                        <span class="current-price">€75.00</span>
+                        <span class="current-price">€29.90</span>
                       </div>
                     </div>
                   </div>
@@ -547,7 +514,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                   <div class="product-card">
                     <div class="product-image">
                       <img
-                        src="assets/img/product/product-4.webp"
+                        src="assets/img/product/product-g-2.webp"
                         alt="Geometric Earrings"
                         class="img-fluid"
                       />
@@ -556,7 +523,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                       </div>
                     </div>
                     <div class="product-info">
-                      <h4 class="product-name">Geometric Earrings</h4>
+                      <h4 class="product-name">Cotton Jogger Pants</h4>
                       <div class="product-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -566,7 +533,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                         <span>(47)</span>
                       </div>
                       <div class="product-price">
-                        <span class="current-price">€42.99</span>
+                        <span class="current-price">€24.00</span>
                       </div>
                     </div>
                   </div>
@@ -574,13 +541,13 @@ Mobile-first, Bootstrap 5, minimal JS.
                   <div class="product-card">
                     <div class="product-image">
                       <img
-                        src="assets/img/product/product-9.webp"
+                        src="assets/img/product/product-b-1.webp"
                         alt="Structured Satchel"
                         class="img-fluid"
                       />
                     </div>
                     <div class="product-info">
-                      <h4 class="product-name">Structured Satchel</h4>
+                      <h4 class="product-name">Warm Children's Coat</h4>
                       <div class="product-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
@@ -590,7 +557,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                         <span>(64)</span>
                       </div>
                       <div class="product-price">
-                        <span class="current-price">€89.99</span>
+                        <span class="current-price">€29.90</span>
                       </div>
                     </div>
                   </div>
@@ -685,30 +652,21 @@ Mobile-first, Bootstrap 5, minimal JS.
                     <img src="assets/img/RL-logo2.png" alt="Raw Line Logo" height="50">
                   </a>
                 <p class="mt-3">
-                  From fashion to tech, find everything you need with exclusive
-                  deals and fast shipping.
+                  Stylish, simplicity, and sustainability. Raw Line offers only the
+                  best clothing and accessories for every occasion.
                 </p>
 
                 <div class="social-links mt-4">
                   <h5>Connect With Us</h5>
                   <div class="social-icons">
-                    <a href="#" aria-label="Facebook"
+                    <a href="" aria-label="Facebook"
                       ><i class="bi bi-facebook"></i
                     ></a>
-                    <a href="#" aria-label="Instagram"
+                    <a href="" aria-label="Instagram"
                       ><i class="bi bi-instagram"></i
                     ></a>
-                    <a href="#" aria-label="Twitter"
+                    <a href="" aria-label="Twitter"
                       ><i class="bi bi-twitter-x"></i
-                    ></a>
-                    <a href="#" aria-label="TikTok"
-                      ><i class="bi bi-tiktok"></i
-                    ></a>
-                    <a href="#" aria-label="Pinterest"
-                      ><i class="bi bi-pinterest"></i
-                    ></a>
-                    <a href="#" aria-label="YouTube"
-                      ><i class="bi bi-youtube"></i
                     ></a>
                   </div>
                 </div>
@@ -791,12 +749,8 @@ Mobile-first, Bootstrap 5, minimal JS.
                 </p>
               </div>
               <div class="credits mt-1">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you've purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
                 Designed by
-                <a href="https://bootstrapmade.com/">Perfect Team</a>
+                <a href="https://github.com/pin3dev" target="_blank">Ivany Pinheiro</a>, <a href="https://github.com/ruifgcosta" target="_blank">Rui Costa</a> and <a href="https://github.com/thaisliira" target="_blank">Thais Lira</a>
               </div>
             </div>
 
@@ -811,7 +765,6 @@ Mobile-first, Bootstrap 5, minimal JS.
                     <i class="bi bi-apple" aria-label="Apple Pay"></i>
                     <i class="bi bi-google" aria-label="Google Pay"></i>
                     <i class="bi bi-shop" aria-label="Shop Pay"></i>
-                    <i class="bi bi-cash" aria-label="Cash on Delivery"></i>
                   </div>
                 </div>
 
@@ -845,24 +798,24 @@ Mobile-first, Bootstrap 5, minimal JS.
       const featured = [
         {
           id: "p1",
-          name: "Denim Shirt",
-          category: "women",
-          price: 19.9,
-          image: "./assets/img/product/product-f-8.webp",
+          name: "Floral Dress",
+          category: "Fluid and soft",
+          price: 49.90,
+          image: "./assets/img/product/product-f-1.webp",
         },
         {
           id: "p2",
-          name: "Orange Dress",
-          category: "women",
-          price: 49.9,
-          image: "./assets/img/product/product-f-3.webp",
+          name: "Lace Strap Blouse",
+          category: "100% cotton",
+          price: 22.50,
+          image: "./assets/img/product/product-f-7.webp",
         },
         {
           id: "p4",
-          name: "Beige Jeans",
-          category: "men",
-          price: 29.9,
-          image: "./assets/img/product/product-m-6.webp",
+          name: "Polo Caramel",
+          category: "Elegant and comfortable",
+          price: 30.90,
+          image: "./assets/img/product/product-m-2.webp",
         },
       ];
 
@@ -885,7 +838,7 @@ Mobile-first, Bootstrap 5, minimal JS.
                 p.id
               }" data-name="${p.name}" data-price="${p.price}" data-image="${
             p.image
-          }">Adicionar</button>
+          }">Add to cart <i class="bi bi-cart3"></i></button>
             </div>
           </div>
         </div>
