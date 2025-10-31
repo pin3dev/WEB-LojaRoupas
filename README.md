@@ -38,6 +38,8 @@ The primary goal of this project is to build a functional, beautiful and mobile-
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript)
+![Bootstrap](https://img.shields.io/badge/-Bootstrap-563D7C?style=flat-square&logo=bootstrap)
+
 
 ## 🚀 Getting Started
 To run this project locally, no special build steps are required. Simply clone the repository and open the .html files in your browser.
@@ -54,6 +56,12 @@ cd WEB-LojaRoupas
 ``` 
 
 2. Open the index.html or catalog.html file in your preferred web browser.
+
+
+## 🚀 Deploy
+
+The page is hosted via GitHub Pages:
+👉 https://pin3dev.github.io/WEB-LojaRoupas/
 
 
 ## ✨ Authors

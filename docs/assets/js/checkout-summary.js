@@ -1,20 +1,19 @@
+/**
+ * @fileoverview Script para renderizar o resumo do pedido na página de checkout.
+ */
 function renderOrderSummary() {
-  const container = document.getElementById('order-summary');
+  const container = document.getElementById('order-summary'); // Container do resumo do pedido
   if (!container) return;
 
-  const cart = getCart();
+  const cart = getCart(); // Função que obtém o carrinho do localStorage
   if (cart.length === 0) {
     container.innerHTML = '<p>Your cart is empty</p>';
     return;
   }
 
-  // Calcular totais
-  // const totals = calculateGrandTotal();
-
-  // LER TOTAIS DO LOCALSTORAGE (não recalcular)
   let totals;
   try {
-    totals = JSON.parse(localStorage.getItem('cartTotals') || 'null');
+    totals = JSON.parse(localStorage.getItem('cartTotals') || 'null'); // Tentar obter os totais salvos no localStorage
   } catch (e) {
     totals = null;
   }
@@ -49,7 +48,7 @@ function renderOrderSummary() {
   });
   html += '</ul><hr>';
 
-  // Totais
+  // Totais do pedido a partir dos dados calculados
   html += `
     <div class="d-flex justify-content-between mb-1">
       <span>Subtotal</span><span>€ ${totals.subtotal.toFixed(2)}</span>
