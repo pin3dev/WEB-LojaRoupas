@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<!--
+Index - Home page
+Mobile-first, Bootstrap 5, minimal JS.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Raw Line Store</title>
+    <!-- Bootstrap 5 CSS (CDN) -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/img/RL-logo2.png" alt="Raw Line Logo" height="50">
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMain"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+            <ul class="navbar-nav me-auto">
+
+                <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      id="megaMenu"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      >Categories</a
+                    >
+                    <div
+                      class="dropdown-menu p-4"
+                      aria-labelledby="megaMenu"
+                      style="min-width: 600px"
+                    >
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Man</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man-shirt">T-Shirts</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man-pant">Pants</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=man-acessorie">Accessories</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Woman</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman-dress">Dresses</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman-blouse">Blouses</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=woman-pant">Pants</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="text-uppercase">Children</h6>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=children-boy">Boys</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="catalog.html?cat=children-girl">Girls</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="catalog.html">Catalogue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link position-relative" href="cart.html">
+                        <i class="bi bi-cart3"></i>
+                        <span id="cart-count" class="badge bg-danger rounded-pill ms-1">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="content-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <h1 class="hero-title">Discover Amazing Products</h1>
+            <p class="hero-description">
+              Explore our curated collection of premium items designed to
+              enhance your lifestyle. From clothes to accessories, find everything you
+              need with exclusive deals and fast shipping.
+            </p>
+            <div class="hero-actions" data-aos="fade-up" data-aos-delay="200">
+              <a href="cart.html" class="btn-primary">Shop Now</a>
+              <a href="catalog.html" class="btn-secondary">Browse Categories</a>
+            </div>
+            <div class="features-list" data-aos="fade-up" data-aos-delay="300">
+              <div class="feature-item">
+                <i class="bi bi-truck"></i>
+                <span>Free Shipping</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-award"></i>
+                <span>Quality Guarantee</span>
+              </div>
+              <div class="feature-item">
+                <i class="bi bi-headset"></i>
+                <span>24/7 Support</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visuals">
+          <div
+            class="product-showcase"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <div class="product-card featured">
+              <a href="product.html" class="product-link">
+              <img
+                src="assets/img/product/men_polo_grey_1.jpg"
+                alt="Featured Product"
+                class="img-fluid"
+              />
+              </a>
+              <div class="product-badge">Best Seller</div>
+              <div class="product-info">
+                <h4>Polo Ralph Lauren LS</h4>
+                <div class="price">
+                  <span class="sale-price">€189.99</span>
+                  <span class="original-price">€239.99</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-grid">
+              <div class="product-mini" data-aos="zoom-in" data-aos-delay="400">
+                <img
+                  src="assets/img/product/product-11.png"
+                  alt="Product"
+                  class="img-fluid"
+                />
+                <span class="mini-price">€89</span>
+              </div>
+              <div class="product-mini" data-aos="zoom-in" data-aos-delay="500">
+                <img
+                  src="assets/img/product/product-8.png"
+                  alt="Product"
+                  class="img-fluid"
+                />
+                <span class="mini-price">€49</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-elements">
+            <div
+              class="floating-icon cart"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <i class="bi bi-cart3"></i>
+              <span class="notification-dot">3</span>
+            </div>
+            <div
+              class="floating-icon wishlist"
+              data-aos="fade-up"
+              data-aos-delay="700"
+            >
+              <i class="bi bi-heart"></i>
+            </div>
+            <div
+              class="floating-icon search"
+              data-aos="fade-up"
+              data-aos-delay="800"
+            >
+              <i class="bi bi-search"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- Hero Carousel
+<header class="container mt-3">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=1400&auto=format&fit=crop&q=60" class="d-block w-100" alt="Coleção">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Nova Coleção Primavera</h2>
+          <p>Peças selecionadas — estilo e conforto.</p>
+          <a href="catalog.html" class="btn btn-light">Ver Coleção</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1520975683576-2d8b2a6c8a55?w=1400&auto=format&fit=crop&q=60" class="d-block w-100" alt="Promoção">
+        <div class="carousel-caption d-none d-md-block">
+          <h2>Até 30% OFF</h2>
+          <p>Ofertas por tempo limitado.</p>
+          <a href="catalog.html" class="btn btn-light">Aproveitar</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</header> -->
+
+    <!-- Featured products -->
+    <main class="container my-5">
+      <!-- Best Sellers Section -->
+      <section id="best-sellers" class="best-sellers section">
+        <!-- Section Title -->
+        <div
+          class="container section-title text-center mb-5"
+          data-aos="fade-up"
+        >
+          <h2>Best Sellers</h2>
+          <p>
+            Simple as that ... this is our customers' favorite products!
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-5">
+            <div class="row mt-5" id="featured-products">
+              <!-- Product cards are injected by JS for simplicity -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Best Sellers Section -->
+
+      <!-- Cards Section -->
+      <section id="cards" class="cards section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4">
+            <div
+              class="col-lg-4 col-md-6 mb-5 mb-md-0"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="product-category">
+                <h3 class="category-title">
+                  <i class="bi bi-person-standing-dress"></i> Women
+                </h3>
+                <div class="product-list">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="assets/img/product/product-f-5.webp"
+                        alt="Premium Leather Tote"
+                        class="img-fluid"
+                      />
+                      <div class="product-badges">
+                        <span class="badge-sale">-25%</span>
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <h4 class="product-name">White Summer Shirt</h4>
+                      <div class="product-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <span>(24)</span>
+                      </div>
+                      <div class="product-price">
+                        <span class="current-price">€59.99</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="assets/img/product/product-f-8.webp"
+                        alt="Statement Earrings"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="product-info">
+                      <h4 class="product-name">Jeans Chic blouse</h4>
+                      <div class="product-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <span>(41)</span>
+                      </div>
+                      <div class="product-price">
+                        <span class="current-price">€89.90</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="assets/img/product/product-f-4.webp"
+                        alt="Organic Cotton Shirt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="product-info">
+                      <h4 class="product-name">Black Slim Dress</h4>
+                      <div class="product-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <span>(18)</span>
+                      </div>
+                      <div class="product-price">
+                        <span class="current-price">€22.50</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6 mb-5 mb-md-0"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div class="product-category">
+                <h3 class="category-title">
+                  <i class="bi bi-person-raised-hand"></i> Men
+                </h3>
+                <div class="product-list">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="assets/img/product/product-m-7.webp"
+                        alt="Slim Fit Denim"
+                        class="img-fluid"
+                      />
+                      <div class="product-badges">
+                        <span class="badge-sale">-15%</span>
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <h4 class="product-name">Urban Cargo Blue Pants</h4>
+                      <div class="product-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <span>(87)</span>
+                      </div>
+                      <div class="product-price">
+                        <span class="current-price">€55.00</span>
+                        <span class="old-price">€45.00</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="assets/img/product/product-m-1.webp"
+                        alt="Designer Handbag"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="product-info">
+                      <h4 class="product-name">Polo Blue Lagoon</h4>
+                      <div class="product-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <span>(56)</span>
+                      </div>
+                      <div class="product-price">
+                        <span class="current-price">€38.90</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="assets/img/product/product-m-5.webp"
+                        alt="Leather Crossbody"
+                        class="img-fluid"
+                      />
+                      <div class="product-badges">
+                        <span class="badge-hot">Hot</span>
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <h4 class="product-name">Basic White T-shirt</h4>
+                      <div class="product-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <span>(112)</span>
+                      </div>
+                      <div class="product-price">
+                        <span class="current-price">€19.90</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-lg-4 col-md-6 mb-5 mb-md-0"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              <div class="product-category">
+                <h3 class="category-title">
+                  <i class="bi bi-person-arms-up"></i> Kids
+                </h3>
+                <div class="product-list">
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="assets/img/product/product-b-2.webp"
+                        alt="Pleated Midi Skirt"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="product-info">
+                      <h4 class="product-name">Warm Children's Coat</h4>
+                      <div class="product-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <span>(32)</span>
+                      </div>
+                      <div class="product-price">
+                        <span class="current-price">€29.90</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="assets/img/product/product-g-2.webp"
+                        alt="Geometric Earrings"
+                        class="img-fluid"
+                      />
+                      <div class="product-badges">
+                        <span class="badge-limited">Limited</span>
+                      </div>
+                    </div>
+                    <div class="product-info">
+                      <h4 class="product-name">Cotton Jogger Pants</h4>
+                      <div class="product-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <span>(47)</span>
+                      </div>
+                      <div class="product-price">
+                        <span class="current-price">€24.00</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="product-card">
+                    <div class="product-image">
+                      <img
+                        src="assets/img/product/product-b-1.webp"
+                        alt="Structured Satchel"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="product-info">
+                      <h4 class="product-name">Warm Children's Coat</h4>
+                      <div class="product-rating">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <span>(64)</span>
+                      </div>
+                      <div class="product-price">
+                        <span class="current-price">€29.90</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /Cards Section -->
+    </main>
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div
+              class="main-content text-center"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div
+                class="offer-badge"
+                data-aos="fade-down"
+                data-aos-delay="250"
+              >
+                <span class="limited-time">Limited Time</span>
+                <span class="offer-text">50% OFF</span>
+              </div>
+
+              <h2 data-aos="fade-up" data-aos-delay="300">
+                Exclusive Flash Sale
+              </h2>
+
+              <p class="subtitle" data-aos="fade-up" data-aos-delay="350">
+                Don't miss out on our biggest sale of the year. Premium quality
+                products at unbeatable prices for the next 48 hours only.
+              </p>
+
+              <div
+                class="countdown-wrapper"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <div
+                  class="countdown d-flex justify-content-center"
+                  data-count="2025/10/31"
+                >
+                  <div>
+                    <h3 class="count-days"></h3>
+                    <h4>Days</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-hours"></h3>
+                    <h4>Hours</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-minutes"></h3>
+                    <h4>Minutes</h4>
+                  </div>
+                  <div>
+                    <h3 class="count-seconds"></h3>
+                    <h4>Seconds</h4>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="action-buttons"
+                data-aos="fade-up"
+                data-aos-delay="450"
+              >
+                <a href="cart.html" class="btn-shop-now">Shop Now</a>
+                <a href="catalog.html" class="btn-view-deals">View All Deals</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Call To Action Section -->
+
+    <footer id="footer" class="footer dark-background">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-widget footer-about">
+                <a href="index.html" class="logo">
+                  <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/RL-logo2.png" alt="Raw Line Logo" height="50">
+                  </a>
+                <p class="mt-3">
+                  Stylish, simplicity, and sustainability. Raw Line offers only the
+                  best clothing and accessories for every occasion.
+                </p>
+
+                <div class="social-links mt-4">
+                  <h5>Connect With Us</h5>
+                  <div class="social-icons">
+                    <a href="" aria-label="Facebook"
+                      ><i class="bi bi-facebook"></i
+                    ></a>
+                    <a href="" aria-label="Instagram"
+                      ><i class="bi bi-instagram"></i
+                    ></a>
+                    <a href="" aria-label="Twitter"
+                      ><i class="bi bi-twitter-x"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h4>Shop</h4>
+                <ul class="footer-links">
+                  <li><a href="#best-sellers">Bestsellers</a></li>
+                  <li>
+                    <a href="catalog.html?cat=feminino">Women's Clothing</a>
+                  </li>
+                  <li>
+                    <a href="catalog.html?cat=masculino">Men's Clothing</a>
+                  </li>
+                  <li>
+                    <a href="catalog.html?cat=infantil">Kid's Clothing</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 col-sm-6">
+              <div class="footer-widget">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="footer-widget">
+                <h4>Contact Information</h4>
+                <div class="footer-contact">
+                  <div class="contact-item">
+                    <i class="bi bi-geo-alt"></i>
+                    <span>Rua Ciríaco Cardoso, 186 4150-212 Porto</span>
+                  </div>
+                  <div class="contact-item">
+                    <i class="bi bi-telephone"></i>
+                    <span>+351 22 619 5200</span>
+                  </div>
+                  <div class="contact-item">
+                    <i class="bi bi-envelope"></i>
+                    <span>info@rawline.example</span>
+                  </div>
+                  <div class="contact-item">
+                    <i class="bi bi-clock"></i>
+                    <span>Monday-Saturday: 9am-7pm<br />Sunday: Closed</span>
+                  </div>
+                </div>
+
+                <div class="app-buttons mt-4">
+                  <a href="#" class="app-btn">
+                    <i class="bi bi-apple"></i>
+                    <span>App Store</span>
+                  </a>
+                  <a href="#" class="app-btn">
+                    <i class="bi bi-google-play"></i>
+                    <span>Google Play</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row gy-3 align-items-center">
+            <div class="col-lg-6 col-md-12">
+              <div class="copyright">
+                <p>
+                  © <span>Copyright</span>
+                  <strong class="sitename">Raw Line</strong>. All Rights Reserved.
+                </p>
+              </div>
+              <div class="credits mt-1">
+                Designed by
+                <a href="https://github.com/pin3dev" target="_blank">Ivany Pinheiro</a>, <a href="https://github.com/ruifgcosta" target="_blank">Rui Costa</a> and <a href="https://github.com/thaisliira" target="_blank">Thais Lira</a>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="d-flex flex-wrap justify-content-lg-end justify-content-center align-items-center gap-4"
+              >
+                <div class="payment-methods">
+                  <div class="payment-icons">
+                    <i class="bi bi-credit-card" aria-label="Credit Card"></i>
+                    <i class="bi bi-paypal" aria-label="PayPal"></i>
+                    <i class="bi bi-apple" aria-label="Apple Pay"></i>
+                    <i class="bi bi-google" aria-label="Google Pay"></i>
+                    <i class="bi bi-shop" aria-label="Shop Pay"></i>
+                  </div>
+                </div>
+
+                <div class="legal-links">
+                  <a href="#">Terms</a>
+                  <a href="#">Privacy</a>
+                  <a href="#">Cookies</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Bootstrap bundle + our script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/scrollTop.js"></script>
+    <script src="assets/js/countdownTimer.js"></script>
+    <script>
+      /* Initialize: sample featured products injected on home */
+      const featured = [
+        {
+          id: "p1",
+          name: "Floral Dress",
+          category: "Fluid and soft",
+          price: 49.90,
+          image: "./assets/img/product/product-f-1.webp",
+        },
+        {
+          id: "p2",
+          name: "Lace Strap Blouse",
+          category: "100% cotton",
+          price: 22.50,
+          image: "./assets/img/product/product-f-7.webp",
+        },
+        {
+          id: "p4",
+          name: "Polo Caramel",
+          category: "Elegant and comfortable",
+          price: 30.90,
+          image: "./assets/img/product/product-m-2.webp",
+        },
+      ];
+
+      function renderFeatured() {
+        const cont = document.getElementById("featured-products");
+        cont.innerHTML = "";
+        featured.forEach((p) => {
+          cont.innerHTML += `
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="${p.image}" class="card-img-top" alt="${p.name}">
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">${p.name}</h6>
+            <p class="card-text text-muted small mb-2">${
+              p.category.charAt(0).toUpperCase() + p.category.slice(1)
+            }</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <div><strong>€ ${p.price.toFixed(2)}</strong></div>
+              <button class="btn btn-sm btn-outline-primary add-to-cart" data-id="${
+                p.id
+              }" data-name="${p.name}" data-price="${p.price}" data-image="${
+            p.image
+          }">Add to cart <i class="bi bi-cart3"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+        });
+        attachAddButtons();
+      }
+      renderFeatured();
+
+      /* Set year */
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+/* ====================================================================
+                        Estilos CHECKOUT
+                        Autora: Ivany Batista
+===================================================================== */
+
+/* =========== GERAIS =========== */
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+/* =========== FAIXA TITULO =========== */
+.checkout-header {
+  background: #f5f5f5 !important;
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.checkout-header h1 {
+  font-weight: 400;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  color: #666;
+  text-shadow: none;
+}
+
+
+/* =========== FORMULARIOS =========== */
+.checkout-forms .form-control {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.checkout-forms .form-control:focus {
+  border-color: #035f61;
+  box-shadow: 0 0 0 0.2rem rgba(0, 180, 182, 0.25);
+}
+
+/* FORMULARIOS: Campos inválidos */
+.form-control.is-invalid {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+/* =========== CHECKOUT BARRA =========== */
+/* círculos, linhas, labels */
+
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.checkout-steps .step {
+  text-align: center;
+  flex: 1;
+  position: relative;
+}
+
+.checkout-steps .circle {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 0 auto;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #ccc;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.checkout-steps .label {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.checkout-steps .line {
+  flex: none;
+  width: 100px;
+  height: 3px;
+  background-color: #ddd;
+  margin: 0 5px;
+  z-index: 1;
+}
+
+/* Estado ativo */
+.checkout-steps .active .circle {
+  background-color: var(--accent-color);
+}
+
+.checkout-steps .active .label {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Estado completo */
+.checkout-steps .completed .circle {
+  background-color: var(--accent-color);
+  position: relative;
+}
+
+.checkout-steps .completed .circle::after {
+  content: "✓";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+}
+
+.checkout-steps .completed .circle {
+  color: transparent;
+}
+
+.checkout-steps .completed .label {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.checkout-step {
+  transition: opacity 0.3s ease;
+}
+
+.checkout-step:not(.d-none) {
+  opacity: 1;
+}
+
+.checkout-step.d-none {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  overflow: hidden;
+}
+
+.checkout-step .d-flex {
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.checkout-step .d-flex .btn {
+  width: auto !important;
+  flex: 0 0 auto !important;
+  white-space: nowrap;
+}
+
+/* =========== CARTAO DE SUMARIO =========== */
+#order-summary img {
+  border: 1px solid #eee;
+}
+
+#order-summary .fw-semibold {
+  color: #333;
+}
+
+#order-summary .text-muted {
+  color: #777 !important;
+}
+
+
+/* =========== RESPONSIVIDADE =========== */
+@media (max-width: 768px) {
+
+  .checkout-step .d-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .checkout-step .d-flex .btn {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .checkout-steps {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .checkout-steps .line {
+    display: none;
+  }
+
+  .checkout-steps .step {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 12px;
+    border-left: 4px solid #ddd;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* Oculta os círculos no mobile */
+  .checkout-steps .circle {
+    display: none;
+  }
+
+  .checkout-steps .label {
+    font-size: 16px;
+    margin-top: 0;
+    font-weight: 500;
+    color: #555;
+  }
+
+  .checkout-steps .active {
+    border-left-color: var(--accent-color, #007bff);
+    background-color: rgba(0, 255, 34, 0.05);
+  }
+
+  .checkout-steps .completed {
+    border-left-color: var(--accent-color, #007bff);
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: 576px) {
+  .checkout-step .d-flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .checkout-step .d-flex .btn {
+    width: 100%;
+  }
+
+  .checkout-step .d-flex .btn+.btn {
+    margin-top: 0.5rem;
+  }
+}
