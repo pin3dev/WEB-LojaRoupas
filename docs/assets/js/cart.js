@@ -20,10 +20,6 @@ function saveCart(cart){
 
 // APAGAR TODOS OS ITENS DO CARRINHO COM MSG DE ALERTA
 function clearCart(){
-    // if (confirm("Are you sure you want to clear your entire cart?")) {
-    //     saveCart([]);
-    //     renderCart();
-    // }
     const clearCartModal = new bootstrap.Modal(document.getElementById('clearCartModal'));
     clearCartModal.show();
 }
